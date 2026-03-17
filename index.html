@@ -380,6 +380,22 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .cons-cta h3 { font-family: 'Marcellus', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: .4rem; }
 .cons-cta p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; color: var(--ink2); opacity: .8; }
 
+/* ── RESOURCES ── */
+#resources { background: var(--parch); }
+.resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.rcard {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  border-top: 4px solid var(--sage);
+  padding: 2rem 1.8rem; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: .6rem;
+  transition: transform .25s, box-shadow .25s, border-top-color .25s;
+}
+.rcard:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(42,30,12,.1); border-top-color: var(--rust); }
+.rcard-org { font-family: 'IM Fell English', serif; font-style: italic; font-size: .85rem; color: var(--sage2); }
+.rcard h3 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); }
+.rcard p { font-family: 'Sorts Mill Goudy', serif; font-size: .93rem; line-height: 1.6; color: var(--ink2); opacity: .78; flex: 1; }
+.rcard-link { font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); margin-top: .4rem; }
+
 /* ── FOOTER ── */
 footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
 footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2), var(--peach), var(--mint)); }
@@ -444,7 +460,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .hero-r { padding: 2.5rem 2rem; }
   .sec { padding: 4.5rem 1.5rem; }
   .ticket-grid, .schedule-grid, .activities-intro, .vendor-layout,
-  .monarch-layout, .workshops-layout, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .monarch-layout, .workshops-layout, .footer-grid, .resources-grid { grid-template-columns: 1fr; gap: 2rem; }
   .sites-grid, .act-grid { grid-template-columns: 1fr; }
   .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .gitem:first-child { grid-row: auto; }
@@ -497,6 +513,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <li><a href="#vendors" class="mob-link">Vendors</a></li>
       <li><a href="#monarch" class="mob-link">Monarchs</a></li>
       <li><a href="#conservation" class="mob-link">Conservation</a></li>
+      <li><a href="#resources" class="mob-link">Resources</a></li>
   </ul>
     <a href="#tickets" class="btn m-cta mob-link">Buy Tickets</a>
   </div>
@@ -824,6 +841,50 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 </section>
 
 
+<!-- IMPORTANT RESOURCES -->
+<div class="color-band"></div>
+<section id="resources" class="sec">
+  <div class="inner">
+    <div class="reveal">
+      <p class="sec-eyebrow">Further Reading</p>
+      <h2 class="sh">Important Resources</h2>
+      <p class="sp">Learn more about monarch butterflies, conservation efforts, and how you can help protect these remarkable creatures through these trusted organizations.</p>
+    </div>
+    <div class="resources-grid">
+      <a href="https://www.nhaudubon.org" target="_blank" rel="noopener noreferrer" class="rcard reveal d1">
+        <span class="rcard-org">New Hampshire</span>
+        <h3>NH Audubon</h3>
+        <p>Dedicated to the conservation of wildlife and habitat throughout New Hampshire, with programs focused on birds, pollinators, and native plant gardens.</p>
+        <span class="rcard-link">nhaudubon.org →</span>
+      </a>
+      <a href="https://extension.unh.edu" target="_blank" rel="noopener noreferrer" class="rcard reveal d2">
+        <span class="rcard-org">University of New Hampshire</span>
+        <h3>UNH Extension</h3>
+        <p>Provides research-based education and resources on gardening, wildlife habitat, and sustainable land management for New Hampshire residents.</p>
+        <span class="rcard-link">extension.unh.edu →</span>
+      </a>
+      <a href="https://monarchjointventure.org" target="_blank" rel="noopener noreferrer" class="rcard reveal d3">
+        <span class="rcard-org">National Partnership</span>
+        <h3>Monarch Joint Venture</h3>
+        <p>A partnership of federal and state agencies, nonprofits, and academic programs working together to protect the monarch migration across the United States.</p>
+        <span class="rcard-link">monarchjointventure.org →</span>
+      </a>
+      <a href="https://www.monarchwatch.org" target="_blank" rel="noopener noreferrer" class="rcard reveal d1">
+        <span class="rcard-org">Conservation &amp; Research</span>
+        <h3>Monarch Watch</h3>
+        <p>A nonprofit education, research, and conservation program based at the University of Kansas, home of the famous Monarch Tagging Program.</p>
+        <span class="rcard-link">monarchwatch.org →</span>
+      </a>
+      <a href="https://journeynorth.org" target="_blank" rel="noopener noreferrer" class="rcard reveal d2">
+        <span class="rcard-org">Citizen Science</span>
+        <h3>Journey North</h3>
+        <p>A citizen science program that tracks the migration of monarchs and other wildlife. Report your sightings and follow the migration in real time.</p>
+        <span class="rcard-link">journeynorth.org →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- JOIN US BANNER -->
 <div style="background: linear-gradient(135deg, var(--sage) 0%, #2a5028 100%); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden;">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(192,216,48,.15) 0%, transparent 70%);pointer-events:none;"></div>
@@ -859,7 +920,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
           <li><a href="#tickets">Purchase Tickets</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#activities">Activities</a></li>
-          <li><a href="#vendors">Become a Vendor</a></li>
+          <li><a href="vendors.html">Become a Vendor</a></li>
           <li><a href="#">Volunteer</a></li>
         </ul>
       </div>
@@ -867,6 +928,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <h5>Learn</h5>
         <ul>
           <li><a href="#monarch">About Monarchs</a></li>
+          <li><a href="#resources">Important Resources</a></li>
           <li><a href="#">Monarch Watch Tagging</a></li>
           <li><a href="#">Plant Milkweed</a></li>
         </ul>
