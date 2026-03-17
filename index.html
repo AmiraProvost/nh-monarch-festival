@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14th Annual NH Monarch Festival · August 22, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parch:  #f2e8d0;
+  --parch2: #e8d8b0;
+  --parch3: #d4c090;
+  --cream:  #faf4e4;
+  --ink:    #2a1e0c;
+  --ink2:   #52401c;
+  --rust:   #c05010;
+  --rust2:  #e07030;
+  --sage:   #3a6030;
+  --sage2:  #3a5c30;
+  --sage3:  #a8d098;
+  --gold:   #b08820;
+  --gold2:  #e0b840;
+  --mint:   #7ec89a;
+  --mint2:  #c0e8d0;
+  --peach:  #f0a870;
+  --yg:     #c0d830;
+  --yg2:    #e0ee80;
+  --orange: #e06010;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: .5;
+}
+
+/* ── FESTIVE BANNER STRIP ── */
+.festival-banner {
+  background: linear-gradient(90deg, var(--sage) 0%, var(--mint) 25%, var(--yg) 50%, var(--peach) 75%, var(--rust) 100%);
+  padding: .5rem 0; text-align: center; overflow: hidden; position: relative;
+}
+.festival-banner-inner {
+  display: inline-flex; gap: 3rem; align-items: center;
+  animation: bannerScroll 20s linear infinite; white-space: nowrap;
+}
+.festival-banner span {
+  font-family: 'Marcellus', serif; font-size: .78rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink); opacity: .85;
+}
+.festival-banner .dot { font-size: .5rem; opacity: .5; }
+@keyframes bannerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 300;
+  background: var(--parch);
+  border-bottom: 1px solid var(--parch3);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .65rem 3rem;
+  box-shadow: 0 1px 16px rgba(42,30,12,.08);
+}
+.nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
+.nav-name { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--sage); line-height: 1.3; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a { font-size: .66rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--sage); }
+.nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
+.nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+  background: var(--parch);
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 92vh; position: relative; overflow: hidden;
+}
+#hero::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 78% 25%, rgba(126,200,154,.45) 0%, transparent 50%),
+              radial-gradient(ellipse at 85% 85%, rgba(240,168,112,.35) 0%, transparent 48%),
+              radial-gradient(ellipse at 5% 90%, rgba(192,216,48,.2) 0%, transparent 40%);
+}
+.hero-l {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5.5rem 3rem 5.5rem 5rem; position: relative; z-index: 1;
+}
+.hero-kicker {
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 600;
+  font-size: 1rem; color: var(--ink);
+  display: flex; align-items: center; gap: .8rem; margin-bottom: 1.5rem;
+}
+.hero-kicker::before { content: ''; display: inline-block; width: 26px; height: 1px; background: var(--ink); opacity: .4; }
+h1.hero-title {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.4rem);
+  line-height: 1.06; color: var(--ink); margin-bottom: .6rem;
+}
+h1 .rust { color: var(--rust); }
+h1 .sage { color: var(--sage); }
+.hero-edition {
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-size: 1rem; color: var(--ink); opacity: .9; margin-bottom: 1.2rem;
+}
+.hero-desc {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 1.08rem; line-height: 1.85; color: var(--ink2);
+  max-width: 44ch; margin-bottom: 1.8rem;
+}
+.hero-when {
+  font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: .7rem; margin-bottom: .4rem;
+}
+.hero-when::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--peach); }
+.hero-where {
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-size: 1rem; color: var(--ink); margin-bottom: .3rem;
+}
+.hero-hours {
+  font-size: .78rem; letter-spacing: .08em; color: var(--ink2); opacity: .9; margin-bottom: 2.2rem;
+}
+.hero-btns { display: flex; gap: .9rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block; text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: .68rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase;
+  padding: .82rem 2rem; transition: all .25s; cursor: pointer; border: none;
+}
+.btn-rust { background: var(--rust); color: var(--cream); }
+.btn-rust:hover { background: var(--ink); }
+.btn-sage { background: transparent; border: 1.5px solid var(--sage); color: var(--sage); }
+.btn-sage:hover { background: var(--sage); color: var(--cream); }
+.btn-parch { background: var(--parch2); color: var(--ink); border: 1px solid var(--parch3); }
+.btn-parch:hover { background: var(--parch3); }
+
+.hero-r {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 4rem 3.5rem; gap: 2.2rem; position: relative; z-index: 1;
+}
+.logo-ring { position: relative; display: flex; align-items: center; justify-content: center; }
+.logo-ring::before {
+  content: ''; position: absolute; inset: -16px; border-radius: 50%;
+  border: 2px dashed rgba(58,96,48,.4);
+  animation: ringRotate 26s linear infinite;
+}
+.logo-ring::after {
+  content: ''; position: absolute; inset: -32px; border-radius: 50%;
+  border: 1.5px dashed rgba(126,200,154,.3);
+}
+@keyframes ringRotate { to { transform: rotate(360deg); } }
+.hero-logo-lg {
+  width: 240px; height: 240px; border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(126,200,154,.18), 0 0 0 20px rgba(192,216,48,.1), 0 16px 60px rgba(42,30,12,.18);
+  position: relative; z-index: 1;
+  animation: logoPulse 4s ease-in-out infinite;
+}
+@keyframes logoPulse {
+  0%,100% { box-shadow: 0 0 0 8px rgba(126,200,154,.18), 0 0 0 20px rgba(192,216,48,.1), 0 16px 60px rgba(42,30,12,.18); }
+  50% { box-shadow: 0 0 0 12px rgba(126,200,154,.25), 0 0 0 28px rgba(192,216,48,.14), 0 16px 60px rgba(42,30,12,.18); }
+}
+.field-notes {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  padding: 1.7rem 2rem; width: 100%; max-width: 310px; position: relative;
+}
+.field-notes::before {
+  content: 'Field Notes'; position: absolute; top: -9px; left: 16px;
+  background: var(--cream); padding: 0 6px;
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .88rem; color: var(--sage2);
+}
+.fn-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: .5rem 0; border-bottom: 1px dotted var(--parch3);
+}
+.fn-row:last-child { border: none; }
+.fn-lbl { font-family: 'IM Fell English', serif; font-style: italic; font-size: .86rem; color: var(--ink2); opacity: .7; }
+.fn-val { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--rust); }
+
+/* ── ORNAMENTAL RULE ── */
+.orn-rule {
+  display: flex; align-items: center; gap: 1.2rem;
+  padding: .4rem 5rem; background: inherit;
+}
+.orn-line { flex: 1; height: 1px; background: var(--parch3); opacity: .8; }
+.orn-glyph { font-family: 'IM Fell English', serif; font-style: italic; font-size: .8rem; opacity: .3; letter-spacing: .5em; }
+
+/* ── COLOR BAND DIVIDERS ── */
+.color-band {
+  height: 6px;
+  background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%);
+}
+
+/* ── SECTIONS ── */
+.sec { padding: 6rem 5rem; position: relative; }
+.inner { max-width: 1100px; margin: 0 auto; }
+.sec-eyebrow {
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: 1rem; color: var(--rust);
+  display: flex; align-items: center; gap: .75rem; margin-bottom: .7rem;
+}
+.sec-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--sage2); }
+h2.sh { font-family: 'Marcellus', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--ink); line-height: 1.1; margin-bottom: .9rem; }
+p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 58ch; }
+
+/* ── TICKETS ── */
+#tickets { background: var(--mint2); }
+.admission-note {
+  background: white; border-left: 4px solid var(--orange);
+  padding: 1.2rem 1.8rem; margin: 2rem 0 3rem;
+  font-family: 'Sorts Mill Goudy', serif; font-style: italic;
+  font-size: 1rem; color: var(--ink2); line-height: 1.6;
+}
+.ticket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.tcard {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  padding: 2.8rem 2.2rem; position: relative;
+  transition: box-shadow .3s, transform .3s;
+}
+.tcard:hover { box-shadow: 0 12px 40px rgba(42,30,12,.14); transform: translateY(-5px); }
+.tbar { height: 7px; width: 100%; margin-bottom: 2rem; border-radius: 4px; }
+.tcard-type { font-family: 'IM Fell English', serif; font-style: italic; font-size: .95rem; color: var(--sage2); margin-bottom: .4rem; }
+.tcard-price { font-family: 'Marcellus', serif; font-size: 3.6rem; color: var(--rust); line-height: 1; margin-bottom: .15rem; }
+.tcard-price.free { font-size: 2.4rem; color: var(--sage); }
+.tcard-per { font-size: .72rem; letter-spacing: .1em; color: var(--ink2); opacity: .55; margin-bottom: 1.6rem; }
+.tcard hr { border: none; border-top: 1px dotted var(--parch3); margin-bottom: 1.6rem; }
+.tcard ul { list-style: none; margin-bottom: 2.2rem; }
+.tcard li {
+  font-family: 'Sorts Mill Goudy', serif; font-size: .98rem;
+  padding: .45rem 0; border-bottom: 1px dotted rgba(42,30,12,.07);
+  display: flex; gap: .7rem; align-items: flex-start; color: var(--ink2);
+}
+.tcard li::before { content: '✦'; font-size: .45rem; color: var(--gold); margin-top: .48rem; flex-shrink: 0; }
+.best-stamp {
+  position: absolute; top: 1.3rem; right: 1.3rem;
+  background: var(--sage3); color: var(--sage); border: 1px solid rgba(72,104,64,.2);
+  font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .18rem .65rem;
+}
+.free-note { margin-top: 2rem; padding: 1.4rem; background: var(--parch); border: 1.5px solid var(--parch3); }
+.free-note h4 { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--sage); margin-bottom: .5rem; }
+.free-note p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .95rem; color: var(--ink2); line-height: 1.6; }
+
+/* ── SCHEDULE ── */
+#schedule { background: var(--cream); }
+.schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
+.timeline { margin-top: 1.5rem; }
+.tl-item { display: flex; gap: 1.2rem; margin-bottom: 2rem; position: relative; }
+.tl-item::after { content: ''; position: absolute; left: 2.5rem; top: 2.4rem; bottom: -1.2rem; width: 1px; background: linear-gradient(to bottom, var(--parch3), transparent); }
+.tl-item:last-child::after { display: none; }
+.tl-time { font-family: 'Marcellus', serif; font-size: .82rem; color: var(--gold); min-width: 3.2rem; padding-top: .18rem; flex-shrink: 0; }
+.tl-dot { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: var(--cream); border: 1.5px solid var(--peach); margin-top: .18rem; display: flex; align-items: center; justify-content: center; }
+.tl-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--rust); opacity: .7; }
+.tl-body strong { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--ink); display: block; margin-bottom: .15rem; }
+.tl-body span { font-family: 'Sorts Mill Goudy', serif; font-size: .93rem; color: var(--ink2); opacity: .7; }
+.schedule-photo { position: sticky; top: 90px; }
+.schedule-photo img { width: 100%; height: 420px; object-fit: cover; display: block; }
+.photo-caption { padding: .8rem 1rem; background: var(--parch); border: 1px solid var(--parch3); border-top: none; }
+.photo-caption p { font-family: 'IM Fell English', serif; font-style: italic; font-size: .92rem; color: var(--sage2); }
+
+/* ── ACTIVITIES ── */
+#activities { background: var(--parch); }
+.activities-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-bottom: 4rem; }
+.act-photo img { width: 100%; height: 380px; object-fit: cover; display: block; }
+.act-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); }
+.act-card { background: var(--cream); padding: 1.8rem 1.6rem; transition: background .2s, transform .2s; border-top: 5px solid transparent; }
+.act-card:hover { background: white; transform: translateY(-3px); border-top-color: var(--orange); }
+.act-card:nth-child(3n+1):hover { border-top-color: var(--mint); }
+.act-card:nth-child(3n+2):hover { border-top-color: var(--yg); }
+.act-card:nth-child(3n+3):hover { border-top-color: var(--peach); }
+.act-icon { font-size: 1.5rem; opacity: .6; display: block; margin-bottom: .7rem; }
+.act-card h3 { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--ink); margin-bottom: .35rem; }
+.act-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .92rem; line-height: 1.55; color: var(--ink2); opacity: .78; }
+.adults-section { margin-top: 4rem; padding: 3rem; background: var(--cream); border: 1.5px solid var(--parch3); border-left: 4px solid var(--sage2); }
+.adults-section h3 { font-family: 'Marcellus', serif; font-size: 1.2rem; color: var(--sage); margin-bottom: 1rem; }
+.adults-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+.adults-list li { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; color: var(--ink2); list-style: none; display: flex; gap: .6rem; align-items: flex-start; }
+.adults-list li::before { content: '◆'; font-size: .4rem; color: var(--sage2); margin-top: .5rem; flex-shrink: 0; }
+
+/* ── GALLERY ── */
+#gallery { background: linear-gradient(160deg, #e8f5ec 0%, var(--cream) 60%, #fef0e0 100%); }
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 3px; margin-top: 2.5rem;
+  border: 1.5px solid var(--parch3);
+}
+.gitem { overflow: hidden; cursor: pointer; }
+.gitem:first-child { grid-row: span 2; }
+.gitem img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; display: block; }
+.gitem:hover img { transform: scale(1.05); }
+.gallery-row2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-top: 3px; background: var(--parch3); }
+.gitem2 { overflow: hidden; height: 200px; cursor: pointer; }
+.gitem2 img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; display: block; }
+.gitem2:hover img { transform: scale(1.05); }
+.gallery-caption { margin-top: 1.2rem; text-align: center; font-family: 'IM Fell English', serif; font-style: italic; font-size: 1rem; color: var(--sage2); }
+
+/* ── VENDORS ── */
+#vendors { background: linear-gradient(160deg, var(--parch) 0%, #fef5e4 100%); }
+.vendor-layout { display: block; }
+.vendor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); margin-top: 2rem; }
+.vcard { background: var(--cream); padding: 1.8rem 1.6rem; transition: background .2s; border-top: 3px solid transparent; }
+.vcard:hover { background: var(--parch); border-top-color: var(--peach); }
+.vicon { font-size: 1.4rem; display: block; margin-bottom: .7rem; opacity: .6; }
+.vcard h3 { font-family: 'Marcellus', serif; font-size: .92rem; color: var(--ink); margin-bottom: .3rem; }
+.vcard p { font-family: 'Sorts Mill Goudy', serif; font-size: .92rem; line-height: 1.5; color: var(--ink2); opacity: .75; }
+.vendor-photo img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.vendor-apply { margin-top: 2rem; padding: 2.2rem; background: var(--cream); border: 1.5px solid var(--parch3); }
+.vendor-apply h4 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .5rem; }
+.vendor-apply p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; color: var(--ink2); opacity: .8; margin-bottom: 1.2rem; line-height: 1.6; }
+.known-vendors { margin-top: 3rem; }
+.known-vendors h4 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--sage); margin-bottom: 1rem; }
+.vendor-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.vchip { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .92rem; background: var(--cream); border: 1px solid var(--parch3); padding: .25rem .8rem; color: var(--ink2); }
+
+/* ── MONARCH EDUCATION ── */
+#monarch { background: linear-gradient(160deg, #fdf8e8 0%, #f0f8e8 100%); }
+.monarch-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.monarch-plate { background: var(--parch); border: 1.5px solid var(--parch3); padding: 3rem 2.5rem; text-align: center; position: sticky; top: 90px; }
+.plate-caption { font-family: 'IM Fell English', serif; font-style: italic; font-size: .95rem; color: var(--sage2); margin-bottom: .8rem; display: block; }
+.plate-img { width: 100%; height: 280px; object-fit: cover; display: block; margin-bottom: 1.2rem; }
+.plate-name { font-family: 'Marcellus', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: .25rem; }
+.plate-latin { font-family: 'IM Fell English', serif; font-style: italic; font-size: .9rem; color: var(--ink2); opacity: .55; margin-bottom: 1.3rem; }
+.plate-tags { display: flex; flex-wrap: wrap; gap: .45rem; justify-content: center; }
+.ptag { font-size: .63rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .22rem .7rem; border: 1px solid; }
+.ptag-r { background: #f0ddd0; color: var(--rust); border-color: #e0bda8; }
+.ptag-g { background: #c8e0c8; color: var(--sage); border-color: #a8c8a8; }
+.ptag-gold { background: #f0e4b8; color: var(--gold); border-color: #d8c890; }
+
+.lifecycle { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); margin-top: 2rem; }
+.lc-card { background: var(--cream); overflow: hidden; }
+.lc-card img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform .5s; }
+.lc-card:hover img { transform: scale(1.05); }
+.lc-body { padding: 1.2rem 1.4rem; }
+.lc-body h4 { font-family: 'Marcellus', serif; font-size: .92rem; color: var(--ink); margin-bottom: .3rem; }
+.lc-body p { font-family: 'Sorts Mill Goudy', serif; font-size: .9rem; line-height: 1.55; color: var(--ink2); opacity: .78; }
+.fact-boxes { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--parch3); margin-top: 2rem; }
+.fbox { padding: 1.6rem 2rem; border-bottom: 1px dotted var(--parch3); display: flex; gap: 1.5rem; align-items: flex-start; transition: background .2s; }
+.fbox:hover { background: var(--parch); }
+.fbox:last-child { border: none; }
+.fbox-num { font-family: 'Marcellus', serif; font-size: 1.9rem; color: var(--rust); line-height: 1; min-width: 3rem; text-align: right; flex-shrink: 0; }
+.fbox-body h4 { font-family: 'Marcellus', serif; font-size: .93rem; color: var(--ink); margin-bottom: .25rem; }
+.fbox-body p { font-family: 'Sorts Mill Goudy', serif; font-size: .93rem; line-height: 1.6; color: var(--ink2); opacity: .8; }
+
+/* ── WORKSHOPS ── */
+#workshops { background: var(--parch); }
+.workshops-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+.workshop-cards { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+.wcard { background: var(--cream); border: 1.5px solid var(--parch3); padding: 2rem 2.2rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: border-color .25s; }
+.wcard:hover { border-color: var(--sage2); }
+.wcard-num { font-family: 'Marcellus', serif; font-size: 1.8rem; color: var(--parch3); line-height: 1; flex-shrink: 0; }
+.wcard-body h4 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--ink); margin-bottom: .35rem; }
+.wcard-body p { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.6; color: var(--ink2); opacity: .8; }
+.wcard-tag { display: inline-block; font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; background: var(--sage3); color: var(--sage); padding: .15rem .55rem; margin-bottom: .6rem; }
+.workshop-aside img { width: 100%; height: 280px; object-fit: cover; display: block; margin-bottom: 1.5rem; }
+.freebies { background: var(--cream); border: 1.5px solid var(--parch3); padding: 2rem 2.2rem; }
+.freebies h4 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--sage); margin-bottom: 1rem; }
+.freebies ul { list-style: none; }
+.freebies li { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; color: var(--ink2); padding: .4rem 0; border-bottom: 1px dotted var(--parch3); display: flex; gap: .6rem; }
+.freebies li:last-child { border: none; }
+.freebies li::before { content: '◆'; font-size: .4rem; color: var(--gold); margin-top: .5rem; flex-shrink: 0; }
+
+/* ── CONSERVATION ── */
+#conservation { background: linear-gradient(160deg, #eef8f2 0%, var(--cream) 100%); }
+.sites-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 3rem; }
+.scard { background: white; border: 1.5px solid var(--parch3); border-top: 4px solid var(--mint); padding: 2rem 1.8rem; transition: border-top-color .25s, transform .25s, box-shadow .25s; }
+.scard:hover { border-top-color: var(--rust); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(42,30,12,.1); }
+.sregion { font-family: 'IM Fell English', serif; font-style: italic; font-size: .95rem; color: var(--sage2); margin-bottom: .4rem; }
+.scard h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--ink); margin-bottom: .55rem; }
+.scard p { font-family: 'Sorts Mill Goudy', serif; font-size: .93rem; line-height: 1.6; color: var(--ink2); opacity: .75; margin-bottom: .9rem; }
+.stags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.stag { font-size: .6rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; padding: .18rem .6rem; border: 1px solid; }
+.stag-m { background: #f0ddd0; color: var(--rust); border-color: #e0bda8; }
+.stag-h { background: #c8e0c8; color: var(--sage); border-color: #a8c8a8; }
+.stag-g { background: #e8f0a0; color: #3a5000; border-color: #c8d870; }
+.cons-cta { margin-top: 3rem; padding: 2.8rem 3rem; background: var(--parch); border: 1.5px solid var(--parch3); border-left: 4px solid var(--sage); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cons-cta h3 { font-family: 'Marcellus', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: .4rem; }
+.cons-cta p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; color: var(--ink2); opacity: .8; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2), var(--peach), var(--mint)); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(242,232,208,.1); }
+.footer-brand-row { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.2rem; }
+.flogo { height: 46px; width: 46px; border-radius: 50%; }
+.fbrand-name { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--parch); line-height: 1.3; }
+.ftagline { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; opacity: .65; line-height: 1.7; margin-bottom: 1.2rem; }
+.footer-col h5 { font-family: 'Marcellus', serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--peach); opacity: .8; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .5rem; }
+.footer-col a { color: rgba(242,232,208,.55); text-decoration: none; font-size: .86rem; transition: color .2s; }
+.footer-col a:hover { color: rgba(242,232,208,.95); }
+.fbottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.fbottom p { font-size: .72rem; opacity: .38; letter-spacing: .05em; }
+
+/* ── HAMBURGER MENU ── */
+.hamburger {
+  display: none; flex-direction: column; justify-content: space-between;
+  width: 28px; height: 20px; cursor: pointer; z-index: 400;
+}
+.hamburger span {
+  display: block; height: 2.5px; width: 100%;
+  background: var(--sage); border-radius: 2px; transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.75px) rotate(-45deg); }
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--parch); z-index: 350; padding: 5rem 2rem 2rem;
+  flex-direction: column;
+}
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.mobile-menu li { border-bottom: 1px dotted var(--parch3); }
+.mobile-menu a {
+  display: block; padding: 1.1rem .5rem;
+  font-family: 'Marcellus', serif; font-size: 1.1rem;
+  color: var(--ink); text-decoration: none; transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--rust); }
+.mobile-menu .m-cta {
+  margin-top: 1.5rem; display: block;
+  background: var(--rust); color: white !important;
+  text-align: center; padding: 1rem; font-weight: 700;
+}
+.mobile-menu-close {
+  position: absolute; top: 1.2rem; right: 1.5rem;
+  font-size: 1.8rem; cursor: pointer; color: var(--ink2);
+  background: none; border: none; font-family: sans-serif; line-height: 1;
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+@media (max-width: 920px) {
+  nav { padding: .65rem 1.5rem; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; }
+  .hero-r { padding: 2.5rem 2rem; }
+  .sec { padding: 4.5rem 1.5rem; }
+  .ticket-grid, .schedule-grid, .activities-intro, .vendor-layout,
+  .monarch-layout, .workshops-layout, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .sites-grid, .act-grid { grid-template-columns: 1fr; }
+  .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gitem:first-child { grid-row: auto; }
+  .lifecycle, .adults-list { grid-template-columns: 1fr; }
+  .cons-cta { flex-direction: column; }
+  .monarch-plate, .schedule-photo, .wcard { position: static; }
+  .orn-rule { padding: .4rem 1.5rem; }
+  .hamburger { display: flex !important; }
+  .mobile-menu { display: block; }
+  .mobile-menu.open { display: block; }
+}
+</style>
+</head>
+<body>
+
+<!-- FESTIVE BANNER -->
+<div class="festival-banner">
+  <div class="festival-banner-inner">
+    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Free for Kids in Costume!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Vendors & Activities · Live Specimens</span><span class="dot">◆</span>
+    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Free for Kids in Costume!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Vendors & Activities · Live Specimens</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
+    <div class="nav-name">NH Monarch<br>Festival</div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose">✕</button>
+    <ul>
+      <li><a href="#tickets" class="mob-link">Tickets</a></li>
+      <li><a href="#schedule" class="mob-link">Schedule</a></li>
+      <li><a href="#activities" class="mob-link">Activities</a></li>
+      <li><a href="#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="#vendors" class="mob-link">Vendors</a></li>
+      <li><a href="#monarch" class="mob-link">Monarchs</a></li>
+      <li><a href="#conservation" class="mob-link">Conservation</a></li>
+    </ul>
+    <a href="#tickets" class="btn m-cta mob-link">Buy Tickets</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#tickets">Tickets</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#vendors">Vendors</a></li>
+    <li><a href="#monarch">Monarchs</a></li>
+    <li><a href="#tickets" class="nav-cta">Buy Tickets</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-l">
+    <p class="hero-kicker">2026 &ensp;·&ensp; 14th Annual</p>
+    <h1 class="hero-title">NH <span class="rust">Monarch</span><br>Festival</h1>
+    <p class="hero-edition">Celebrating monarchs, milkweed, and more</p>
+    <p class="hero-desc">Join us for a day of wonder, learning, and community! Discover the incredible world of monarchs, milkweed, and the ecosystem we share — with hands-on activities for all ages, live specimens, and the magic of a butterfly release ceremony.</p>
+    <p class="hero-when">Saturday, August 22, 2026</p>
+    <p class="hero-where">Tioga Pavilion &ensp;·&ensp; Belmont Village, New Hampshire <span style="font-size:.8rem;color:var(--rust);font-weight:600;">(location pending)</span></p>
+    <p class="hero-hours">Festival open 10:00 am – 5:00 pm</p>
+    <div class="hero-btns">
+      <a href="#tickets" class="btn btn-rust" style="min-width:180px;text-align:center;">Purchase Tickets</a>
+      <a href="#activities" class="btn btn-sage" style="min-width:180px;text-align:center;">See Activities</a>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="logo-ring">
+      <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="hero-logo-lg">
+    </div>
+    <div class="field-notes">
+      <div class="fn-row"><span class="fn-lbl">Date</span><span class="fn-val">Aug 22, 2026</span></div>
+      <div class="fn-row"><span class="fn-lbl">Location</span><span class="fn-val">Belmont, NH</span></div>
+      <div class="fn-row"><span class="fn-lbl">Hours</span><span class="fn-val">10 am – 5 pm</span></div>
+      <div class="fn-row"><span class="fn-lbl">Year</span><span class="fn-val">14th Annual (2026)</span></div>
+      <div class="fn-row"><span class="fn-lbl">Admission</span><span class="fn-val">From $4</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- TICKETS -->
+<section id="tickets" class="sec" style="background:var(--parch);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="sec-eyebrow">Admission</p>
+      <h2 class="sh">Festival Tickets</h2>
+      <p class="sp">Grab your tickets and come celebrate with us! Admission fees help support festival costs and conservation donations so we can continue to bring this festival to the community year after year.</p>
+    </div>
+    <div class="admission-note reveal">
+      <strong>Costume Bonus:</strong> Any child <em>or adult</em> who arrives in an appropriate costume gets in FREE — so come dressed as your favorite butterfly, caterpillar, or garden creature!
+    </div>
+    <div class="ticket-grid">
+      <div class="tcard reveal d1">
+        <div class="tbar" style="background:linear-gradient(90deg,var(--mint),#50c880);"></div>
+        <p class="tcard-type">Children</p>
+        <p class="tcard-price">$4</p>
+        <p class="tcard-per">Ages 3 – 12 years</p>
+        <a href="#" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
+      </div>
+      <div class="tcard reveal d2">
+        <div class="tbar" style="background:linear-gradient(90deg,var(--rust),var(--peach));"></div>
+        <div class="best-stamp">General</div>
+        <p class="tcard-type">Adults</p>
+        <p class="tcard-price">$7</p>
+        <p class="tcard-per">Ages 13 – 64 years</p>
+        <a href="#" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
+      </div>
+      <div class="tcard reveal d3">
+        <div class="tbar" style="background:linear-gradient(90deg,var(--gold),var(--yg));"></div>
+        <p class="tcard-type">Seniors</p>
+        <p class="tcard-price">$5</p>
+        <p class="tcard-per">Ages 65 &amp; older</p>
+        <a href="#" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
+      </div>
+    </div>
+    <div class="free-note reveal">
+      <h4>FREE Admission</h4>
+      <p>Children 2 years and younger are always FREE. Any child or adult who arrives in costume receives complimentary admission — wings, antennae, and caterpillar suits especially encouraged.</p>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- SCHEDULE -->
+<section id="schedule" class="sec" style="background:var(--cream);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="sec-eyebrow">Day of Event</p>
+      <h2 class="sh">Schedule & Timeline</h2>
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.8rem;">Details to come closer to festival date</p>
+      <p class="sp">Check back as we get closer to August 22, 2026 for the full schedule of events, presentations, and activities!</p>
+    </div>
+    <div class="schedule-grid">
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <span class="tl-time" style="color:var(--rust);font-size:1rem;">10:00</span><div class="tl-dot" style="border-color:var(--rust);width:24px;height:24px;"></div>
+          <div class="tl-body"><strong style="color:var(--rust);font-size:1.05rem;">🎉 Festival Opens!</strong><span>Gates open — activities, booths, and presentations begin</span></div>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-time" style="color:var(--rust);font-size:1rem;">5:00</span><div class="tl-dot"></div>
+          <div class="tl-body"><strong style="color:var(--sage);">Festival Closes</strong><span>Festival ends at 5:00 pm — thank you for celebrating with us!</span></div>
+        </div>
+      </div>
+      <div class="schedule-photo reveal d2">
+        <img src="images/festival1.jpeg" alt="Festival gathering" style="width:100%;height:420px;object-fit:cover;display:block;">
+        <div class="photo-caption"><p>Attendees gather on the festival lawn for a presentation — one of many throughout the day</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- ACTIVITIES -->
+<section id="activities" class="sec" style="background:var(--parch);">
+  <div class="inner">
+    <div class="activities-intro">
+      <div class="reveal">
+        <p class="sec-eyebrow">Potential Activities</p>
+        <h2 class="sh">List of Potential Activities</h2>
+        <p class="sp">There's something magical around every corner — earn your wings, hunt for monarch eggs, and parade like a migrating butterfly. Here are some of the potential activities (to be determined closer to festival date):</p>
+        <div style="margin-top:1.8rem;background:var(--mint2);padding:1.4rem 1.6rem;border-left:4px solid var(--mint);">
+          <h4 style="font-family:'Marcellus',serif;font-size:1rem;color:var(--sage);margin-bottom:.5rem;">Kid Activities</h4>
+          <p style="font-family:'Jost',sans-serif;font-size:.95rem;color:var(--ink2);line-height:1.65;">We offer lots of things for kids to enjoy at the festival. Some of this year's activities include:</p>
+        </div>
+      </div>
+      <div class="act-photo reveal d2">
+        <img src="images/festival2.jpeg" alt="Child watching monarch enclosures" style="width:100%;height:380px;object-fit:cover;display:block;">
+        <div class="photo-caption" style="padding:.8rem 1rem;background:var(--parch2);border:1px solid var(--parch3);border-top:none;">
+          <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:.82rem;color:var(--sage2);">A child looks up in wonder at the monarch enclosures — one of the festival's most beloved moments</p>
+        </div>
+      </div>
+    </div>
+    <div class="act-grid reveal">
+      <div class="act-card"><span class="act-icon">🦋</span><h3>Build a Flying Monarch</h3><p>Craft your own paper monarch butterfly to take home.</p></div>
+      <div class="act-card"><span class="act-icon">📋</span><h3>Pollinator Passport</h3><p>Pick up your Passport at the entrance, collect stamps at each station, and turn it in for a special prize!</p></div>
+      <div class="act-card"><span class="act-icon">🐛</span><h3>Caterpillar Crawl</h3><p>Complete this activity to earn your butterfly wings for the Migration Parade!</p></div>
+      <div class="act-card"><span class="act-icon">🗺️</span><h3>Migration Race</h3><p>Red light, green light — race like a migrating monarch south to Mexico!</p></div>
+      <div class="act-card"><span class="act-icon">🥚</span><h3>Milkweed Mayhem Egg Hunt</h3><p>Search through fake milkweed for the one hidden monarch egg.</p></div>
+      <div class="act-card"><span class="act-icon">🎭</span><h3>Monarch Masks</h3><p>Make and decorate your own monarch butterfly mask.</p></div>
+      <div class="act-card"><span class="act-icon">🌳</span><h3>Kaleidoscope Tree</h3><p>Hang your origami or colored butterfly on our community butterfly tree.</p></div>
+      <div class="act-card"><span class="act-icon">🎨</span><h3>Face Painting</h3><p>Professional face painter on-site throughout the day.</p></div>
+      <div class="act-card"><span class="act-icon">🧘</span><h3>If a Human Were a Caterpillar</h3><p>Scale comparison showing how big you'd grow in just two weeks!</p></div>
+      <div class="act-card"><span class="act-icon">📸</span><h3>Photo Backdrops</h3><p>Wooden cutouts — caterpillar, butterfly, milkweed bugs, and more.</p></div>
+      <div class="act-card"><span class="act-icon">🔍</span><h3>Scavenger Hunt Trivia</h3><p>Find the monarch egg symbol and answer the science questions for a prize.</p></div>
+      <div class="act-card"><span class="act-icon">🎪</span><h3>Costume Contest</h3><p>Prizes for the best butterfly, caterpillar, or pollinator costume!</p></div>
+    </div>
+    <div class="adults-section reveal">
+      <h3>Adult Learning Opportunities</h3>
+      <ul class="adults-list">
+        <li>Native plant gardening mini talks from vendors</li>
+        <li>Nature journaling with a local guide</li>
+        <li>Monarch learning stations with helpful information and free seeds</li>
+        <li>Host plants and how to grow them</li>
+        <li>"Test Your Knowledge" monarch trivia quiz — turn in your form for a prize</li>
+        <li>Garden design consultation with expert gardeners</li>
+        <li>Local bee club information and demos</li>
+        <li>Conservation group presentations and data sharing</li>
+        <li>Citizen science projects and opportunities to contribute</li>
+        <li>Latest technology and science studies</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- VENDORS -->
+<section id="vendors" class="sec" style="background:var(--parch);">
+  <div class="inner">
+    <div class="vendor-layout">
+      <div>
+        <div class="reveal">
+          <p class="sec-eyebrow">Marketplace</p>
+          <h2 class="sh">Vendors &amp; Exhibitors</h2>
+          <p class="sp">Explore booths filled with native plants, local art, delicious food, conservation science, and so much more. Every table is a new discovery!</p>
+          <p style="font-family:'Jost',sans-serif;font-size:.88rem;color:var(--ink2);margin-top:.8rem;font-style:italic;">(Vendor information will be updated closer to the festival date. Please check back later for a full list.)</p>
+        </div>
+        <div class="vendor-grid reveal">
+          <div class="vcard"><span class="vicon">🌱</span><h3>Native Plants</h3><p>Milkweed, pollinator plants, and natives to take habitat home with you.</p></div>
+          <div class="vcard"><span class="vicon">🔬</span><h3>Science &amp; Research</h3><p>Citizen science projects, OE testing, nanotagging, and Monarch Watch data.</p></div>
+          <div class="vcard"><span class="vicon">🎨</span><h3>Native Artists</h3><p>Butterfly-inspired pottery, fine art prints, fiber arts with plant dyes.</p></div>
+          <div class="vcard"><span class="vicon">🌿</span><h3>Conservation Groups</h3><p>NH Audubon, Newfound Lake Region Association, Belmont Conservation Commission.</p></div>
+          <div class="vcard"><span class="vicon">🍯</span><h3>Local Food &amp; Farm</h3><p>Herbalists, tea makers, local farms, baked goods, and food trucks.</p></div>
+          <div class="vcard"><span class="vicon">📚</span><h3>Education</h3><p>UNH Cooperative Extension, NH Fish &amp; Game, nature guides, and children's books.</p></div>
+        </div>
+
+      </div>
+      <div class="vendor-apply reveal" style="margin-top:2.5rem;padding:2.2rem;background:var(--cream);border:1.5px solid var(--parch3);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+        <div>
+          <h4 style="font-family:'Marcellus',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;">Apply to Vend at NHMF 2026</h4>
+          <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:.98rem;color:var(--ink2);opacity:.8;">We welcome local artisans, native plant nurseries, environmental nonprofits, food vendors, and community science organizations. Space is limited.</p>
+        </div>
+        <a href="#" class="btn btn-rust" style="white-space:nowrap;">Vendor Application</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- GALLERY -->
+<section id="gallery" class="sec" style="background:var(--cream);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="sec-eyebrow">Photography</p>
+      <h2 class="sh">Festival in Pictures</h2>
+      <p class="sp">A glimpse into the magic of past festivals — tagging ceremonies, wonder-filled moments with live specimens, community gatherings, and the breathtaking monarchs themselves.</p>
+    </div>
+    <div class="gallery-mosaic reveal">
+      <div class="gitem"><img src="images/Butterfly1.jpeg" alt="Monarch on sunflower"></div>
+      <div class="gitem"><img src="images/festival1.jpeg" alt="Festival gathering"></div>
+      <div class="gitem"><img src="images/Butterfly2.jpeg" alt="Two monarchs on flowers"></div>
+      <div class="gitem"><img src="images/festival4.jpeg" alt="UNH Extension presentation"></div>
+      <div class="gitem"><img src="images/festival5.jpeg" alt="Kids at butterfly release"></div>
+    </div>
+    <div class="gallery-row2 reveal">
+      <div class="gitem2"><img src="images/Butterfly3.jpeg" alt="Monarch on goldenrod"></div>
+      <div class="gitem2"><img src="images/Butterfly4.jpeg" alt="Monarch on sunflower"></div>
+      <div class="gitem2"><img src="images/Butterfly5.jpeg" alt="Monarch wings open"></div>
+      <div class="gitem2"><img src="images/Butterfly6.jpeg" alt="Monarch nectaring"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/Caterpillar1.jpeg" alt="Monarch caterpillar on leaf"></div>
+      <div class="gitem2"><img src="images/Caterpillar2.jpeg" alt="Caterpillar close-up"></div>
+      <div class="gitem2"><img src="images/Caterpillar3.jpeg" alt="Caterpillar on milkweed"></div>
+      <div class="gitem2"><img src="images/Caterpillar4.jpeg" alt="Caterpillar detail"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/Caterpillar-J1.jpeg" alt="Caterpillar forming J"></div>
+      <div class="gitem2"><img src="images/Chrysalis1.jpeg" alt="Monarch chrysalis"></div>
+      <div class="gitem2"><img src="images/Chrysalis2.jpeg" alt="Chrysalis close-up"></div>
+      <div class="gitem2"><img src="images/Egg1.jpeg" alt="Monarch egg on milkweed"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/Egg2.jpeg" alt="Monarch eggs on leaf"></div>
+      <div class="gitem2"><img src="images/Tagging1.jpeg" alt="Monarch Watch tagging"></div>
+      <div class="gitem2"><img src="images/Macro1.jpeg" alt="Monarch macro detail"></div>
+      <div class="gitem2"><img src="images/Macro2.jpeg" alt="Monarch wing detail"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/Macro3.jpeg" alt="Monarch closeup"></div>
+      <div class="gitem2"><img src="images/Macro4.jpeg" alt="Monarch face closeup"></div>
+      <div class="gitem2"><img src="images/Macro5.jpeg" alt="Monarch head detail"></div>
+      <div class="gitem2"><img src="images/Macro6.jpeg" alt="Monarch antenna detail"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/Macro7.jpeg" alt="Monarch wing macro"></div>
+      <div class="gitem2"><img src="images/MilkweedEco1.jpeg" alt="Milkweed ecosystem"></div>
+      <div class="gitem2"><img src="images/MilkweedEco2.jpeg" alt="Milkweed flowers"></div>
+      <div class="gitem2"><img src="images/Milkweedseeds1.jpeg" alt="Milkweed seed pods"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/Pollinator1.jpeg" alt="Bee on milkweed"></div>
+      <div class="gitem2"><img src="images/Pollinator2.jpeg" alt="Pollinator on flower"></div>
+      <div class="gitem2"><img src="images/Pollinator3.jpeg" alt="Swallowtail on milkweed"></div>
+      <div class="gitem2"><img src="images/festival2.jpeg" alt="Festival enclosures"></div>
+    </div>
+    <div class="gallery-row2 reveal" style="margin-top:3px;">
+      <div class="gitem2"><img src="images/festival3.jpeg" alt="Festival classroom"></div>
+      <div class="gitem2"><img src="images/festival5.jpeg" alt="Kids with monarchs"></div>
+      <div class="gitem2"><img src="images/festival6.jpeg" alt="Festival activities"></div>
+      <div class="gitem2"><img src="images/Butterfly1.jpeg" alt="Monarch on sunflower"></div>
+    </div>
+    <p class="gallery-caption reveal">Share your festival photographs on socials using <strong>#NHMonarchFestival</strong> — your photos may be featured here!</p>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- MONARCH EDUCATION -->
+<section id="monarch" class="sec" style="background:var(--cream);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="sec-eyebrow">Natural History</p>
+      <h2 class="sh">About the Monarch Butterfly</h2>
+      <p class="sp">The monarch undertakes one of the most extraordinary migrations on Earth. New Hampshire sits along a critical corridor of that journey every August and September.</p>
+    </div>
+    <div class="monarch-layout" style="margin-top:3rem;">
+      <div class="monarch-plate reveal">
+        <span class="plate-caption">Specimen Plate · Lepidoptera · Nymphalidae</span>
+        <img src="images/Butterfly5.jpeg" alt="Monarch butterfly wings open" class="plate-img">
+        <p class="plate-name">Monarch Butterfly</p>
+        <p class="plate-latin">Danaus plexippus</p>
+        <div class="plate-tags">
+          <span class="ptag ptag-r">Aug–Sept Migration</span>
+          <span class="ptag ptag-g">Eastern Population</span>
+          <span class="ptag ptag-gold">Endangered · IUCN</span>
+        </div>
+      </div>
+      <div>
+        <div class="lifecycle reveal">
+          <div class="lc-card">
+            <img src="images/Egg1.jpeg" alt="Monarch egg on milkweed leaf">
+            <div class="lc-body"><h4>Stage 1 · Egg</h4><p>Laid singly on milkweed leaves. Each tiny ribbed egg hatches in 3–5 days.</p></div>
+          </div>
+          <div class="lc-card">
+            <img src="images/Caterpillar1.jpeg" alt="Monarch caterpillar">
+            <div class="lc-body"><h4>Stage 2 · Caterpillar</h4><p>The larva passes through 5 instars over 2 weeks, growing 2,700× its hatching size.</p></div>
+          </div>
+          <div class="lc-card">
+            <img src="images/Chrysalis1.jpeg" alt="Monarch chrysalis">
+            <div class="lc-body"><h4>Stage 3 · Chrysalis</h4><p>The jade-green chrysalis with a gold crown holds a complete transformation lasting 8–12 days.</p></div>
+          </div>
+          <div class="lc-card">
+            <img src="images/Tagging1.jpeg" alt="Monarch butterfly open wings">
+            <div class="lc-body"><h4>Stage 4 · Butterfly</h4><p>The "super generation" emerges in late summer and migrates up to 3,000 miles to Mexico.</p></div>
+          </div>
+        </div>
+        <div class="fact-boxes reveal">
+          <div class="fbox"><span class="fbox-num">3K</span><div class="fbox-body"><h4>Miles Migrated</h4><p>Monarchs travel up to 3,000 miles from New England to their overwintering sites in the oyamel fir forests of Michoacán, Mexico.</p></div></div>
+          <div class="fbox"><span class="fbox-num">80%</span><div class="fbox-body"><h4>Population Decline</h4><p>Eastern monarch populations have dropped dramatically since the 1990s due to habitat loss, pesticides, and climate change. They are now IUCN-listed as endangered.</p></div></div>
+          <div class="fbox"><span class="fbox-num">1</span><div class="fbox-body"><h4>Host Plant: Milkweed Only</h4><p>Monarch caterpillars can only eat milkweed (<em>Asclepias</em> spp.). Planting milkweed in your yard is one of the most direct actions you can take for monarchs.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JOIN US BANNER -->
+<div style="background: linear-gradient(135deg, var(--sage) 0%, #2a5028 100%); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(192,216,48,.15) 0%, transparent 70%);pointer-events:none;"></div>
+  <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:var(--mint2);letter-spacing:.08em;margin-bottom:.8rem;position:relative;z-index:1;">Belmont Village, New Hampshire</p>
+  <h2 style="font-family:'Marcellus',serif;font-size:clamp(2.2rem,4vw,3.8rem);color:white;line-height:1.1;margin-bottom:1rem;position:relative;z-index:1;">We Hope to See You<br><span style="color:var(--yg2);">August 22, 2026!</span></h2>
+  <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.75);max-width:50ch;margin:0 auto 2.5rem;line-height:1.7;position:relative;z-index:1;">Bring your family, your curiosity, and your best butterfly costume. The monarchs are counting on us!</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+    <a href="#tickets" class="btn" style="background:var(--peach);color:var(--ink);padding:.9rem 2.4rem;">Purchase Tickets</a>
+    <a href="#vendors" class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);color:white;padding:.9rem 2.4rem;">Become a Vendor</a>
+  </div>
+  <div style="margin-top:3rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;position:relative;z-index:1;">
+    <div style="text-align:center;"><span style="font-family:'Marcellus',serif;font-size:2.2rem;color:var(--peach);display:block;line-height:1;">10am</span><span style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);">Doors Open</span></div>
+    <div style="text-align:center;"><span style="font-family:'Marcellus',serif;font-size:2.2rem;color:var(--yg2);display:block;line-height:1;">Free</span><span style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);">In Costume</span></div>
+    <div style="text-align:center;"><span style="font-family:'Marcellus',serif;font-size:2.2rem;color:var(--mint2);display:block;line-height:1;">5pm</span><span style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);">Festival Ends</span></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-row">
+          <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+          <div class="fbrand-name">NH Monarch<br>Festival</div>
+        </div>
+        <p class="ftagline">Celebrating nature's most remarkable journey — right here in New Hampshire. Educational, fun, and open to all ages.</p>
+        <p style="font-size:.72rem;opacity:.36;letter-spacing:.05em;">14th Annual · August 22, 2026<br>Belmont Village, NH (location pending)<br>A community conservation event</p>
+      </div>
+      <div class="footer-col">
+        <h5>Festival</h5>
+        <ul>
+          <li><a href="#tickets">Purchase Tickets</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#vendors">Become a Vendor</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="#monarch">About Monarchs</a></li>
+          <li><a href="#">Monarch Watch Tagging</a></li>
+          <li><a href="#">Plant Milkweed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Newsletter Signup</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#">Press &amp; Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
+      <p>#NHMonarchFestival</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+function openMenu() { mobileMenu.style.display='flex'; hamburger.classList.add('open'); }
+function closeMenu() { mobileMenu.style.display='none'; hamburger.classList.remove('open'); }
+hamburger.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', closeMenu));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('a[href="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = a.textContent.trim();
+    if (t.includes('Ticket') || t.includes('Purchase'))
+      alert('Ticket sales will open closer to August 22, 2026. Check back soon!');
+    else if (t.includes('Vendor') || t.includes('Application'))
+      alert('Vendor applications open soon. Please check back or contact us for details.');
+    else if (t.includes('Waystation'))
+      alert('Visit the NH Division of Forests & Lands website to register your waystation.');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us · NH Monarch Festival 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parch:  #f2e8d0;
+  --parch2: #e8d8b0;
+  --parch3: #d4c090;
+  --cream:  #faf4e4;
+  --ink:    #2a1e0c;
+  --ink2:   #52401c;
+  --rust:   #c05010;
+  --sage:   #3a6030;
+  --sage2:  #3a5c30;
+  --sage3:  #a8d098;
+  --gold:   #b08820;
+  --mint:   #7ec89a;
+  --mint2:  #c0e8d0;
+  --peach:  #f0a870;
+  --yg:     #c0d830;
+  --orange: #e06010;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* paper grain */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: .5;
+}
+
+/* ── FESTIVE BANNER ── */
+.festival-banner {
+  background: linear-gradient(90deg, var(--sage) 0%, var(--mint) 25%, var(--yg) 50%, var(--peach) 75%, var(--rust) 100%);
+  padding: .5rem 0; text-align: center; overflow: hidden; position: relative;
+}
+.festival-banner-inner {
+  display: inline-flex; gap: 3rem; align-items: center;
+  animation: bannerScroll 20s linear infinite; white-space: nowrap;
+}
+.festival-banner span {
+  font-family: 'Marcellus', serif; font-size: .78rem;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--ink); opacity: .85;
+}
+.festival-banner .dot { font-size: .5rem; opacity: .5; }
+@keyframes bannerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 300;
+  background: var(--parch);
+  border-bottom: 1px solid var(--parch3);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .65rem 3rem;
+  box-shadow: 0 1px 16px rgba(42,30,12,.08);
+}
+.nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
+.nav-name { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--sage); line-height: 1.3; }
+.nav-back {
+  font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink2); text-decoration: none; transition: color .2s;
+  display: flex; align-items: center; gap: .5rem;
+}
+.nav-back:hover { color: var(--sage); }
+.nav-back::before { content: '←'; font-size: .9rem; }
+
+/* ── COLOR BAND ── */
+.color-band {
+  height: 6px;
+  background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%);
+}
+
+/* ── MAIN CONTENT ── */
+main {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 5rem 2rem;
+  position: relative; z-index: 1;
+}
+
+.contact-card {
+  background: var(--parch);
+  border: 1.5px solid var(--parch3);
+  max-width: 620px; width: 100%;
+  padding: 4rem 4rem;
+  position: relative;
+}
+
+/* top color accent */
+.contact-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--mint), var(--yg), var(--peach), var(--rust));
+}
+
+.contact-eyebrow {
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: 1rem; color: var(--sage2);
+  display: flex; align-items: center; gap: .8rem;
+  margin-bottom: .8rem;
+}
+.contact-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 26px; height: 1px; background: var(--sage2); opacity: .7;
+}
+
+h1.contact-title {
+  font-family: 'Marcellus', serif;
+  font-size: 2.6rem; color: var(--ink);
+  line-height: 1.1; margin-bottom: .6rem;
+}
+h1.contact-title span { color: var(--rust); }
+
+.contact-intro {
+  font-family: 'Sorts Mill Goudy', serif; font-style: italic;
+  font-size: 1.05rem; line-height: 1.75; color: var(--ink2); opacity: .85;
+  margin-bottom: 3rem;
+}
+
+/* ── CONTACT DETAILS ── */
+.contact-details { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--parch3); margin-bottom: 2.5rem; }
+
+.cdetail {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  padding: 1.6rem 2rem;
+  border-bottom: 1px dotted var(--parch3);
+  background: var(--cream);
+  transition: background .2s;
+}
+.cdetail:last-child { border-bottom: none; }
+.cdetail:hover { background: white; }
+
+.cdetail-icon {
+  font-size: 1.4rem; flex-shrink: 0; margin-top: .1rem; opacity: .75;
+}
+.cdetail-body {}
+.cdetail-label {
+  font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--sage2); display: block; margin-bottom: .3rem;
+}
+.cdetail-value {
+  font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--ink);
+  text-decoration: none; display: block; line-height: 1.4;
+}
+.cdetail-value:hover { color: var(--rust); }
+.cdetail-sub {
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .9rem; color: var(--ink2); opacity: .65; margin-top: .2rem; display: block;
+}
+
+/* ── BACK BUTTON ── */
+.back-btn {
+  display: inline-flex; align-items: center; gap: .7rem;
+  text-decoration: none; font-family: 'Jost', sans-serif;
+  font-size: .7rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase;
+  color: var(--sage); border: 1.5px solid var(--sage);
+  padding: .82rem 2rem; transition: all .25s;
+}
+.back-btn:hover { background: var(--sage); color: var(--cream); }
+.back-btn::before { content: '←'; font-size: .9rem; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); color: var(--parch);
+  padding: 2.5rem 3rem;
+  text-align: center;
+  position: relative; z-index: 1;
+}
+footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2, #e0b840), var(--peach), var(--mint));
+}
+.footer-logo-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: .8rem; margin-bottom: .8rem;
+}
+.flogo { height: 38px; width: 38px; border-radius: 50%; }
+.fbrand { font-family: 'Marcellus', serif; font-size: .92rem; color: var(--parch); text-align: left; line-height: 1.3; }
+footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
+
+@media (max-width: 600px) {
+  nav { padding: .65rem 1.5rem; }
+  main { padding: 3rem 1.2rem; }
+  .contact-card { padding: 2.5rem 1.8rem; }
+  h1.contact-title { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- FESTIVE BANNER -->
+<div class="festival-banner">
+  <div class="festival-banner-inner">
+    <span>14th Annual</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Free for Kids in Costume!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Release Ceremony · Live Specimens</span><span class="dot">◆</span>
+    <span>14th Annual</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Free for Kids in Costume!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Release Ceremony · Live Specimens</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
+    <div class="nav-name">NH Monarch<br>Festival</div>
+  </a>
+  <a class="nav-back" href="index.html">Back to Festival Home</a>
+</nav>
+
+<div class="color-band"></div>
+
+<!-- MAIN -->
+<main>
+  <div class="contact-card">
+    <p class="contact-eyebrow">Get In Touch</p>
+    <h1 class="contact-title">Contact <span>Us</span></h1>
+    <p class="contact-intro">Have a question about the festival, vendor applications, volunteering, or anything else? We'd love to hear from you!</p>
+
+    <div class="contact-details">
+      <div class="cdetail">
+        <span class="cdetail-icon">👤</span>
+        <div class="cdetail-body">
+          <span class="cdetail-label">Contact</span>
+          <span class="cdetail-value">Amira Provost</span>
+          <span class="cdetail-sub">Event Coordinator, NH Monarch Festival</span>
+        </div>
+      </div>
+      <div class="cdetail">
+        <span class="cdetail-icon">✉️</span>
+        <div class="cdetail-body">
+          <span class="cdetail-label">Email</span>
+          <a class="cdetail-value" href="mailto:TheMonarchMatriarch@gmail.com">TheMonarchMatriarch@gmail.com</a>
+          <span class="cdetail-sub">Best for general inquiries &amp; vendor applications</span>
+        </div>
+      </div>
+      <div class="cdetail">
+        <span class="cdetail-icon">📞</span>
+        <div class="cdetail-body">
+          <span class="cdetail-label">Phone</span>
+          <a class="cdetail-value" href="tel:+16033266408">603.326.6408</a>
+          <span class="cdetail-sub">Feel free to call or text</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">Back to Festival Home</a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo-row">
+    <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+    <div class="fbrand">NH Monarch<br>Festival</div>
+  </div>
+  <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; Belmont Village, New Hampshire &nbsp;·&nbsp; #NHMonarchFest</p>
+</footer>
+
+</body>
+</html>
