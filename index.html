@@ -714,7 +714,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
           <h4 style="font-family:'Marcellus',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;">Apply to Vend at NHMF 2026</h4>
           <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:.98rem;color:var(--ink2);opacity:.8;">We welcome local artisans, native plant nurseries, environmental nonprofits, food vendors, and community science organizations. Space is limited.</p>
         </div>
-        <a href="#" class="btn btn-rust" style="white-space:nowrap;">Vendor Application</a>
+        <a href="vendors.html" class="btn btn-rust" style="white-space:nowrap;">Vendor Application</a>
       </div>
     </div>
   </div>
@@ -893,7 +893,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.75);max-width:50ch;margin:0 auto 2.5rem;line-height:1.7;position:relative;z-index:1;">Bring your family, your curiosity, and your best butterfly costume. The monarchs are counting on us!</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
     <a href="#tickets" class="btn" style="background:var(--peach);color:var(--ink);padding:.9rem 2.4rem;">Purchase Tickets</a>
-    <a href="#vendors" class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);color:white;padding:.9rem 2.4rem;">Become a Vendor</a>
+    <a href="vendors.html" class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);color:white;padding:.9rem 2.4rem;">Become a Vendor</a>
   </div>
   <div style="margin-top:3rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;position:relative;z-index:1;">
     <div style="text-align:center;"><span style="font-family:'Marcellus',serif;font-size:2.2rem;color:var(--peach);display:block;line-height:1;">10am</span><span style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);">Doors Open</span></div>
@@ -974,7 +974,7 @@ document.querySelectorAll('a[href="#"]').forEach(a => {
     if (t.includes('Ticket') || t.includes('Purchase'))
       alert('Ticket sales will open closer to August 22, 2026. Check back soon!');
     else if (t.includes('Vendor') || t.includes('Application'))
-      alert('Vendor applications open soon. Please check back or contact us for details.');
+      window.location.href = 'vendors.html';
     else if (t.includes('Waystation'))
       alert('Visit the NH Division of Forests & Lands website to register your waystation.');
   });
