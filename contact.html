@@ -71,24 +71,13 @@ nav {
 .nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
 .nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
 .nav-name { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--sage); line-height: 1.3; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
-.nav-links > li { position: relative; }
-.nav-links a { font-size: .66rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
-.nav-links a:hover { color: var(--sage); }
-.nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
-.nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
-.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; cursor: pointer; z-index: 400; }
-.hamburger span { display: block; height: 2.5px; width: 100%; background: var(--sage); border-radius: 2px; transition: all .3s; }
-.hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-8.75px) rotate(-45deg); }
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--parch); z-index: 350; padding: 5rem 2rem 2rem; flex-direction: column; }
-.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
-.mobile-menu li { border-bottom: 1px dotted var(--parch3); }
-.mobile-menu a { display: block; padding: 1.1rem .5rem; font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; transition: color .2s; }
-.mobile-menu a:hover { color: var(--rust); }
-.mobile-menu .m-cta { margin-top: 1.5rem; display: block; background: var(--rust); color: white !important; text-align: center; padding: 1rem; font-weight: 700; }
-.mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
+.nav-back {
+  font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink2); text-decoration: none; transition: color .2s;
+  display: flex; align-items: center; gap: .5rem;
+}
+.nav-back:hover { color: var(--sage); }
+.nav-back::before { content: '←'; font-size: .9rem; }
 
 /* ── COLOR BAND ── */
 .color-band {
@@ -120,13 +109,14 @@ main {
 }
 
 .contact-eyebrow {
-  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
-  font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
-  display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: 1rem; color: var(--sage2);
+  display: flex; align-items: center; gap: .8rem;
+  margin-bottom: .8rem;
 }
 .contact-eyebrow::before {
   content: ''; display: inline-block;
-  width: 32px; height: 1.5px; background: var(--rust); opacity: .5;
+  width: 26px; height: 1px; background: var(--sage2); opacity: .7;
 }
 
 h1.contact-title {
@@ -185,33 +175,28 @@ h1.contact-title span { color: var(--rust); }
 .back-btn::before { content: '←'; font-size: .9rem; }
 
 /* ── FOOTER ── */
-footer {
-  background: var(--ink); color: var(--parch);
-  padding: 2.5rem 3rem;
-  text-align: center;
-  position: relative; z-index: 1;
-}
-footer::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2, #e0b840), var(--peach), var(--mint));
-}
-.footer-logo-row {
-  display: flex; align-items: center; justify-content: center;
-  gap: .8rem; margin-bottom: .8rem;
-}
-.flogo { height: 38px; width: 38px; border-radius: 50%; }
-.fbrand { font-family: 'Marcellus', serif; font-size: .92rem; color: var(--parch); text-align: left; line-height: 1.3; }
-footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
+footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), #e0b840, var(--peach), var(--mint)); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(242,232,208,.1); }
+.footer-brand-row { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.2rem; }
+.flogo { height: 46px; width: 46px; border-radius: 50%; }
+.fbrand-name { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--parch); line-height: 1.3; }
+.ftagline { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; opacity: .65; line-height: 1.7; margin-bottom: 1.2rem; }
+.footer-col h5 { font-family: 'Marcellus', serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--peach); opacity: .8; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .5rem; }
+.footer-col a { color: rgba(242,232,208,.55); text-decoration: none; font-size: .86rem; transition: color .2s; }
+.footer-col a:hover { color: rgba(242,232,208,.95); }
+.fbottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.fbottom p { font-size: .72rem; opacity: .38; letter-spacing: .05em; }
 
 @media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex !important; }
-  .mobile-menu { display: none; }
-  .mobile-menu.open { display: flex; }
   main { padding: 3rem 1.2rem; }
   .contact-card { padding: 2.5rem 1.8rem; }
   h1.contact-title { font-size: 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer { padding: 4rem 1.5rem 2rem; }
 }
 </style>
 </head>
@@ -241,30 +226,7 @@ footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
     <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
     <div class="nav-name">NH Monarch<br>Festival</div>
   </a>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu-close" id="menuClose">✕</button>
-    <ul>
-      <li><a href="index.html#schedule" class="mob-link">Schedule</a></li>
-      <li><a href="index.html#activities" class="mob-link">Activities</a></li>
-      <li><a href="vendors.html" class="mob-link">Vendors</a></li>
-      <li><a href="index.html#resources" class="mob-link">Resources</a></li>
-      <li><a href="volunteer.html" class="mob-link">Volunteer</a></li>
-      <li><a href="index.html#gallery" class="mob-link">Gallery</a></li>
-      <li><a href="contact.html" class="mob-link m-cta">Contact Us</a></li>
-    </ul>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html#schedule">Schedule</a></li>
-    <li><a href="index.html#activities">Activities</a></li>
-    <li><a href="vendors.html">Vendors</a></li>
-    <li><a href="index.html#resources">Resources</a></li>
-    <li><a href="volunteer.html">Volunteer</a></li>
-    <li><a href="index.html#gallery">Gallery</a></li>
-    <li><a href="index.html#tickets" class="nav-cta">Buy Tickets</a></li>
-  </ul>
+  <a class="nav-back" href="index.html">Back to Festival Home</a>
 </nav>
 
 <div class="color-band"></div>
@@ -309,11 +271,51 @@ footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo-row">
-    <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
-    <div class="fbrand">NH Monarch<br>Festival<    <div class="fbrand">NH Monarch<br>Festival</div>
+  <div class="inner" style="max-width:1100px;margin:0 auto;">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-row">
+          <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+          <div class="fbrand-name">NH Monarch<br>Festival</div>
+        </div>
+        <p class="ftagline">Celebrating nature's most remarkable journey — right here in New Hampshire. Educational, fun, and open to all ages.</p>
+        <p style="font-size:.72rem;opacity:.36;letter-spacing:.05em;">14th Annual · August 22, 2026<br>Belmont Village, NH (location pending)<br>A community conservation event</p>
+      </div>
+      <div class="footer-col">
+        <h5>Festival</h5>
+        <ul>
+          <li><a href="index.html#tickets">Purchase Tickets</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="index.html#activities">Activities</a></li>
+          <li><a href="vendors.html">Become a Vendor</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="index.html#monarch">About Monarchs</a></li>
+          <li><a href="index.html#resources">Important Resources</a></li>
+          <li><a href="https://www.monarchwatch.org" target="_blank" rel="noopener noreferrer">Monarch Watch Tagging</a></li>
+          <li><a href="https://monarchjointventure.org/mjvprograms/habitat/planting-and-growing-milkweed" target="_blank" rel="noopener noreferrer">Plant Milkweed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="newsletter.html">Newsletter Signup</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="index.html#gallery">Photo Gallery</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
+      <p>#NHMonarchFestival</p>
+    </div>
   </div>
-  <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; Belmont Village, New Hampshire &nbsp;·&nbsp; #NHMonarchFest</p>
 </footer>
 
 <script>
