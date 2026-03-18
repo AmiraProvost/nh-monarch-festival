@@ -456,8 +456,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 @media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
   .nav-links { display: none; }
-  #hero { grid-template-columns: 1fr; }
-  .hero-r { padding: 2.5rem 2rem; }
+  #hero { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+  .hero-r { padding: 2.5rem 2rem; order: -1; }
   .sec { padding: 4.5rem 1.5rem; }
   .ticket-grid, .schedule-grid, .activities-intro, .vendor-layout,
   .monarch-layout, .workshops-layout, .footer-grid, .resources-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -469,8 +469,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .monarch-plate, .schedule-photo, .wcard { position: static; }
   .orn-rule { padding: .4rem 1.5rem; }
   .hamburger { display: flex !important; }
-  .mobile-menu { display: block; }
-  .mobile-menu.open { display: block; }
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: flex; }
 }
 </style>
 </head>
@@ -955,8 +955,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
-function openMenu() { mobileMenu.style.display='flex'; hamburger.classList.add('open'); }
-function closeMenu() { mobileMenu.style.display='none'; hamburger.classList.remove('open'); }
+function openMenu() { mobileMenu.classList.add('open'); hamburger.classList.add('open'); }
+function closeMenu() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }
 hamburger.addEventListener('click', openMenu);
 menuClose.addEventListener('click', closeMenu);
 document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', closeMenu));
