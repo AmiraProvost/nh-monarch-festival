@@ -427,9 +427,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <ul>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="#">Newsletter Signup</a></li>
-          <li><a href="#">Donate</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="newsletter.html">Newsletter Signup</a></li>
+          <li><a href="donate.html">Donate</a></li>
           <li><a href="index.html#gallery">Photo Gallery</a></li>
-          <li><a href="#">Press &amp; Media</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
         </ul>
       </div>
     </div>
@@ -440,10 +442,18 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
-hamburger.addEventListener('click', () => { mobileMenu.style.display='flex'; hamburger.classList.add('open'); });
-menuClose.addEventListener('click', () => { mobileMenu.style.display='none'; hamburger.classList.remove('open'); });
-document.querySelectorAll('.mob-link').forEach(a => a.addEventListe
+hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
+menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
