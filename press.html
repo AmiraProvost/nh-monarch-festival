@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press & Media · NH Monarch Festival 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parch:  #f2e8d0;
+  --parch2: #e8d8b0;
+  --parch3: #d4c090;
+  --cream:  #faf4e4;
+  --ink:    #2a1e0c;
+  --ink2:   #52401c;
+  --rust:   #c05010;
+  --rust2:  #e07030;
+  --sage:   #3a6030;
+  --sage2:  #3a5c30;
+  --sage3:  #a8d098;
+  --gold:   #b08820;
+  --gold2:  #e0b840;
+  --mint:   #7ec89a;
+  --mint2:  #c0e8d0;
+  --peach:  #f0a870;
+  --yg:     #c0d830;
+  --yg2:    #e0ee80;
+  --orange: #e06010;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: .5;
+}
+
+/* ── FESTIVE BANNER ── */
+.festival-banner {
+  background: linear-gradient(90deg, var(--sage) 0%, var(--mint) 25%, var(--yg) 50%, var(--peach) 75%, var(--rust) 100%);
+  padding: .5rem 0; text-align: center; overflow: hidden; position: relative;
+}
+.festival-banner-inner {
+  display: inline-flex; gap: 3rem; align-items: center;
+  animation: bannerScroll 20s linear infinite; white-space: nowrap;
+}
+.festival-banner span { font-family: 'Marcellus', serif; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); opacity: .85; }
+.festival-banner .dot { font-size: .5rem; opacity: .5; }
+@keyframes bannerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 300;
+  background: var(--parch); border-bottom: 1px solid var(--parch3);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .65rem 3rem; box-shadow: 0 1px 16px rgba(42,30,12,.08);
+}
+.nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
+.nav-name { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--sage); line-height: 1.3; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a { font-size: .66rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--sage); }
+.nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
+.nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--parch); padding: 5rem 5rem 4rem;
+  position: relative; overflow: hidden; border-bottom: 1px solid var(--parch3);
+}
+.page-header::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 90% 40%, rgba(126,200,154,.3) 0%, transparent 55%),
+              radial-gradient(ellipse at 10% 80%, rgba(240,168,112,.2) 0%, transparent 45%);
+}
+.page-header-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.page-eyebrow {
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
+}
+.page-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1.5px; background: var(--rust); opacity: .5; }
+.page-header h1 { font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
+.page-header p:not(.page-eyebrow) { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 60ch; }
+
+/* ── COLOR BAND ── */
+.color-band { height: 6px; background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%); }
+
+/* ── SECTIONS ── */
+.sec { padding: 5rem 5rem; position: relative; }
+.inner { max-width: 1100px; margin: 0 auto; }
+h2.sh { font-family: 'Marcellus', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--ink); line-height: 1.1; margin-bottom: .9rem; }
+p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 58ch; }
+
+/* ── FACT SHEET ── */
+.fact-sheet {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  margin-top: 3rem; position: relative;
+}
+.fact-sheet::before {
+  content: 'Event Fact Sheet · 14th Annual NH Monarch Festival';
+  position: absolute; top: -10px; left: 2rem;
+  background: var(--cream); padding: 0 8px;
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .9rem; color: var(--sage2);
+}
+.fact-row {
+  display: grid; grid-template-columns: 200px 1fr;
+  border-bottom: 1px dotted var(--parch3); padding: 1.1rem 2rem;
+  align-items: baseline;
+}
+.fact-row:last-child { border: none; }
+.fact-label { font-family: 'Jost', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); opacity: .8; }
+.fact-value { font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; color: var(--ink2); line-height: 1.6; }
+
+/* ── PRESS RELEASE ── */
+.press-release {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  padding: 3.5rem 4rem; margin-top: 3rem; position: relative;
+}
+.press-release::before {
+  content: 'Press Release · For Immediate Release';
+  position: absolute; top: -10px; left: 2rem;
+  background: var(--cream); padding: 0 8px;
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .9rem; color: var(--rust);
+}
+.pr-date { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink2); opacity: .55; margin-bottom: 1.5rem; }
+.pr-headline { font-family: 'Marcellus', serif; font-size: 1.5rem; color: var(--ink); line-height: 1.25; margin-bottom: .4rem; }
+.pr-subhead { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: var(--ink2); opacity: .7; margin-bottom: 2rem; }
+.pr-body p { font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1.2rem; }
+.pr-body blockquote {
+  border-left: 3px solid var(--sage); padding: 1rem 1.5rem;
+  margin: 1.8rem 0; background: var(--parch);
+}
+.pr-body blockquote p { font-style: italic; opacity: .85; margin: 0; }
+.pr-body blockquote cite { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sage2); opacity: .7; display: block; margin-top: .6rem; }
+.pr-boilerplate { border-top: 1px dotted var(--parch3); margin-top: 2rem; padding-top: 1.5rem; }
+.pr-boilerplate h4 { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--ink); margin-bottom: .5rem; }
+.pr-boilerplate p { font-family: 'Sorts Mill Goudy', serif; font-size: .92rem; line-height: 1.7; color: var(--ink2); opacity: .7; }
+.pr-contact { margin-top: 1.5rem; padding: 1.2rem 1.5rem; background: var(--parch); border: 1px solid var(--parch3); }
+.pr-contact h4 { font-family: 'Jost', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; }
+.pr-contact p { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; color: var(--ink2); line-height: 1.6; }
+.pr-contact a { color: var(--sage); text-decoration: none; }
+.pr-contact a:hover { text-decoration: underline; }
+
+/* ── MEDIA CONTACT ── */
+.media-contact-card {
+  background: linear-gradient(135deg, var(--sage) 0%, #2a5028 100%);
+  padding: 3rem 3.5rem; display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  margin-top: 3rem; position: relative; overflow: hidden;
+}
+.media-contact-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(192,216,48,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.mc-text h3 { font-family: 'Marcellus', serif; font-size: 1.3rem; color: white; margin-bottom: .4rem; position: relative; z-index: 1; }
+.mc-text p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,.75); line-height: 1.6; position: relative; z-index: 1; }
+.mc-email {
+  display: inline-block; background: var(--peach); color: var(--ink);
+  font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: .9rem 2rem; text-decoration: none;
+  transition: background .25s, transform .25s; position: relative; z-index: 1;
+}
+.mc-email:hover { background: var(--yg2); transform: translateY(-2px); }
+
+/* ── SOCIAL ── */
+.social-row { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.social-btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  padding: .7rem 1.4rem; text-decoration: none; color: var(--ink);
+  font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: border-color .2s, box-shadow .2s;
+}
+.social-btn:hover { border-color: var(--sage); box-shadow: 0 4px 12px rgba(42,30,12,.08); }
+
+/* ── BOILERPLATE BOX ── */
+.boilerplate-box {
+  background: var(--parch); border: 1.5px solid var(--parch3);
+  border-left: 4px solid var(--gold); padding: 2.5rem 3rem; margin-top: 3rem;
+  position: relative;
+}
+.boilerplate-box::before {
+  content: 'Official Boilerplate — Copy & Use Freely';
+  position: absolute; top: -10px; left: 2rem;
+  background: var(--parch); padding: 0 8px;
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .9rem; color: var(--gold);
+}
+.boilerplate-box p { font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; line-height: 1.85; color: var(--ink2); }
+.copy-btn {
+  display: inline-block; margin-top: 1.2rem;
+  font-family: 'Jost', sans-serif; font-size: .68rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  background: var(--sage3); color: var(--sage); border: 1px solid var(--sage);
+  padding: .5rem 1.2rem; cursor: pointer; transition: background .2s;
+}
+.copy-btn:hover { background: var(--sage); color: white; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2), var(--peach), var(--mint)); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(242,232,208,.1); }
+.footer-brand-row { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.2rem; }
+.flogo { height: 46px; width: 46px; border-radius: 50%; }
+.fbrand-name { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--parch); line-height: 1.3; }
+.ftagline { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; opacity: .65; line-height: 1.7; margin-bottom: 1.2rem; }
+.footer-col h5 { font-family: 'Marcellus', serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--peach); opacity: .8; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .5rem; }
+.footer-col a { color: rgba(242,232,208,.55); text-decoration: none; font-size: .86rem; transition: color .2s; }
+.footer-col a:hover { color: rgba(242,232,208,.95); }
+.fbottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.fbottom p { font-size: .72rem; opacity: .38; letter-spacing: .05em; }
+
+/* ── HAMBURGER ── */
+.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; cursor: pointer; z-index: 400; }
+.hamburger span { display: block; height: 2.5px; width: 100%; background: var(--sage); border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.75px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--parch); z-index: 350; padding: 5rem 2rem 2rem; flex-direction: column; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.mobile-menu li { border-bottom: 1px dotted var(--parch3); }
+.mobile-menu a { display: block; padding: 1.1rem .5rem; font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; transition: color .2s; }
+.mobile-menu a:hover { color: var(--rust); }
+.mobile-menu .m-cta { margin-top: 1.5rem; display: block; background: var(--rust); color: white !important; text-align: center; padding: 1rem; font-weight: 700; }
+.mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+@media (max-width: 920px) {
+  nav { padding: .65rem 1.5rem; }
+  .nav-links { display: none; }
+  .sec { padding: 4rem 1.5rem; }
+  .page-header { padding: 3.5rem 1.5rem 3rem; }
+  .fact-row { grid-template-columns: 1fr; gap: .3rem; padding: 1rem 1.2rem; }
+  .press-release { padding: 2.5rem 1.5rem; }
+  .media-contact-card { padding: 2.5rem 1.5rem; flex-direction: column; }
+  .boilerplate-box { padding: 2rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hamburger { display: flex !important; }
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: flex; }
+  footer { padding: 4rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- FESTIVE BANNER -->
+<div class="festival-banner">
+  <div class="festival-banner-inner">
+    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Press & Media Resources Available</span><span class="dot">◆</span>
+    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Press & Media Resources Available</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
+    <div class="nav-name">NH Monarch<br>Festival</div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose">✕</button>
+    <ul>
+      <li><a href="index.html#schedule" class="mob-link">Schedule</a></li>
+      <li><a href="index.html#activities" class="mob-link">Activities</a></li>
+      <li><a href="vendors.html" class="mob-link">Vendors</a></li>
+      <li><a href="index.html#resources" class="mob-link">Resources</a></li>
+      <li><a href="volunteer.html" class="mob-link">Volunteer</a></li>
+      <li><a href="index.html#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="contact.html" class="mob-link m-cta">Contact Us</a></li>
+    </ul>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#schedule">Schedule</a></li>
+    <li><a href="index.html#activities">Activities</a></li>
+    <li><a href="vendors.html">Vendors</a></li>
+    <li><a href="index.html#resources">Resources</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#tickets" class="nav-cta">Buy Tickets</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Media Resources</p>
+    <h1>Press &amp; Media</h1>
+    <p>Welcome, members of the press! Everything you need to cover the 14th Annual NH Monarch Festival is right here — event facts, a press release, boilerplate copy, and contact information for interview requests.</p>
+  </div>
+</div>
+
+<div class="color-band"></div>
+
+<!-- FACT SHEET -->
+<section class="sec" style="background:var(--cream);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="page-eyebrow">Quick Reference</p>
+      <h2 class="sh">Event Fact Sheet</h2>
+      <p class="sp">Key details about the 2026 NH Monarch Festival for use in articles, event listings, and social media posts.</p>
+    </div>
+    <div class="fact-sheet reveal" style="margin-top:2.5rem;">
+      <div class="fact-row">
+        <span class="fact-label">Event Name</span>
+        <span class="fact-value">14th Annual NH Monarch Festival</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Date</span>
+        <span class="fact-value">Saturday, August 22, 2026</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Hours</span>
+        <span class="fact-value">10:00 AM – 5:00 PM</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Location</span>
+        <span class="fact-value">Tioga Pavilion, Belmont Village, New Hampshire <em style="opacity:.6;">(location pending confirmation)</em></span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Expected Attendance</span>
+        <span class="fact-value">Approximately 300 attendees</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Admission</span>
+        <span class="fact-value">From $4 · Children in costume admitted free</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Activities</span>
+        <span class="fact-value">Monarch tagging, butterfly release ceremony, live specimens, educational booths, kids' activities, vendors &amp; exhibitors</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Focus</span>
+        <span class="fact-value">Monarch butterfly conservation, community education, and family-friendly nature programming</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Website</span>
+        <span class="fact-value"><a href="https://www.nhmonarchfestival.com" style="color:var(--sage);">www.nhmonarchfestival.com</a></span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Social Media</span>
+        <span class="fact-value">Facebook · #NHMonarchFestival</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Media Contact</span>
+        <span class="fact-value"><a href="mailto:TheMonarchMatriarch@gmail.com" style="color:var(--sage);">TheMonarchMatriarch@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- PRESS RELEASE -->
+<section class="sec" style="background:var(--parch);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="page-eyebrow">Official Announcement</p>
+      <h2 class="sh">Press Release</h2>
+      <p class="sp">The following press release is approved for publication. Please contact us before making any edits to quoted material.</p>
+    </div>
+    <div class="press-release reveal">
+      <p class="pr-date">For Immediate Release · Summer 2026</p>
+      <h2 class="pr-headline">The 14th Annual NH Monarch Festival Returns to Belmont Village on August 22, 2026</h2>
+      <p class="pr-subhead">Free family event celebrates monarch butterflies, conservation, and community with live specimens, tagging demonstrations, and a butterfly release ceremony</p>
+      <div class="pr-body">
+        <p><strong>BELMONT, NH</strong> — The NH Monarch Festival, one of New Hampshire's beloved annual nature celebrations, will hold its 14th annual event on Saturday, August 22, 2026, at Tioga Pavilion in Belmont Village, New Hampshire. The festival runs from 10:00 AM to 5:00 PM and is open to attendees of all ages.</p>
+        <p>The event celebrates the remarkable migration of monarch butterflies — an iconic species that passes through New Hampshire each August and September on its journey to overwintering sites in the oyamel fir forests of Michoacán, Mexico. Once among the most abundant butterflies in North America, the monarch is now listed as endangered by the IUCN, having lost more than 80% of its population since the 1990s.</p>
+        <p>This year's festival will feature hands-on monarch tagging with Monarch Watch-certified tags, a live butterfly release ceremony, live specimen viewing, educational booths, kids' activities, and a variety of conservation-focused vendors and exhibitors. The festival draws approximately 300 attendees from across New Hampshire and neighboring states.</p>
+        <blockquote>
+          <p>"The NH Monarch Festival is about more than butterflies — it's about connecting our community with the natural world and inspiring people of all ages to take action for conservation. Every year, I'm moved by how many families come out to learn, to wonder, and to be part of something bigger than themselves."</p>
+          <cite>— Festival Organizer, NH Monarch Festival</cite>
+        </blockquote>
+        <p>Admission is $4 for children ages 3–12, $7 for adults, and $5 for seniors. Any attendee who arrives in a butterfly, caterpillar, or garden creature costume is admitted free. The festival encourages families to come in costume and celebrate the monarch in style.</p>
+        <p>For more information, visit <a href="https://www.nhmonarchfestival.com" style="color:var(--sage);">www.nhmonarchfestival.com</a> or contact the festival organizer at <a href="mailto:TheMonarchMatriarch@gmail.com" style="color:var(--sage);">TheMonarchMatriarch@gmail.com</a>.</p>
+        <div class="pr-boilerplate">
+          <h4>About the NH Monarch Festival</h4>
+          <p>The NH Monarch Festival is an annual community event held in Belmont Village, New Hampshire, dedicated to celebrating and conserving the monarch butterfly. Now in its 14th year, the festival brings together families, nature enthusiasts, educators, and conservation organizations for a day of learning, wonder, and hands-on engagement with one of nature's most remarkable creatures.</p>
+        </div>
+        <div class="pr-contact">
+          <h4>Media Contact</h4>
+          <p>NH Monarch Festival<br>
+          Email: <a href="mailto:TheMonarchMatriarch@gmail.com">TheMonarchMatriarch@gmail.com</a><br>
+          Website: <a href="https://www.nhmonarchfestival.com">www.nhmonarchfestival.com</a><br>
+          Hashtag: #NHMonarchFestival</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- BOILERPLATE + SOCIAL -->
+<section class="sec" style="background:var(--cream);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="page-eyebrow">Ready to Use</p>
+      <h2 class="sh">Boilerplate &amp; Social</h2>
+      <p class="sp">Copy and use the following description freely in articles, event listings, social posts, and program guides.</p>
+    </div>
+    <div class="boilerplate-box reveal">
+      <p>The NH Monarch Festival is an annual community celebration held each August in Belmont Village, New Hampshire. Now in its 14th year, the festival brings together families, nature enthusiasts, and conservation advocates for a day of monarch tagging, live specimen viewing, educational activities, and a butterfly release ceremony. Admission starts at $4, and children in costume are admitted free. For more information, visit <strong>nhmonarchfestival.com</strong>.</p>
+      <button class="copy-btn" onclick="copyBoilerplate()">📋 Copy to Clipboard</button>
+    </div>
+
+    <div style="margin-top:3rem;" class="reveal">
+      <h3 style="font-family:'Marcellus',serif;font-size:1.2rem;color:var(--ink);margin-bottom:.5rem;">Official Hashtag</h3>
+      <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1rem;color:var(--ink2);opacity:.8;margin-bottom:1.2rem;">Please use our official hashtag when posting about the festival on social media.</p>
+      <div style="display:inline-block;background:var(--parch);border:1.5px solid var(--parch3);padding:1rem 2rem;">
+        <span style="font-family:'Marcellus',serif;font-size:1.4rem;color:var(--sage);">#NHMonarchFestival</span>
+      </div>
+      <div class="social-row">
+        <a href="#" class="social-btn">📘 Facebook</a>
+      </div>
+      <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:.88rem;color:var(--ink2);opacity:.55;margin-top:.8rem;">Update the Facebook link above with your actual Facebook page URL.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA CONTACT CTA -->
+<div style="padding:0 5rem 5rem;background:var(--cream);">
+  <div class="inner">
+    <div class="media-contact-card reveal">
+      <div class="mc-text">
+        <h3>Interview &amp; Photo Requests</h3>
+        <p>We welcome media at the festival and are happy to arrange interviews, provide photo access, or answer any questions about the event or monarch conservation.</p>
+      </div>
+      <a href="mailto:TheMonarchMatriarch@gmail.com?subject=Press Inquiry – NH Monarch Festival 2026" class="mc-email">Contact Media Team</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-row">
+          <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+          <div class="fbrand-name">NH Monarch<br>Festival</div>
+        </div>
+        <p class="ftagline">Celebrating nature's most remarkable journey — right here in New Hampshire. Educational, fun, and open to all ages.</p>
+        <p style="font-size:.72rem;opacity:.36;letter-spacing:.05em;">14th Annual · August 22, 2026<br>Belmont Village, NH (location pending)<br>A community conservation event</p>
+      </div>
+      <div class="footer-col">
+        <h5>Festival</h5>
+        <ul>
+          <li><a href="index.html#tickets">Purchase Tickets</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="index.html#activities">Activities</a></li>
+          <li><a href="vendors.html">Become a Vendor</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="index.html#monarch">About Monarchs</a></li>
+          <li><a href="index.html#resources">Important Resources</a></li>
+          <li><a href="https://www.monarchwatch.org" target="_blank" rel="noopener noreferrer">Monarch Watch Tagging</a></li>
+          <li><a href="https://monarchjointventure.org/mjvprograms/habitat/planting-and-growing-milkweed" target="_blank" rel="noopener noreferrer">Plant Milkweed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="newsletter.html">Newsletter Signup</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="index.html#gallery">Photo Gallery</a></li>
+          <li><a href="press.html">Press &amp; Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
+      <p>#NHMonarchFestival</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
+menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function copyBoilerplate() {
+  const text = `The NH Monarch Festival is an annual community celebration held each August in Belmont Village, New Hampshire. Now in its 14th year, the festival brings together families, nature enthusiasts, and conservation advocates for a day of monarch tagging, live specimen viewing, educational activities, and a butterfly release ceremony. Admission starts at $4, and children in costume are admitted free. For more information, visit nhmonarchfestival.com.`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy to Clipboard', 2500);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate · NH Monarch Festival 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parch:  #f2e8d0;
+  --parch2: #e8d8b0;
+  --parch3: #d4c090;
+  --cream:  #faf4e4;
+  --ink:    #2a1e0c;
+  --ink2:   #52401c;
+  --rust:   #c05010;
+  --rust2:  #e07030;
+  --sage:   #3a6030;
+  --sage2:  #3a5c30;
+  --sage3:  #a8d098;
+  --gold:   #b08820;
+  --gold2:  #e0b840;
+  --mint:   #7ec89a;
+  --mint2:  #c0e8d0;
+  --peach:  #f0a870;
+  --yg:     #c0d830;
+  --yg2:    #e0ee80;
+  --orange: #e06010;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: .5;
+}
+
+/* ── FESTIVE BANNER ── */
+.festival-banner {
+  background: linear-gradient(90deg, var(--sage) 0%, var(--mint) 25%, var(--yg) 50%, var(--peach) 75%, var(--rust) 100%);
+  padding: .5rem 0; text-align: center; overflow: hidden; position: relative;
+}
+.festival-banner-inner {
+  display: inline-flex; gap: 3rem; align-items: center;
+  animation: bannerScroll 20s linear infinite; white-space: nowrap;
+}
+.festival-banner span {
+  font-family: 'Marcellus', serif; font-size: .78rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink); opacity: .85;
+}
+.festival-banner .dot { font-size: .5rem; opacity: .5; }
+@keyframes bannerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 300;
+  background: var(--parch); border-bottom: 1px solid var(--parch3);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .65rem 3rem; box-shadow: 0 1px 16px rgba(42,30,12,.08);
+}
+.nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
+.nav-name { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--sage); line-height: 1.3; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a { font-size: .66rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--sage); }
+.nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
+.nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--parch); padding: 5rem 5rem 4rem;
+  position: relative; overflow: hidden; border-bottom: 1px solid var(--parch3);
+}
+.page-header::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 90% 40%, rgba(240,168,112,.3) 0%, transparent 55%),
+              radial-gradient(ellipse at 10% 80%, rgba(126,200,154,.2) 0%, transparent 45%);
+}
+.page-header-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.page-eyebrow {
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
+}
+.page-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1.5px; background: var(--rust); opacity: .5; }
+.page-header h1 { font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
+.page-header p:not(.page-eyebrow) { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 60ch; }
+
+/* ── COLOR BAND ── */
+.color-band { height: 6px; background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%); }
+
+/* ── SECTIONS ── */
+.sec { padding: 5rem 5rem; position: relative; }
+.inner { max-width: 1100px; margin: 0 auto; }
+h2.sh { font-family: 'Marcellus', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--ink); line-height: 1.1; margin-bottom: .9rem; }
+p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 58ch; }
+
+/* ── IMPACT CARDS ── */
+.impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.impact-card {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  border-left: 4px solid var(--sage); padding: 2rem 1.8rem;
+  display: flex; gap: 1.4rem; align-items: flex-start;
+  transition: box-shadow .25s, transform .25s;
+}
+.impact-card:hover { box-shadow: 0 8px 24px rgba(42,30,12,.08); transform: translateY(-3px); }
+.impact-icon { font-size: 1.8rem; opacity: .6; flex-shrink: 0; }
+.impact-body h3 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .4rem; }
+.impact-body p { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.6; color: var(--ink2); opacity: .78; }
+
+/* ── DONATE CARDS ── */
+.donate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+.donate-card {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  border-top: 4px solid var(--sage); padding: 3rem 2.5rem;
+  text-align: center; position: relative;
+}
+.donate-card-icon { font-size: 2.2rem; opacity: .55; display: block; margin-bottom: 1rem; }
+.donate-card h3 { font-family: 'Marcellus', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: .5rem; }
+.donate-card p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; line-height: 1.6; color: var(--ink2); opacity: .75; margin-bottom: 1.8rem; }
+
+/* PayPal */
+.paypal-btn {
+  display: inline-block; background: #0070ba; color: white;
+  font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: .9rem 2rem; text-decoration: none;
+  transition: background .25s, transform .25s; width: 100%;
+}
+.paypal-btn:hover { background: #005ea6; transform: translateY(-2px); }
+.paypal-logo { font-size: 1rem; margin-right: .4rem; }
+
+/* Venmo */
+.venmo-handle {
+  font-family: 'Marcellus', serif; font-size: 1.4rem; color: var(--sage);
+  display: block; margin-bottom: 1rem; letter-spacing: .04em;
+}
+.venmo-btn {
+  display: inline-block; background: #008CFF; color: white;
+  font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: .9rem 2rem; text-decoration: none;
+  transition: background .25s, transform .25s; width: 100%;
+}
+.venmo-btn:hover { background: #0070cc; transform: translateY(-2px); }
+
+/* ── SETUP NOTICE ── */
+.setup-notice {
+  background: #fff8e8; border: 1.5px solid var(--gold2);
+  border-left: 4px solid var(--gold); padding: 2rem 2.4rem; margin-bottom: 3rem;
+}
+.setup-notice h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--gold); margin-bottom: .6rem; }
+.setup-notice ol { padding-left: 1.4rem; }
+.setup-notice li { font-family: 'Sorts Mill Goudy', serif; font-size: .97rem; color: var(--ink2); line-height: 1.7; margin-bottom: .4rem; }
+.setup-notice code { background: var(--parch2); padding: .1rem .4rem; font-size: .9rem; color: var(--rust); }
+.setup-notice a { color: var(--sage); }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  background: var(--parch); border: 1.5px solid var(--parch3);
+  border-left: 4px solid var(--gold); padding: 1.5rem 2rem; margin-top: 2.5rem;
+}
+.disclaimer p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .92rem; color: var(--ink2); opacity: .7; line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2), var(--peach), var(--mint)); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(242,232,208,.1); }
+.footer-brand-row { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.2rem; }
+.flogo { height: 46px; width: 46px; border-radius: 50%; }
+.fbrand-name { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--parch); line-height: 1.3; }
+.ftagline { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; opacity: .65; line-height: 1.7; margin-bottom: 1.2rem; }
+.footer-col h5 { font-family: 'Marcellus', serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--peach); opacity: .8; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .5rem; }
+.footer-col a { color: rgba(242,232,208,.55); text-decoration: none; font-size: .86rem; transition: color .2s; }
+.footer-col a:hover { color: rgba(242,232,208,.95); }
+.fbottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.fbottom p { font-size: .72rem; opacity: .38; letter-spacing: .05em; }
+
+/* ── HAMBURGER ── */
+.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; cursor: pointer; z-index: 400; }
+.hamburger span { display: block; height: 2.5px; width: 100%; background: var(--sage); border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.75px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--parch); z-index: 350; padding: 5rem 2rem 2rem; flex-direction: column; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.mobile-menu li { border-bottom: 1px dotted var(--parch3); }
+.mobile-menu a { display: block; padding: 1.1rem .5rem; font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; transition: color .2s; }
+.mobile-menu a:hover { color: var(--rust); }
+.mobile-menu .m-cta { margin-top: 1.5rem; display: block; background: var(--rust); color: white !important; text-align: center; padding: 1rem; font-weight: 700; }
+.mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+@media (max-width: 920px) {
+  nav { padding: .65rem 1.5rem; }
+  .nav-links { display: none; }
+  .sec { padding: 4rem 1.5rem; }
+  .page-header { padding: 3.5rem 1.5rem 3rem; }
+  .impact-grid, .donate-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hamburger { display: flex !important; }
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: flex; }
+  footer { padding: 4rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- FESTIVE BANNER -->
+<div class="festival-banner">
+  <div class="festival-banner-inner">
+    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Support the Monarchs — Every Dollar Makes a Difference!</span><span class="dot">◆</span>
+    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>Support the Monarchs — Every Dollar Makes a Difference!</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
+    <div class="nav-name">NH Monarch<br>Festival</div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose">✕</button>
+    <ul>
+      <li><a href="index.html#schedule" class="mob-link">Schedule</a></li>
+      <li><a href="index.html#activities" class="mob-link">Activities</a></li>
+      <li><a href="vendors.html" class="mob-link">Vendors</a></li>
+      <li><a href="index.html#resources" class="mob-link">Resources</a></li>
+      <li><a href="volunteer.html" class="mob-link">Volunteer</a></li>
+      <li><a href="index.html#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="contact.html" class="mob-link m-cta">Contact Us</a></li>
+    </ul>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#schedule">Schedule</a></li>
+    <li><a href="index.html#activities">Activities</a></li>
+    <li><a href="vendors.html">Vendors</a></li>
+    <li><a href="index.html#resources">Resources</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#tickets" class="nav-cta">Buy Tickets</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Support the Festival</p>
+    <h1>Make a Donation</h1>
+    <p>The NH Monarch Festival is a labor of love. Your generous donation helps keep the festival going, supports monarch conservation, and ensures families of all backgrounds can participate. Every dollar makes a difference.</p>
+  </div>
+</div>
+
+<div class="color-band"></div>
+
+<!-- IMPACT SECTION -->
+<section class="sec" style="background:var(--cream);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="page-eyebrow">Your Impact</p>
+      <h2 class="sh">Where Your Donation Goes</h2>
+      <p class="sp">Every contribution goes directly toward making the NH Monarch Festival a meaningful, accessible, and impactful event for our community.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card reveal d1">
+        <span class="impact-icon">🎪</span>
+        <div class="impact-body">
+          <h3>Support Festival Costs</h3>
+          <p>Help cover the costs of running the festival — from tents and tables to signage, sound equipment, and event logistics that make the day possible.</p>
+        </div>
+      </div>
+      <div class="impact-card reveal d2">
+        <span class="impact-icon">🦋</span>
+        <div class="impact-body">
+          <h3>Fund Monarch Conservation</h3>
+          <p>A portion of every donation supports monarch conservation efforts, including habitat restoration, tagging programs, and partnerships with organizations like Monarch Watch.</p>
+        </div>
+      </div>
+      <div class="impact-card reveal d1">
+        <span class="impact-icon">🎟️</span>
+        <div class="impact-body">
+          <h3>Keep Admission Affordable</h3>
+          <p>Your support helps us keep ticket prices low so that families of all income levels can enjoy the festival and connect with nature together.</p>
+        </div>
+      </div>
+      <div class="impact-card reveal d2">
+        <span class="impact-icon">🧒</span>
+        <div class="impact-body">
+          <h3>Sponsor a Kids' Activity</h3>
+          <p>Help fund hands-on educational activities for children — from butterfly crafts and lifecycle demonstrations to live specimen viewings and tagging participation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- DONATE SECTION -->
+<section class="sec" style="background:var(--parch);">
+  <div class="inner">
+    <div class="reveal">
+      <p class="page-eyebrow">Give Today</p>
+      <h2 class="sh">Choose Your Way to Donate</h2>
+      <p class="sp">We accept donations via PayPal and Venmo. Every amount is appreciated — no donation is too small!</p>
+    </div>
+
+    <!-- ⚠️ SETUP NOTICE — REMOVE AFTER ADDING YOUR DETAILS -->
+    <div class="setup-notice reveal" style="margin-top:2.5rem;">
+      <h3>⚙️ Setup Required: Add Your PayPal & Venmo Details</h3>
+      <ol>
+        <li><strong>PayPal:</strong> Log in to your PayPal account at <a href="https://paypal.com" target="_blank">paypal.com</a>. Go to <strong>Tools → PayPal Buttons</strong>, create a Donate button, and copy the link. Replace <code>YOUR_PAYPAL_LINK</code> in the code below with your actual PayPal donate link.</li>
+        <li><strong>Venmo:</strong> Replace <code>@YourVenmoHandle</code> with your actual Venmo username. You can also generate a Venmo QR code at <a href="https://venmo.com" target="_blank">venmo.com</a> and add it as an image if you'd like.</li>
+        <li>Delete this yellow notice box once both are set up.</li>
+      </ol>
+    </div>
+    <!-- END SETUP NOTICE -->
+
+    <div class="donate-grid">
+
+      <!-- PAYPAL -->
+      <div class="donate-card reveal d1">
+        <span class="donate-card-icon">💳</span>
+        <h3>Donate via PayPal</h3>
+        <p>Use PayPal to make a secure one-time donation by credit card, debit card, or your PayPal balance. No PayPal account required.</p>
+        <a href="YOUR_PAYPAL_LINK" target="_blank" class="paypal-btn">
+          <span class="paypal-logo">🅿</span> Donate with PayPal
+        </a>
+      </div>
+
+      <!-- VENMO -->
+      <div class="donate-card reveal d2">
+        <span class="donate-card-icon">📱</span>
+        <h3>Donate via Venmo</h3>
+        <p>Send your donation directly through Venmo. Search for us by handle or scan the QR code in the app.</p>
+        <span class="venmo-handle">@YourVenmoHandle</span>
+        <a href="https://venmo.com/YourVenmoHandle" target="_blank" class="venmo-btn">
+          Open in Venmo
+        </a>
+      </div>
+
+    </div>
+
+    <div class="disclaimer reveal">
+      <p>⚠️ <strong>Please note:</strong> The NH Monarch Festival is not currently a registered 501(c)(3) nonprofit organization. Donations are not tax-deductible at this time. We are working toward nonprofit status and will update this page when that changes. Thank you for your generosity and support!</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-row">
+          <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+          <div class="fbrand-name">NH Monarch<br>Festival</div>
+        </div>
+        <p class="ftagline">Celebrating nature's most remarkable journey — right here in New Hampshire. Educational, fun, and open to all ages.</p>
+        <p style="font-size:.72rem;opacity:.36;letter-spacing:.05em;">14th Annual · August 22, 2026<br>Belmont Village, NH (location pending)<br>A community conservation event</p>
+      </div>
+      <div class="footer-col">
+        <h5>Festival</h5>
+        <ul>
+          <li><a href="index.html#tickets">Purchase Tickets</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="index.html#activities">Activities</a></li>
+          <li><a href="vendors.html">Become a Vendor</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="index.html#monarch">About Monarchs</a></li>
+          <li><a href="index.html#resources">Important Resources</a></li>
+          <li><a href="https://www.monarchwatch.org" target="_blank" rel="noopener noreferrer">Monarch Watch Tagging</a></li>
+          <li><a href="https://monarchjointventure.org/mjvprograms/habitat/planting-and-growing-milkweed" target="_blank" rel="noopener noreferrer">Plant Milkweed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="newsletter.html">Newsletter Signup</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="index.html#gallery">Photo Gallery</a></li>
+          <li><a href="#">Press &amp; Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
+      <p>#NHMonarchFestival</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
+menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
