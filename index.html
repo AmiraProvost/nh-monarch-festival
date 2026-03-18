@@ -453,7 +453,42 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .reveal.vis { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
 
-@media (max-width: 920px) {
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.92); align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-img {
+  max-width: 90vw; max-height: 90vh;
+  object-fit: contain; box-shadow: 0 0 60px rgba(0,0,0,.6);
+  cursor: default; animation: lbFadeIn .2s ease;
+}
+@keyframes lbFadeIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+.lightbox-close {
+  position: fixed; top: 1.2rem; right: 1.5rem;
+  color: white; font-size: 2rem; cursor: pointer;
+  background: none; border: none; line-height: 1; opacity: .7; transition: opacity .2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-caption {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .95rem; color: rgba(255,255,255,.65); text-align: center;
+  pointer-events: none;
+}
+.lightbox-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.1); border: none; color: white;
+  font-size: 1.8rem; padding: .8rem 1rem; cursor: pointer;
+  transition: background .2s; line-height: 1;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,.2); }
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+
   nav { padding: .65rem 1.5rem; }
   .nav-links { display: none; }
   #hero { grid-template-columns: 1fr; display: flex; flex-direction: column; }
@@ -971,6 +1006,15 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lbClose">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</button>
+  <img class="lightbox-img" id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext">&#8250;</button>
+  <p class="lightbox-caption" id="lbCaption"></p>
+</div>
+
 <script>
 // Mobile menu
 const hamburger = document.getElementById('hamburger');
@@ -998,6 +1042,59 @@ document.querySelectorAll('a[href="#"]').forEach(a => {
     else if (t.includes('Waystation'))
       alert('Visit the NH Division of Forests & Lands website to register your waystation.');
   });
+});
+
+// ── LIGHTBOX ──
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCaption = document.getElementById('lbCaption');
+const lbClose = document.getElementById('lbClose');
+const lbPrev = document.getElementById('lbPrev');
+const lbNext = document.getElementById('lbNext');
+
+const galleryImgs = Array.from(document.querySelectorAll('.gitem img, .gitem2 img'));
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  const img = galleryImgs[index];
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCaption.textContent = img.alt;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+  openLightbox(currentIndex);
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % galleryImgs.length;
+  openLightbox(currentIndex);
+}
+
+galleryImgs.forEach((img, i) => {
+  img.parentElement.style.cursor = 'zoom-in';
+  img.parentElement.addEventListener('click', () => openLightbox(i));
+});
+
+lbClose.addEventListener('click', closeLightbox);
+lbPrev.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+lbNext.addEventListener('click', e => { e.stopPropagation(); showNext(); });
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'ArrowRight') showNext();
 });
 </script>
 </body>
