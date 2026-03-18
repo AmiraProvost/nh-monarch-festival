@@ -71,13 +71,24 @@ nav {
 .nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
 .nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
 .nav-name { font-family: 'Marcellus', serif; font-size: .85rem; color: var(--sage); line-height: 1.3; }
-.nav-back {
-  font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--ink2); text-decoration: none; transition: color .2s;
-  display: flex; align-items: center; gap: .5rem;
-}
-.nav-back:hover { color: var(--sage); }
-.nav-back::before { content: '←'; font-size: .9rem; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links > li { position: relative; }
+.nav-links a { font-size: .66rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--sage); }
+.nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
+.nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; cursor: pointer; z-index: 400; }
+.hamburger span { display: block; height: 2.5px; width: 100%; background: var(--sage); border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.75px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--parch); z-index: 350; padding: 5rem 2rem 2rem; flex-direction: column; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.mobile-menu li { border-bottom: 1px dotted var(--parch3); }
+.mobile-menu a { display: block; padding: 1.1rem .5rem; font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; transition: color .2s; }
+.mobile-menu a:hover { color: var(--rust); }
+.mobile-menu .m-cta { margin-top: 1.5rem; display: block; background: var(--rust); color: white !important; text-align: center; padding: 1rem; font-weight: 700; }
+.mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
 
 /* ── COLOR BAND ── */
 .color-band {
@@ -109,14 +120,13 @@ main {
 }
 
 .contact-eyebrow {
-  font-family: 'IM Fell English', serif; font-style: italic;
-  font-size: 1rem; color: var(--sage2);
-  display: flex; align-items: center; gap: .8rem;
-  margin-bottom: .8rem;
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
 }
 .contact-eyebrow::before {
   content: ''; display: inline-block;
-  width: 26px; height: 1px; background: var(--sage2); opacity: .7;
+  width: 32px; height: 1.5px; background: var(--rust); opacity: .5;
 }
 
 h1.contact-title {
@@ -193,8 +203,12 @@ footer::before {
 .fbrand { font-family: 'Marcellus', serif; font-size: .92rem; color: var(--parch); text-align: left; line-height: 1.3; }
 footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
 
-@media (max-width: 600px) {
+@media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex !important; }
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: flex; }
   main { padding: 3rem 1.2rem; }
   .contact-card { padding: 2.5rem 1.8rem; }
   h1.contact-title { font-size: 2rem; }
@@ -227,7 +241,30 @@ footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
     <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
     <div class="nav-name">NH Monarch<br>Festival</div>
   </a>
-  <a class="nav-back" href="index.html">Back to Festival Home</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose">✕</button>
+    <ul>
+      <li><a href="index.html#schedule" class="mob-link">Schedule</a></li>
+      <li><a href="index.html#activities" class="mob-link">Activities</a></li>
+      <li><a href="vendors.html" class="mob-link">Vendors</a></li>
+      <li><a href="index.html#resources" class="mob-link">Resources</a></li>
+      <li><a href="volunteer.html" class="mob-link">Volunteer</a></li>
+      <li><a href="index.html#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="contact.html" class="mob-link m-cta">Contact Us</a></li>
+    </ul>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#schedule">Schedule</a></li>
+    <li><a href="index.html#activities">Activities</a></li>
+    <li><a href="vendors.html">Vendors</a></li>
+    <li><a href="index.html#resources">Resources</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#tickets" class="nav-cta">Buy Tickets</a></li>
+  </ul>
 </nav>
 
 <div class="color-band"></div>
@@ -252,7 +289,7 @@ footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
         <span class="cdetail-icon">✉️</span>
         <div class="cdetail-body">
           <span class="cdetail-label">Email</span>
-          <a class="cdetail-value" href="mailto:TheMonarchMatriarch@gmail.com">TheMonarchMatriarch@gmail.com</a>
+          <a class="cdetail-value" href="/cdn-cgi/l/email-protection#1a4e727f5775747b687972577b6e68737b6879725a7d777b737634797577"><span class="__cf_email__" data-cfemail="c296aaa78fadaca3b0a1aa8fa3b6b0aba3b0a1aa82a5afa3abaeeca1adaf">[email&#160;protected]</span></a>
           <span class="cdetail-sub">Best for general inquiries &amp; vendor applications</span>
         </div>
       </div>
@@ -274,10 +311,18 @@ footer p { font-size: .75rem; opacity: .4; letter-spacing: .05em; }
 <footer>
   <div class="footer-logo-row">
     <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
-    <div class="fbrand">NH Monarch<br>Festival</div>
+    <div class="fbrand">NH Monarch<br>Festival<    <div class="fbrand">NH Monarch<br>Festival</div>
   </div>
   <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; Belmont Village, New Hampshire &nbsp;·&nbsp; #NHMonarchFest</p>
 </footer>
 
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
+menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
+</script>
 </body>
 </html>
