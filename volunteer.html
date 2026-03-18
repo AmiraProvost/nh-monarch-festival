@@ -104,11 +104,11 @@ nav {
 .sec { padding: 5rem 5rem; position: relative; }
 .inner { max-width: 1100px; margin: 0 auto; }
 .sec-eyebrow {
-  font-family: 'IM Fell English', serif; font-style: italic;
-  font-size: 1rem; color: var(--rust);
-  display: flex; align-items: center; gap: .75rem; margin-bottom: .7rem;
+  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
 }
-.sec-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--sage2); }
+.sec-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1.5px; background: var(--rust); opacity: .5; }
 h2.sh { font-family: 'Marcellus', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--ink); line-height: 1.1; margin-bottom: .9rem; }
 p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 58ch; }
 
@@ -388,8 +388,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <div class="contact-cta">
   <h2>Ready to Volunteer?</h2>
   <p>We'd love to hear from you! Send us an email with your name, which role interests you, and a little about yourself. We'll be in touch with next steps.</p>
-  <a href="mailto:TheMonarchMatriarch@gmail.com?subject=Volunteer Interest – NH Monarch Festival 2026" class="email-link">Send Us an Email</a>
-  <span class="email-address">TheMonarchMatriarch@gmail.com</span>
+  <a href="/cdn-cgi/l/email-protection#c094a8a58dafaea1b2a3a88da1b4b2a9a1b2a3a880a7ada1a9aceea3afadffb3b5a2aaa5a3b4fd96afacb5aeb4a5a5b2e089aeb4a5b2a5b3b4e0224053e08e88e08dafaea1b2a3a8e086a5b3b4a9b6a1ace0f2f0f2f6" class="email-link">Send Us an Email</a>
+  <span class="email-address"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4f0ccc1e9cbcac5d6c7cce9c5d0d6cdc5d6c7cce4c3c9c5cdc88ac7cbc9">[email&#160;protected]</a></span>
 </div>
 
 <!-- FOOTER -->
@@ -440,18 +440,10 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
 hamburger.addEventListener('click', () => { mobileMenu.style.display='flex'; hamburger.classList.add('open'); });
 menuClose.addEventListener('click', () => { mobileMenu.style.display='none'; hamburger.classList.remove('open'); });
-document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.style.display='none'; hamburger.classList.remove('open'); }));
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-</body>
-</html>
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListe
