@@ -205,9 +205,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.vis { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
 
 @media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
@@ -287,23 +285,23 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- WHY VOLUNTEER -->
 <section class="sec" style="background:var(--cream);">
   <div class="inner">
-    <div class="reveal">
+    <div>
       <p class="sec-eyebrow">Why Volunteer</p>
       <h2 class="sh">What's In It for You</h2>
       <p class="sp">Volunteering at the NH Monarch Festival is a rewarding way to give back to your community while spending a beautiful summer day surrounded by nature, monarchs, and like-minded people.</p>
     </div>
     <div class="perks-grid">
-      <div class="perk-card reveal d1">
+      <div class="perk-card ">
         <span class="perk-icon">🦋</span>
         <h3>Connect with Nature</h3>
         <p>Get up close with monarch butterflies, milkweed, and conservation experts. It's a hands-on experience unlike any other.</p>
       </div>
-      <div class="perk-card reveal d2">
+      <div class="perk-card ">
         <span class="perk-icon">🌿</span>
         <h3>Support Your Community</h3>
         <p>Help create a memorable experience for hundreds of families, children, and nature lovers across New Hampshire.</p>
       </div>
-      <div class="perk-card reveal d3">
+      <div class="perk-card ">
         <span class="perk-icon">🌟</span>
         <h3>Make a Difference</h3>
         <p>Every volunteer hour directly supports monarch conservation and helps raise awareness for one of nature's most remarkable migrations.</p>
@@ -317,14 +315,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- VOLUNTEER ROLES -->
 <section class="sec" style="background:var(--parch);">
   <div class="inner">
-    <div class="reveal">
+    <div>
       <p class="sec-eyebrow">Open Positions</p>
       <h2 class="sh">Volunteer Roles</h2>
       <p class="sp">We have a few specific roles available, as well as opportunities for general helpers. All volunteers are asked to be available for the full festival day.</p>
     </div>
     <div class="roles-grid" style="margin-top:3rem;">
 
-      <div class="role-card reveal d1">
+      <div class="role-card ">
         <div class="role-num">01</div>
         <div class="role-body">
           <span class="role-tag">Specific Role</span>
@@ -338,7 +336,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         </div>
       </div>
 
-      <div class="role-card reveal d2">
+      <div class="role-card ">
         <div class="role-num">02</div>
         <div class="role-body">
           <span class="role-tag">Specific Role</span>
@@ -352,7 +350,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         </div>
       </div>
 
-      <div class="role-card reveal d1">
+      <div class="role-card ">
         <div class="role-num">03</div>
         <div class="role-body">
           <span class="role-tag">Specific Role</span>
@@ -366,7 +364,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         </div>
       </div>
 
-      <div class="role-card general reveal d2">
+      <div class="role-card general ">
         <div class="role-num">✦</div>
         <div class="role-body">
           <span class="role-tag general-tag">General Helper</span>
@@ -389,7 +387,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   <h2>Ready to Volunteer?</h2>
   <p>We'd love to hear from you! Send us an email with your name, which role interests you, and a little about yourself. We'll be in touch with next steps.</p>
   <a href="mailto:TheMonarchMatriarch@gmail.com" class="email-link">Send Us an Email</a>
-  <span class="email-address"><a href="mailto:TheMonarchMatriarch@gmail.com">TheMonarchMatriarch@gmail.com</a></span>
+  <span class="email-address">TheMonarchMatriarch@gmail.com</span>
 </div>
 
 <!-- FOOTER -->
@@ -452,12 +450,9 @@ const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
 hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
 menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
-document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.mob-link').forEach(function(a) {
+  a.addEventListener('click', function() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+});
 </script>
 </body>
 </html>

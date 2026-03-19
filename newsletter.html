@@ -224,9 +224,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.vis { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
 
 @media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
@@ -307,23 +305,23 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- WHAT YOU'LL RECEIVE -->
 <section class="sec" style="background:var(--parch);">
   <div class="inner">
-    <div class="reveal">
+    <div>
       <p class="page-eyebrow">What to Expect</p>
       <h2 style="font-family:'Marcellus',serif;font-size:clamp(2.2rem,4vw,3.6rem);color:var(--ink);line-height:1.1;margin-bottom:1rem;">What's in Our Newsletter</h2>
       <p class="sp">We send seasonal updates — no more than a few times a year — so you'll never feel overwhelmed. Just the good stuff.</p>
     </div>
     <div class="perks-grid">
-      <div class="perk-card reveal d1">
+      <div class="perk-card ">
         <span class="perk-icon">🎪</span>
         <h3>Festival Updates</h3>
         <p>Be the first to hear about ticket sales, new activities, vendor announcements, schedule updates, and volunteer opportunities for the annual festival.</p>
       </div>
-      <div class="perk-card reveal d2">
+      <div class="perk-card ">
         <span class="perk-icon">🦋</span>
         <h3>Monarch News</h3>
         <p>Seasonal migration updates, monarch population news, citizen science opportunities, and tips for supporting monarchs right in your own backyard.</p>
       </div>
-      <div class="perk-card reveal d3">
+      <div class="perk-card ">
         <span class="perk-icon">🌱</span>
         <h3>Conservation Tips</h3>
         <p>Practical guides on planting milkweed, creating pollinator habitats, and connecting with local conservation organizations across New Hampshire.</p>
@@ -338,14 +336,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <section class="sec" style="background:var(--parch);">
   <div class="inner">
     <div class="signup-wrap">
-      <div class="reveal">
+      <div>
         <p class="page-eyebrow">Join the List</p>
         <h2 style="font-family:'Marcellus',serif;font-size:clamp(2.2rem,4vw,3.6rem);color:var(--ink);line-height:1.1;margin-bottom:1rem;">Sign Up Today</h2>
         <p class="sp">Enter your email address below to join our newsletter community. You can unsubscribe at any time.</p>
       </div>
 
       <!-- ⚠️ SETUP NOTICE — REMOVE AFTER CONNECTING EMAIL SERVICE -->
-      <div class="setup-notice reveal" style="margin-top:2.5rem;">
+      <div class="setup-notice " style="margin-top:2.5rem;">
         <h3>⚙️ Setup Required: Connect This Form to an Email Service</h3>
         <p>This form is ready to go — you just need to connect it to a newsletter service. Here are your two best free options:</p>
         <ol>
@@ -356,7 +354,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       </div>
       <!-- END SETUP NOTICE -->
 
-      <div class="form-wrap reveal">
+      <div class="form-wrap ">
         <form action="" method="POST" id="newsletterForm">
           <div class="field">
             <label for="email">Email Address <span class="req">*</span></label>
@@ -443,7 +441,7 @@ document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.').forEach(el => obs.observe(el));
 
 // Show success message on submission (works once email service is connected)
 document.getElementById('newsletterForm').addEventListener('submit', function(e) {

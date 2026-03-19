@@ -197,9 +197,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.vis { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
 
 @media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
@@ -279,34 +277,34 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- IMPACT SECTION -->
 <section class="sec" style="background:var(--cream);">
   <div class="inner">
-    <div class="reveal">
+    <div>
       <p class="page-eyebrow">Your Impact</p>
       <h2 class="sh">Where Your Donation Goes</h2>
       <p class="sp">Every contribution goes directly toward making the NH Monarch Festival a meaningful, accessible, and impactful event for our community.</p>
     </div>
     <div class="impact-grid">
-      <div class="impact-card reveal d1">
+      <div class="impact-card ">
         <span class="impact-icon">🎪</span>
         <div class="impact-body">
           <h3>Support Festival Costs</h3>
           <p>Help cover the costs of running the festival — from tents and tables to signage, sound equipment, and event logistics that make the day possible.</p>
         </div>
       </div>
-      <div class="impact-card reveal d2">
+      <div class="impact-card ">
         <span class="impact-icon">🦋</span>
         <div class="impact-body">
           <h3>Fund Monarch Conservation</h3>
           <p>A portion of every donation supports monarch conservation efforts, including habitat restoration, tagging programs, and partnerships with organizations like Monarch Watch.</p>
         </div>
       </div>
-      <div class="impact-card reveal d1">
+      <div class="impact-card ">
         <span class="impact-icon">🎟️</span>
         <div class="impact-body">
           <h3>Keep Admission Affordable</h3>
           <p>Your support helps us keep ticket prices low so that families of all income levels can enjoy the festival and connect with nature together.</p>
         </div>
       </div>
-      <div class="impact-card reveal d2">
+      <div class="impact-card ">
         <span class="impact-icon">🧒</span>
         <div class="impact-body">
           <h3>Sponsor a Kids' Activity</h3>
@@ -322,14 +320,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- DONATE SECTION -->
 <section class="sec" style="background:var(--parch);">
   <div class="inner">
-    <div class="reveal">
+    <div>
       <p class="page-eyebrow">Give Today</p>
       <h2 class="sh">Choose Your Way to Donate</h2>
       <p class="sp">We accept donations via PayPal and Venmo. Every amount is appreciated — no donation is too small!</p>
     </div>
 
     <!-- ⚠️ SETUP NOTICE — REMOVE AFTER ADDING YOUR DETAILS -->
-    <div class="setup-notice reveal" style="margin-top:2.5rem;">
+    <div class="setup-notice " style="margin-top:2.5rem;">
       <h3>⚙️ Setup Required: Add Your PayPal & Venmo Details</h3>
       <ol>
         <li><strong>PayPal:</strong> Log in to your PayPal account at <a href="https://paypal.com" target="_blank">paypal.com</a>. Go to <strong>Tools → PayPal Buttons</strong>, create a Donate button, and copy the link. Replace <code>YOUR_PAYPAL_LINK</code> in the code below with your actual PayPal donate link.</li>
@@ -342,7 +340,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <div class="donate-grid">
 
       <!-- PAYPAL -->
-      <div class="donate-card reveal d1">
+      <div class="donate-card ">
         <span class="donate-card-icon">💳</span>
         <h3>Donate via PayPal</h3>
         <p>Use PayPal to make a secure one-time donation by credit card, debit card, or your PayPal balance. No PayPal account required.</p>
@@ -352,7 +350,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       </div>
 
       <!-- VENMO -->
-      <div class="donate-card reveal d2">
+      <div class="donate-card ">
         <span class="donate-card-icon">📱</span>
         <h3>Donate via Venmo</h3>
         <p>Send your donation directly through Venmo. Search for us by handle or scan the QR code in the app.</p>
@@ -364,7 +362,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
     </div>
 
-    <div class="disclaimer reveal">
+    <div class="disclaimer ">
       <p>⚠️ <strong>Please note:</strong> The NH Monarch Festival is not currently a registered 501(c)(3) nonprofit organization. Donations are not tax-deductible at this time. We are working toward nonprofit status and will update this page when that changes. Thank you for your generosity and support!</p>
     </div>
 
@@ -435,8 +433,7 @@ document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', 
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
 </script>
 </body>
 </html>
