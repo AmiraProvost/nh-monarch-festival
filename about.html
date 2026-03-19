@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About NHMF · NH Monarch Festival 2026</title>
+<title>About NHMF &middot; NH Monarch Festival 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -14,7 +14,6 @@
   --ink:    #2a1e0c;
   --ink2:   #52401c;
   --rust:   #c05010;
-  --rust2:  #e07030;
   --sage:   #3a6030;
   --sage2:  #3a5c30;
   --sage3:  #a8d098;
@@ -38,7 +37,7 @@ body::before {
   opacity: .5;
 }
 
-/* ── FESTIVE BANNER ── */
+/* FESTIVE BANNER */
 .festival-banner {
   background: linear-gradient(90deg, var(--sage) 0%, var(--mint) 25%, var(--yg) 50%, var(--peach) 75%, var(--rust) 100%);
   padding: .5rem 0; text-align: center; overflow: hidden; position: relative;
@@ -47,21 +46,16 @@ body::before {
   display: inline-flex; gap: 3rem; align-items: center;
   animation: bannerScroll 20s linear infinite; white-space: nowrap;
 }
-.festival-banner span {
-  font-family: 'Marcellus', serif; font-size: .78rem; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--ink); opacity: .85;
-}
+.festival-banner span { font-family: 'Marcellus', serif; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); opacity: .85; }
 .festival-banner .dot { font-size: .5rem; opacity: .5; }
 @keyframes bannerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: sticky; top: 0; z-index: 300;
-  background: var(--parch);
-  border-bottom: 1px solid var(--parch3);
+  background: var(--parch); border-bottom: 1px solid var(--parch3);
   display: flex; align-items: center; justify-content: space-between;
-  padding: .65rem 3rem;
-  box-shadow: 0 1px 16px rgba(42,30,12,.08);
+  padding: .65rem 3rem; box-shadow: 0 1px 16px rgba(42,30,12,.08);
 }
 .nav-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
 .nav-logo { height: 42px; width: 42px; border-radius: 50%; box-shadow: 0 2px 8px rgba(42,30,12,.18); }
@@ -70,48 +64,24 @@ nav {
 .nav-links a { font-size: .66rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
 .nav-links a:hover { color: var(--sage); }
 .nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
-.nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
-
-/* Dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: .3rem; }
-.nav-dropdown > a::after { content: '▾'; font-size: .6rem; opacity: .5; }
-.dropdown-menu {
-  display: none; position: absolute; top: calc(100% + .6rem); left: 50%; transform: translateX(-50%);
-  background: var(--parch); border: 1px solid var(--parch3); min-width: 180px;
-  box-shadow: 0 8px 24px rgba(42,30,12,.12); z-index: 400; padding: .4rem 0;
-}
-.nav-dropdown:hover .dropdown-menu { display: block; }
-.dropdown-menu a { display: block; padding: .5rem 1.2rem; font-size: .63rem; letter-spacing: .12em; color: var(--ink2); text-transform: uppercase; white-space: nowrap; }
-.dropdown-menu a:hover { background: var(--parch2); color: var(--sage); }
-
-/* Hamburger */
-.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: .4rem; z-index: 301; }
-.hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); transition: all .3s; border-radius: 2px; }
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-cta:hover { background: var(--orange) !important; }
+.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; cursor: pointer; z-index: 400; background: none; border: none; }
+.hamburger span { display: block; height: 2.5px; width: 100%; background: var(--sage); border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.hamburger.open span:nth-child(3) { transform: translateY(-8.75px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--parch); z-index: 350; padding: 5rem 2rem 2rem; flex-direction: column; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.mobile-menu li { border-bottom: 1px dotted var(--parch3); }
+.mobile-menu a { display: block; padding: 1.1rem .5rem; font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+.mobile-menu a:hover { color: var(--rust); }
+.mobile-menu .m-cta { margin-top: 1.5rem; display: block; background: var(--rust); color: white !important; text-align: center; padding: 1rem; font-weight: 700; }
+.mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; line-height: 1; }
 
-/* Mobile menu */
-.mobile-menu {
-  display: none; position: fixed; inset: 0; z-index: 299;
-  background: var(--parch); flex-direction: column; padding: 5rem 3rem 3rem;
-  gap: 0; overflow-y: auto;
-}
-.mobile-menu.open { display: flex; }
-.menu-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--ink2); }
-.mob-link { font-family: 'Marcellus', serif; font-size: 1.4rem; color: var(--ink); text-decoration: none; padding: .8rem 0; border-bottom: 1px solid var(--parch3); }
-.mob-link:hover { color: var(--sage); }
-.mob-sub { font-size: .72rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink2); text-decoration: none; padding: .5rem 0 .5rem 1rem; display: block; }
-.mob-sub:hover { color: var(--rust); }
-.mob-cta { margin-top: 1.5rem; background: var(--rust); color: white; text-align: center; padding: .9rem; font-family: 'Jost', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; }
-
-/* ── PAGE HEADER ── */
+/* PAGE HEADER */
 .page-header {
-  background: var(--parch);
-  padding: 5rem 5rem 4rem;
-  position: relative; overflow: hidden;
-  border-bottom: 1px solid var(--parch3);
+  background: var(--parch); padding: 5rem 5rem 4rem;
+  position: relative; overflow: hidden; border-bottom: 1px solid var(--parch3);
 }
 .page-header::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -120,7 +90,7 @@ nav {
 }
 .page-header-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .page-eyebrow {
-  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-family: 'Jost', sans-serif; font-weight: 500;
   font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
   display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
 }
@@ -128,18 +98,15 @@ nav {
 .page-header h1 { font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
 .page-header p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 60ch; }
 
-/* ── COLOR BAND ── */
-.color-band {
-  height: 6px;
-  background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%);
-}
+/* COLOR BAND */
+.color-band { height: 6px; background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%); }
 
-/* ── SECTIONS ── */
+/* SECTIONS */
 .sec { padding: 5rem 5rem; position: relative; }
-.inner { max-width: 1100px; margin: 0 auto; }
 .sec-alt { background: var(--parch); }
+.inner { max-width: 1100px; margin: 0 auto; }
 .sec-eyebrow {
-  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
+  font-family: 'Jost', sans-serif; font-weight: 500;
   font-size: .88rem; color: var(--rust); letter-spacing: .12em; text-transform: uppercase;
   display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
 }
@@ -147,149 +114,70 @@ nav {
 h2.sh { font-family: 'Marcellus', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--ink); line-height: 1.1; margin-bottom: .9rem; }
 p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 58ch; }
 
-/* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.vis { opacity: 1; transform: none; }
-.d1 { transition-delay: .08s; }
-.d2 { transition-delay: .18s; }
-.d3 { transition-delay: .28s; }
-.d4 { transition-delay: .38s; }
-
-/* ── ORIGIN STORY ── */
-.origin-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 2rem;
-}
-.origin-text p {
-  font-family: 'Sorts Mill Goudy', serif; font-size: 1.05rem; line-height: 1.85; color: var(--ink2);
-  margin-bottom: 1.2rem;
-}
+/* ORIGIN STORY */
+.origin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 2rem; }
+.origin-text p { font-family: 'Sorts Mill Goudy', serif; font-size: 1.05rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1.2rem; }
 .origin-text p:last-child { margin-bottom: 0; }
-.origin-callout {
-  background: var(--sage); color: white; padding: 2.5rem 2.5rem;
-  position: relative;
-}
+.origin-callout { background: var(--sage); color: white; padding: 2.5rem; position: relative; }
 .origin-callout::before {
   content: '\201C'; font-family: 'IM Fell English', serif; font-size: 6rem; line-height: 0;
   position: absolute; top: 2.5rem; left: 1.8rem; color: rgba(255,255,255,.18);
 }
-.origin-callout blockquote {
-  font-family: 'IM Fell English', serif; font-style: italic;
-  font-size: 1.22rem; line-height: 1.7; color: rgba(255,255,255,.92);
-  margin-bottom: 1rem; position: relative; z-index: 1;
-}
-.origin-callout cite {
-  font-family: 'Jost', sans-serif; font-style: normal; font-size: .7rem;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--mint2);
-}
-.origin-stat-row {
-  display: flex; gap: 1.5rem; margin-top: 3rem;
-}
-.origin-stat {
-  background: var(--cream); border: 1.5px solid var(--parch3);
-  border-top: 4px solid var(--peach); padding: 1.4rem 1.6rem; flex: 1; text-align: center;
-}
-.origin-stat .num {
-  font-family: 'Marcellus', serif; font-size: 2.2rem; color: var(--rust);
-  display: block; line-height: 1; margin-bottom: .3rem;
-}
-.origin-stat .label {
-  font-size: .67rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); opacity: .7;
-}
+.origin-callout blockquote { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.22rem; line-height: 1.7; color: rgba(255,255,255,.92); margin-bottom: 1rem; position: relative; z-index: 1; }
+.origin-callout cite { font-family: 'Jost', sans-serif; font-style: normal; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mint2); }
+.origin-stat-row { display: flex; gap: 1.5rem; margin-top: 3rem; }
+.origin-stat { background: var(--cream); border: 1.5px solid var(--parch3); border-top: 4px solid var(--peach); padding: 1.4rem 1.6rem; flex: 1; text-align: center; }
+.origin-stat .num { font-family: 'Marcellus', serif; font-size: 2.2rem; color: var(--rust); display: block; line-height: 1; margin-bottom: .3rem; }
+.origin-stat .label { font-size: .67rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); opacity: .7; }
 
-/* ── MISSION ── */
-.mission-wrap {
-  background: linear-gradient(135deg, var(--sage) 0%, #2a5028 100%);
-  padding: 5rem; position: relative; overflow: hidden;
-}
-.mission-wrap::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(192,216,48,.12) 0%, transparent 70%);
-  pointer-events: none;
-}
+/* MISSION */
+.mission-wrap { background: linear-gradient(135deg, var(--sage) 0%, #2a5028 100%); padding: 5rem; position: relative; overflow: hidden; }
+.mission-wrap::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(192,216,48,.12) 0%, transparent 70%); pointer-events: none; }
 .mission-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-.mission-eyebrow {
-  font-family: 'Jost', sans-serif; font-weight: 500; font-size: .88rem;
-  color: var(--mint2); letter-spacing: .14em; text-transform: uppercase;
-  display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem;
-}
+.mission-eyebrow { font-family: 'Jost', sans-serif; font-weight: 500; font-size: .88rem; color: var(--mint2); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem; }
 .mission-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1.5px; background: var(--mint); opacity: .5; }
 .mission-wrap h2 { font-family: 'Marcellus', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: white; margin-bottom: 1.5rem; line-height: 1.1; }
 .mission-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-.mission-columns p {
-  font-family: 'Sorts Mill Goudy', serif; font-style: italic;
-  font-size: 1.08rem; line-height: 1.8; color: rgba(255,255,255,.8);
-}
+.mission-columns p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: rgba(255,255,255,.8); }
 .mission-pillars { margin-top: 3rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-.pillar {
-  border: 1px solid rgba(255,255,255,.15); padding: 1.8rem 1.6rem; position: relative;
-}
+.pillar { border: 1px solid rgba(255,255,255,.15); padding: 1.8rem 1.6rem; }
 .pillar-icon { font-size: 1.6rem; margin-bottom: .9rem; display: block; }
 .pillar h4 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--yg2); margin-bottom: .5rem; }
 .pillar p { font-family: 'Jost', sans-serif; font-size: .85rem; line-height: 1.6; color: rgba(255,255,255,.65); }
 
-/* ── HISTORY TIMELINE ── */
+/* TIMELINE */
 .timeline { margin-top: 3.5rem; position: relative; padding-left: 2.5rem; }
-.timeline::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
-  background: linear-gradient(to bottom, var(--mint), var(--peach), var(--rust));
-}
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--mint), var(--peach), var(--rust)); }
 .titem { position: relative; margin-bottom: 2.8rem; }
 .titem:last-child { margin-bottom: 0; }
-.titem::before {
-  content: ''; position: absolute; left: -2.5rem; top: .35rem;
-  width: 12px; height: 12px; border-radius: 50%;
-  background: var(--peach); border: 2px solid var(--rust);
-}
-.tyear {
-  font-family: 'Jost', sans-serif; font-weight: 600; font-size: .7rem;
-  letter-spacing: .16em; text-transform: uppercase; color: var(--rust);
-  margin-bottom: .3rem;
-}
+.titem::before { content: ''; position: absolute; left: -2.5rem; top: .35rem; width: 12px; height: 12px; border-radius: 50%; background: var(--peach); border: 2px solid var(--rust); }
+.tyear { font-family: 'Jost', sans-serif; font-weight: 600; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--rust); margin-bottom: .3rem; }
 .titem h4 { font-family: 'Marcellus', serif; font-size: 1.12rem; color: var(--ink); margin-bottom: .35rem; }
 .titem p { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; line-height: 1.7; color: var(--ink2); max-width: 58ch; }
 
-/* ── PEOPLE / TEAM ── */
+/* TEAM */
 .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; margin-top: 3rem; }
-.team-card {
-  background: var(--cream); border: 1.5px solid var(--parch3);
-  padding: 2rem 1.8rem; position: relative;
-}
-.team-card::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--mint), var(--yg));
-}
-.team-role {
-  font-size: .65rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--rust); margin-bottom: .5rem;
-}
+.team-card { background: var(--cream); border: 1.5px solid var(--parch3); padding: 2rem 1.8rem; position: relative; }
+.team-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--mint), var(--yg)); }
+.team-role { font-size: .65rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; display: block; }
 .team-card h4 { font-family: 'Marcellus', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: .7rem; }
 .team-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .96rem; line-height: 1.65; color: var(--ink2); }
+.team-card a { color: var(--sage); text-decoration: none; }
+.team-card a:hover { text-decoration: underline; }
 
-/* ── VALUES ── */
+/* VALUES */
 .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3rem; }
-.value-card {
-  display: flex; gap: 1.2rem; align-items: flex-start;
-  background: var(--parch); border: 1px solid var(--parch3); padding: 1.8rem;
-}
+.value-card { display: flex; gap: 1.2rem; align-items: flex-start; background: var(--parch); border: 1px solid var(--parch3); padding: 1.8rem; }
 .value-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; }
 .value-card h4 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .4rem; }
 .value-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .96rem; line-height: 1.65; color: var(--ink2); }
 
-/* ── CTA BAND ── */
-.cta-band {
-  background: var(--parch2); border-top: 1px solid var(--parch3); border-bottom: 1px solid var(--parch3);
-  padding: 4.5rem 5rem; text-align: center;
-}
+/* CTA BAND */
+.cta-band { background: var(--parch2); border-top: 1px solid var(--parch3); border-bottom: 1px solid var(--parch3); padding: 4.5rem 5rem; text-align: center; }
 .cta-band h2 { font-family: 'Marcellus', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--ink); margin-bottom: .8rem; }
 .cta-band p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: var(--ink2); max-width: 52ch; margin: 0 auto 2.2rem; }
 .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-.btn {
-  display: inline-block; text-decoration: none;
-  font-family: 'Jost', sans-serif;
-  font-size: .68rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase;
-  padding: .82rem 2rem; transition: all .25s; cursor: pointer; border: none;
-}
+.btn { display: inline-block; text-decoration: none; font-family: 'Jost', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; padding: .82rem 2rem; transition: all .25s; border: none; cursor: pointer; }
 .btn-rust { background: var(--rust); color: var(--cream); }
 .btn-rust:hover { background: var(--ink); }
 .btn-sage { background: transparent; border: 1.5px solid var(--sage); color: var(--sage); }
@@ -297,47 +185,38 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .btn-parch { background: var(--parch2); color: var(--ink); border: 1px solid var(--parch3); }
 .btn-parch:hover { background: var(--parch3); }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--ink); color: rgba(255,255,255,.55);
-  padding: 4rem 5rem 2rem; position: relative;
-}
-footer .inner { max-width: 1100px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-brand-row { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
-.flogo { height: 44px; width: 44px; border-radius: 50%; }
-.fbrand-name { font-family: 'Marcellus', serif; font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.3; }
-.ftagline { font-size: .82rem; line-height: 1.7; margin-bottom: 1rem; max-width: 28ch; }
-.footer-col h5 {
-  font-family: 'Jost', sans-serif; font-weight: 600; font-size: .65rem;
-  letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35);
-  margin-bottom: 1rem;
-}
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
-.footer-col a { font-size: .78rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
-.footer-col a:hover { color: var(--mint2); }
-.fbottom {
-  border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.5rem;
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
-  font-size: .72rem; opacity: .35; letter-spacing: .04em;
-}
+/* FOOTER */
+footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2), var(--peach), var(--mint)); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(242,232,208,.1); }
+.footer-brand-row { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.2rem; }
+.flogo { height: 46px; width: 46px; border-radius: 50%; }
+.fbrand-name { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--parch); line-height: 1.3; }
+.ftagline { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; opacity: .65; line-height: 1.7; margin-bottom: 1.2rem; }
+.footer-col h5 { font-family: 'Marcellus', serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--peach); opacity: .8; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .5rem; }
+.footer-col a { color: rgba(242,232,208,.55); text-decoration: none; font-size: .86rem; transition: color .2s; }
+.footer-col a:hover { color: rgba(242,232,208,.95); }
+.fbottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.fbottom p { font-size: .72rem; opacity: .38; letter-spacing: .05em; }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
+@media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .sec { padding: 3.5rem 1.8rem; }
-  .page-header { padding: 3.5rem 1.8rem 2.5rem; }
+  .hamburger { display: flex !important; }
+  .mobile-menu.open { display: flex; }
+  .sec { padding: 3.5rem 1.5rem; }
+  .page-header { padding: 3.5rem 1.5rem 2.5rem; }
   .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .mission-wrap { padding: 3.5rem 1.8rem; }
+  .mission-wrap { padding: 3.5rem 1.5rem; }
   .mission-columns { grid-template-columns: 1fr; gap: 1.5rem; }
   .mission-pillars { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .cta-band { padding: 3.5rem 1.8rem; }
-  footer { padding: 3rem 1.8rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .cta-band { padding: 3.5rem 1.5rem; }
+  footer { padding: 4rem 1.5rem 2rem; }
   .origin-stat-row { flex-direction: column; }
 }
 </style>
@@ -347,96 +226,76 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 <!-- FESTIVE BANNER -->
 <div class="festival-banner">
   <div class="festival-banner-inner">
-    <span>14th Annual</span><span class="dot">◆</span>
-    <span>August 22, 2026</span><span class="dot">◆</span>
-    <span>Belmont, NH</span><span class="dot">◆</span>
-    <span>NH Monarch Festival</span><span class="dot">◆</span>
-    <span>Conservation · Education · Community</span><span class="dot">◆</span>
-    <span>14th Annual</span><span class="dot">◆</span>
-    <span>August 22, 2026</span><span class="dot">◆</span>
-    <span>Belmont, NH</span><span class="dot">◆</span>
-    <span>NH Monarch Festival</span><span class="dot">◆</span>
-    <span>Conservation · Education · Community</span><span class="dot">◆</span>
+    <span>14th Annual</span><span class="dot">&#9670;</span>
+    <span>August 22, 2026</span><span class="dot">&#9670;</span>
+    <span>Belmont, NH</span><span class="dot">&#9670;</span>
+    <span>NH Monarch Festival</span><span class="dot">&#9670;</span>
+    <span>Conservation &middot; Education &middot; Community</span><span class="dot">&#9670;</span>
+    <span>14th Annual</span><span class="dot">&#9670;</span>
+    <span>August 22, 2026</span><span class="dot">&#9670;</span>
+    <span>Belmont, NH</span><span class="dot">&#9670;</span>
+    <span>NH Monarch Festival</span><span class="dot">&#9670;</span>
+    <span>Conservation &middot; Education &middot; Community</span><span class="dot">&#9670;</span>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">
-    <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="nav-logo">
-    <span class="nav-name">NH Monarch<br>Festival</span>
+  <a class="nav-brand" href="index.html">
+    <img src="images/NHMF-LOGO13.png" alt="NHMF" class="nav-logo">
+    <div class="nav-name">NH Monarch<br>Festival</div>
   </a>
-  <ul class="nav-links">
-    <li><a href="index.html#tickets">Tickets</a></li>
-    <li><a href="index.html#schedule">Schedule</a></li>
-    <li><a href="index.html#activities">Activities</a></li>
-    <li class="nav-dropdown">
-      <a href="#">Participate</a>
-      <div class="dropdown-menu">
-        <a href="vendors.html">Become a Vendor</a>
-        <a href="volunteer.html">Volunteer</a>
-        <a href="donate.html">Donate</a>
-      </div>
-    </li>
-    <li class="nav-dropdown">
-      <a href="#">Learn</a>
-      <div class="dropdown-menu">
-        <a href="about.html">About NHMF</a>
-        <a href="index.html#monarch">About Monarchs</a>
-        <a href="index.html#resources">Resources</a>
-        <a href="press.html">Press &amp; Media</a>
-      </div>
-    </li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="index.html#tickets" class="nav-cta">Get Tickets</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
+  <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose">&#x2715;</button>
+    <ul>
+      <li><a href="index.html#schedule" class="mob-link">Schedule</a></li>
+      <li><a href="index.html#activities" class="mob-link">Activities</a></li>
+      <li><a href="vendors.html" class="mob-link">Vendors</a></li>
+      <li><a href="index.html#resources" class="mob-link">Resources</a></li>
+      <li><a href="volunteer.html" class="mob-link">Volunteer</a></li>
+      <li><a href="index.html#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="contact.html" class="mob-link m-cta">Contact Us</a></li>
+    </ul>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#schedule">Schedule</a></li>
+    <li><a href="index.html#activities">Activities</a></li>
+    <li><a href="vendors.html">Vendors</a></li>
+    <li><a href="index.html#resources">Resources</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#tickets" class="nav-cta">Buy Tickets</a></li>
+  </ul>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="menu-close" id="menuClose">✕</button>
-  <a href="index.html#tickets" class="mob-link">Tickets</a>
-  <a href="index.html#schedule" class="mob-link">Schedule</a>
-  <a href="index.html#activities" class="mob-link">Activities</a>
-  <a href="vendors.html" class="mob-link">Become a Vendor</a>
-  <a href="volunteer.html" class="mob-link">Volunteer</a>
-  <a href="about.html" class="mob-link">About NHMF</a>
-  <a href="index.html#monarch" class="mob-sub">About Monarchs</a>
-  <a href="index.html#resources" class="mob-sub">Resources</a>
-  <a href="contact.html" class="mob-link">Contact</a>
-  <a href="index.html#tickets" class="mob-cta">Get Tickets</a>
-</div>
-
 <!-- PAGE HEADER -->
-<header class="page-header">
+<div class="page-header">
   <div class="page-header-inner">
     <p class="page-eyebrow">Our Story</p>
     <h1>About the NH Monarch Festival</h1>
-    <p>Fourteen years of celebrating the monarch butterfly — and the people, plants, and places that make their survival possible. Here's the story behind our favorite day of the year.</p>
+    <p>Fourteen years of celebrating the monarch butterfly &#8212; and the people, plants, and places that make their survival possible. Here&#8217;s the story behind our favorite day of the year.</p>
   </div>
-</header>
+</div>
 <div class="color-band"></div>
 
 <!-- ORIGIN STORY -->
 <section class="sec">
   <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">How It All Started</p>
-      <h2 class="sh">From a Love of Monarchs<br>to a Community Tradition</h2>
-    </div>
+    <p class="sec-eyebrow">How It All Started</p>
+    <h2 class="sh">From a Love of Monarchs<br>to a Community Tradition</h2>
     <div class="origin-grid">
-      <div class="origin-text reveal d1">
-        <p>The NH Monarch Festival was born from one simple belief: that people fall in love with what they understand. When we learn about the monarch butterfly — its 3,000-mile migration, its impossible biology, its dependence on a single plant — something shifts. We want to protect what we love.</p>
-        <p>What began as a small gathering of butterfly enthusiasts in Belmont, New Hampshire, has grown into one of the region's most beloved annual conservation celebrations. Each year, families, educators, artists, naturalists, and neighbors come together to learn, connect, and recommit to the monarchs' survival.</p>
+      <div class="origin-text">
+        <p>The NH Monarch Festival was born from one simple belief: that people fall in love with what they understand. When we learn about the monarch butterfly &#8212; its 3,000-mile migration, its impossible biology, its dependence on a single plant &#8212; something shifts. We want to protect what we love.</p>
+        <p>What began as a small gathering of butterfly enthusiasts in Belmont, New Hampshire, has grown into one of the region&#8217;s most beloved annual conservation celebrations. Each year, families, educators, artists, naturalists, and neighbors come together to learn, connect, and recommit to the monarchs&#8217; survival.</p>
         <p>Now in its 14th year, the festival draws hundreds of attendees from across New Hampshire and beyond. Every activity, every vendor, every conversation is rooted in the same original purpose: to inspire a community of monarch advocates who carry that love home with them.</p>
       </div>
-      <div class="reveal d2">
+      <div>
         <div class="origin-callout">
-          <blockquote>"When people see a monarch up close — when they really see it — they never look at a milkweed the same way again."</blockquote>
-          <cite>— NH Monarch Festival Founder</cite>
+          <blockquote>&#8220;When people see a monarch up close &#8212; when they really see it &#8212; they never look at a milkweed the same way again.&#8221;</blockquote>
+          <cite>&#8212; NH Monarch Festival Founder</cite>
         </div>
         <div class="origin-stat-row">
           <div class="origin-stat">
@@ -460,27 +319,27 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 <!-- MISSION -->
 <div class="mission-wrap">
   <div class="mission-inner">
-    <p class="mission-eyebrow reveal">Our Mission</p>
-    <h2 class="reveal d1">Conservation Through Connection</h2>
+    <p class="mission-eyebrow">Our Mission</p>
+    <h2>Conservation Through Connection</h2>
     <div class="mission-columns">
-      <p class="reveal d2">The NH Monarch Festival exists to educate, inspire, and mobilize our community around monarch butterfly conservation. We believe that hands-on learning, joyful celebration, and local connection are among the most powerful conservation tools we have.</p>
-      <p class="reveal d3">Every festival activity — from tagging demonstrations to milkweed planting to kids' crafts — is designed to create a lasting relationship between our community and the natural world. We want every person who visits to leave with knowledge, inspiration, and a concrete next step they can take at home.</p>
+      <p>The NH Monarch Festival exists to educate, inspire, and mobilize our community around monarch butterfly conservation. We believe that hands-on learning, joyful celebration, and local connection are among the most powerful conservation tools we have.</p>
+      <p>Every festival activity &#8212; from tagging demonstrations to milkweed planting to kids&#8217; crafts &#8212; is designed to create a lasting relationship between our community and the natural world. We want every person who visits to leave with knowledge, inspiration, and a concrete next step they can take at home.</p>
     </div>
     <div class="mission-pillars">
-      <div class="pillar reveal d1">
-        <span class="pillar-icon">🦋</span>
+      <div class="pillar">
+        <span class="pillar-icon">&#127995;</span>
         <h4>Education</h4>
         <p>Sharing the science of monarch migration, biology, and conservation with visitors of all ages through interactive demonstrations and expert-led presentations.</p>
       </div>
-      <div class="pillar reveal d2">
-        <span class="pillar-icon">🌱</span>
+      <div class="pillar">
+        <span class="pillar-icon">&#127807;</span>
         <h4>Habitat</h4>
         <p>Encouraging the planting of native milkweed and nectar plants, and supporting efforts to restore monarch habitat across New Hampshire and beyond.</p>
       </div>
-      <div class="pillar reveal d3">
-        <span class="pillar-icon">🤝</span>
+      <div class="pillar">
+        <span class="pillar-icon">&#129309;</span>
         <h4>Community</h4>
-        <p>Building a network of monarch advocates — backyard gardeners, teachers, students, artists, and neighbors — united by a shared love of the natural world.</p>
+        <p>Building a network of monarch advocates &#8212; backyard gardeners, teachers, students, artists, and neighbors &#8212; united by a shared love of the natural world.</p>
       </div>
     </div>
   </div>
@@ -489,39 +348,37 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 <!-- HISTORY TIMELINE -->
 <section class="sec sec-alt">
   <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">A Fourteen-Year Journey</p>
-      <h2 class="sh">Festival Milestones</h2>
-      <p class="sp">From its humble beginnings to a beloved regional tradition, every year has brought new growth — in attendance, programming, and community impact.</p>
-    </div>
+    <p class="sec-eyebrow">A Fourteen-Year Journey</p>
+    <h2 class="sh">Festival Milestones</h2>
+    <p class="sp">From its humble beginnings to a beloved regional tradition, every year has brought new growth &#8212; in attendance, programming, and community impact.</p>
     <div class="timeline">
-      <div class="titem reveal d1">
-        <p class="tyear">2013 — Year One</p>
+      <div class="titem">
+        <p class="tyear">2013 &#8212; Year One</p>
         <h4>The First Festival</h4>
         <p>A small gathering of monarch enthusiasts in Belmont plants the seeds of what would become an annual tradition. The first festival featured a butterfly release, a handful of local vendors, and more passion than polish.</p>
       </div>
-      <div class="titem reveal d2">
-        <p class="tyear">2015 — Year Three</p>
+      <div class="titem">
+        <p class="tyear">2015 &#8212; Year Three</p>
         <h4>Monarch Tagging Begins</h4>
-        <p>The festival partners with Monarch Watch to introduce live monarch tagging demonstrations — one of the first public tagging events in New Hampshire. Attendance doubles from year one.</p>
+        <p>The festival partners with Monarch Watch to introduce live monarch tagging demonstrations &#8212; one of the first public tagging events in New Hampshire. Attendance doubles from year one.</p>
       </div>
-      <div class="titem reveal d1">
-        <p class="tyear">2018 — Year Six</p>
-        <h4>Kids' Programming Expands</h4>
-        <p>A dedicated children's activity area is introduced, featuring crafts, games, and guided nature walks. The festival begins drawing families from across Belknap County.</p>
+      <div class="titem">
+        <p class="tyear">2018 &#8212; Year Six</p>
+        <h4>Kids&#8217; Programming Expands</h4>
+        <p>A dedicated children&#8217;s activity area is introduced, featuring crafts, games, and guided nature walks. The festival begins drawing families from across Belknap County.</p>
       </div>
-      <div class="titem reveal d2">
-        <p class="tyear">2021 — Year Nine</p>
+      <div class="titem">
+        <p class="tyear">2021 &#8212; Year Nine</p>
         <h4>Conservation Partnerships Grow</h4>
-        <p>The festival deepens its ties with regional conservation organizations, featuring educational booths from NH Audubon, the NH Division of Forests & Lands, and native plant nurseries.</p>
+        <p>The festival deepens its ties with regional conservation organizations, featuring educational booths from NH Audubon, the NH Division of Forests &amp; Lands, and native plant nurseries.</p>
       </div>
-      <div class="titem reveal d1">
-        <p class="tyear">2024 — Year Thirteen</p>
+      <div class="titem">
+        <p class="tyear">2024 &#8212; Year Thirteen</p>
         <h4>Best-Attended Festival Yet</h4>
         <p>The 13th Annual NH Monarch Festival draws its largest crowd ever, with expanded vendor programming, live music, and a monarch waystation dedication ceremony.</p>
       </div>
-      <div class="titem reveal d2">
-        <p class="tyear">2026 — Year Fourteen</p>
+      <div class="titem">
+        <p class="tyear">2026 &#8212; Year Fourteen</p>
         <h4>Here We Come</h4>
         <p>The 14th Annual NH Monarch Festival returns on August 22nd. New activities, beloved traditions, and the same heart at the center: bringing people and monarchs together.</p>
       </div>
@@ -532,49 +389,47 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 <!-- VALUES -->
 <section class="sec">
   <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">What We Believe</p>
-      <h2 class="sh">Our Values</h2>
-      <p class="sp">The NH Monarch Festival is guided by a set of values that show up in everything we do — from the vendors we welcome to the activities we create.</p>
-    </div>
+    <p class="sec-eyebrow">What We Believe</p>
+    <h2 class="sh">Our Values</h2>
+    <p class="sp">The NH Monarch Festival is guided by a set of values that show up in everything we do &#8212; from the vendors we welcome to the activities we create.</p>
     <div class="values-grid">
-      <div class="value-card reveal d1">
-        <span class="value-icon">🌿</span>
+      <div class="value-card">
+        <span class="value-icon">&#127807;</span>
         <div>
           <h4>Rooted in Conservation</h4>
-          <p>Everything we do is in service of monarch butterfly survival. Conservation isn't a backdrop — it's the whole point.</p>
+          <p>Everything we do is in service of monarch butterfly survival. Conservation isn&#8217;t a backdrop &#8212; it&#8217;s the whole point.</p>
         </div>
       </div>
-      <div class="value-card reveal d2">
-        <span class="value-icon">👐</span>
+      <div class="value-card">
+        <span class="value-icon">&#128080;</span>
         <div>
           <h4>Open to Everyone</h4>
           <p>The festival is designed to be joyful, accessible, and welcoming to all ages, backgrounds, and levels of nature knowledge.</p>
         </div>
       </div>
-      <div class="value-card reveal d1">
-        <span class="value-icon">🏡</span>
+      <div class="value-card">
+        <span class="value-icon">&#127969;</span>
         <div>
           <h4>Proudly Local</h4>
-          <p>We celebrate New Hampshire's natural heritage, feature local vendors and makers, and strengthen the bonds of our own community.</p>
+          <p>We celebrate New Hampshire&#8217;s natural heritage, feature local vendors and makers, and strengthen the bonds of our own community.</p>
         </div>
       </div>
-      <div class="value-card reveal d2">
-        <span class="value-icon">✨</span>
+      <div class="value-card">
+        <span class="value-icon">&#10024;</span>
         <div>
-          <h4>Joyful & Celebratory</h4>
-          <p>We believe that joy is one of the most powerful forces for change. We celebrate the monarch — and celebrate each other — with genuine delight.</p>
+          <h4>Joyful &amp; Celebratory</h4>
+          <p>We believe that joy is one of the most powerful forces for change. We celebrate the monarch &#8212; and celebrate each other &#8212; with genuine delight.</p>
         </div>
       </div>
-      <div class="value-card reveal d1">
-        <span class="value-icon">📚</span>
+      <div class="value-card">
+        <span class="value-icon">&#128218;</span>
         <div>
           <h4>Learning at Every Age</h4>
-          <p>From toddlers to grandparents, every visitor should leave knowing something they didn't know before — and feeling the better for it.</p>
+          <p>From toddlers to grandparents, every visitor should leave knowing something they didn&#8217;t know before &#8212; and feeling the better for it.</p>
         </div>
       </div>
-      <div class="value-card reveal d2">
-        <span class="value-icon">🌎</span>
+      <div class="value-card">
+        <span class="value-icon">&#127758;</span>
         <div>
           <h4>Think Local, Act Global</h4>
           <p>Monarchs migrate across a continent. Every milkweed plant, every waystation, every child who learns to love them matters on a global scale.</p>
@@ -587,26 +442,24 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 <!-- TEAM -->
 <section class="sec sec-alt">
   <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">Behind the Festival</p>
-      <h2 class="sh">The People Who Make It Happen</h2>
-      <p class="sp">The NH Monarch Festival is organized by a small, dedicated team of volunteers who give their time, creativity, and love of nature every year.</p>
-    </div>
+    <p class="sec-eyebrow">Behind the Festival</p>
+    <h2 class="sh">The People Who Make It Happen</h2>
+    <p class="sp">The NH Monarch Festival is organized by a small, dedicated team of volunteers who give their time, creativity, and love of nature every year.</p>
     <div class="team-grid">
-      <div class="team-card reveal d1">
-        <p class="team-role">Festival Organizer</p>
+      <div class="team-card">
+        <span class="team-role">Festival Organizer</span>
         <h4>The Monarch Matriarch</h4>
-        <p>The driving force behind the NH Monarch Festival — founder, organizer, and year-round monarch advocate. Reach her at <a href="mailto:TheMonarchMatriarch@gmail.com" style="color:var(--sage);">TheMonarchMatriarch@gmail.com</a> or 603.326.6408.</p>
+        <p>The driving force behind the NH Monarch Festival &#8212; founder, organizer, and year-round monarch advocate. Reach her at <a href="mailto:TheMonarchMatriarch@gmail.com">TheMonarchMatriarch@gmail.com</a> or 603.326.6408.</p>
       </div>
-      <div class="team-card reveal d2">
-        <p class="team-role">Volunteers</p>
+      <div class="team-card">
+        <span class="team-role">Volunteers</span>
         <h4>Our Incredible Team</h4>
-        <p>Every year, a dedicated group of volunteers shows up before sunrise and stays until the last butterfly is tagged. The festival wouldn't exist without them.</p>
+        <p>Every year, a dedicated group of volunteers shows up before sunrise and stays until the last butterfly is tagged. The festival wouldn&#8217;t exist without them.</p>
       </div>
-      <div class="team-card reveal d3">
-        <p class="team-role">Community Partners</p>
+      <div class="team-card">
+        <span class="team-role">Community Partners</span>
         <h4>Local Organizations</h4>
-        <p>We're grateful for the support of conservation organizations, native plant nurseries, educators, and local businesses who share our mission and show up every year.</p>
+        <p>We&#8217;re grateful for the support of conservation organizations, native plant nurseries, educators, and local businesses who share our mission and show up every year.</p>
       </div>
     </div>
   </div>
@@ -615,7 +468,7 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 <!-- CTA BAND -->
 <div class="cta-band">
   <h2>Join Us This August</h2>
-  <p>Whether you're attending for the first time or the fourteenth, we'd love to see you at the festival — and maybe even on our volunteer team.</p>
+  <p>Whether you&#8217;re attending for the first time or the fourteenth, we&#8217;d love to see you at the festival &#8212; and maybe even on our volunteer team.</p>
   <div class="cta-buttons">
     <a href="index.html#tickets" class="btn btn-rust">Get Tickets</a>
     <a href="volunteer.html" class="btn btn-sage">Volunteer With Us</a>
@@ -625,15 +478,15 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 
 <!-- FOOTER -->
 <footer>
-  <div class="inner">
+  <div class="inner" style="max-width:1100px;margin:0 auto;">
     <div class="footer-grid">
       <div>
         <div class="footer-brand-row">
           <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
           <div class="fbrand-name">NH Monarch<br>Festival</div>
         </div>
-        <p class="ftagline">Celebrating nature's most remarkable journey — right here in New Hampshire. Educational, fun, and open to all ages.</p>
-        <p style="font-size:.72rem;opacity:.36;letter-spacing:.05em;">14th Annual · August 22, 2026<br>Belmont Village, NH (location pending)<br>A community conservation event</p>
+        <p class="ftagline">Celebrating nature&#8217;s most remarkable journey &#8212; right here in New Hampshire. Educational, fun, and open to all ages.</p>
+        <p style="font-size:.72rem;opacity:.36;letter-spacing:.05em;">14th Annual &middot; August 22, 2026<br>Belmont Village, NH (location pending)<br>A community conservation event</p>
       </div>
       <div class="footer-col">
         <h5>Festival</h5>
@@ -668,9 +521,9 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
       </div>
     </div>
     <div class="fbottom">
-      <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
+      <p>&#169; 2026 NH Monarch Festival &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Belmont, New Hampshire</p>
       <p style="display:flex;align-items:center;gap:1.2rem;">
-        <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" style="color:rgba(242,232,208,.55);text-decoration:none;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;transition:color .2s;" onmouseover="this.style.color='rgba(242,232,208,.95)'" onmouseout="this.style.color='rgba(242,232,208,.55)'">&#x1F4D8; Facebook</a>
+        <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" style="color:rgba(242,232,208,.55);text-decoration:none;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;" onmouseover="this.style.color='rgba(242,232,208,.95)'" onmouseout="this.style.color='rgba(242,232,208,.55)'">&#128216; Facebook</a>
         <span>#NHMonarchFestival</span>
       </p>
     </div>
@@ -681,8 +534,11 @@ footer .inner { max-width: 1100px; margin: 0 auto; }
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
-hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
-menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
-document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
-
-const obs = 
+hamburger.addEventListener('click', function() { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
+menuClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(function(a) {
+  a.addEventListener('click', function() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+});
+</script>
+</body>
+</html>
