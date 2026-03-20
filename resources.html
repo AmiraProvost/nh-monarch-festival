@@ -96,7 +96,7 @@ nav {
 }
 .page-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1.5px; background: var(--rust); opacity: .5; }
 .page-header h1 { font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
-.page-header p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 60ch; }
+.page-header p:not(.page-eyebrow) { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.08rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 60ch; }
 
 /* COLOR BAND */
 .color-band { height: 6px; background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%); }
