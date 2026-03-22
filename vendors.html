@@ -77,10 +77,15 @@ nav {
 .nav-dropdown > a { display: flex; align-items: center; gap: .3rem; cursor: pointer; }
 .nav-dropdown > a::after { content: '▾'; font-size: .55rem; opacity: .6; }
 .dropdown-menu {
-  display: none; position: absolute; top: calc(100% + .8rem); left: 50%;
+  display: none; position: absolute; top: 100%; left: 50%;
   transform: translateX(-50%); background: var(--parch);
   border: 1px solid var(--parch3); min-width: 200px;
   box-shadow: 0 8px 24px rgba(42,30,12,.12); z-index: 400; padding: .4rem 0;
+  margin-top: 0;
+}
+.nav-dropdown::after {
+  content: ''; position: absolute; left: 0; right: 0;
+  height: 1rem; top: 100%;
 }
 .nav-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu a {
