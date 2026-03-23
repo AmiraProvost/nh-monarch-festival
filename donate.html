@@ -147,42 +147,6 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .donate-card h3 { font-family: 'Marcellus', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: .5rem; }
 .donate-card p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; line-height: 1.6; color: var(--ink2); opacity: .75; margin-bottom: 1.8rem; }
 
-/* PayPal */
-.paypal-btn {
-  display: inline-block; background: #0070ba; color: white;
-  font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  padding: .9rem 2rem; text-decoration: none;
-  transition: background .25s, transform .25s; width: 100%;
-}
-.paypal-btn:hover { background: #005ea6; transform: translateY(-2px); }
-.paypal-logo { font-size: 1rem; margin-right: .4rem; }
-
-/* Venmo */
-.venmo-handle {
-  font-family: 'Marcellus', serif; font-size: 1.4rem; color: var(--sage);
-  display: block; margin-bottom: 1rem; letter-spacing: .04em;
-}
-.venmo-btn {
-  display: inline-block; background: #008CFF; color: white;
-  font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  padding: .9rem 2rem; text-decoration: none;
-  transition: background .25s, transform .25s; width: 100%;
-}
-.venmo-btn:hover { background: #0070cc; transform: translateY(-2px); }
-
-/* ── SETUP NOTICE ── */
-.setup-notice {
-  background: #fff8e8; border: 1.5px solid var(--gold2);
-  border-left: 4px solid var(--gold); padding: 2rem 2.4rem; margin-bottom: 3rem;
-}
-.setup-notice h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--gold); margin-bottom: .6rem; }
-.setup-notice ol { padding-left: 1.4rem; }
-.setup-notice li { font-family: 'Sorts Mill Goudy', serif; font-size: .97rem; color: var(--ink2); line-height: 1.7; margin-bottom: .4rem; }
-.setup-notice code { background: var(--parch2); padding: .1rem .4rem; font-size: .9rem; color: var(--rust); }
-.setup-notice a { color: var(--sage); }
-
 /* ── DISCLAIMER ── */
 .disclaimer {
   background: var(--parch); border: 1.5px solid var(--parch3);
@@ -375,44 +339,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   <div class="inner">
     <div>
       <p class="page-eyebrow">Give Today</p>
-      <h2 class="sh">Choose Your Way to Donate</h2>
-      <p class="sp">We accept donations via PayPal and Venmo. Every amount is appreciated — no donation is too small!</p>
+      <h2 class="sh">Support the Festival</h2>
+      <p class="sp">Your generosity helps make the NH Monarch Festival possible. Online donations are coming soon &#8212; every amount is appreciated!</p>
     </div>
 
-    <!-- ⚠️ SETUP NOTICE — REMOVE AFTER ADDING YOUR DETAILS -->
-    <div class="setup-notice " style="margin-top:2.5rem;">
-      <h3>⚙️ Setup Required: Add Your PayPal & Venmo Details</h3>
-      <ol>
-        <li><strong>PayPal:</strong> Log in to your PayPal account at <a href="https://paypal.com" target="_blank">paypal.com</a>. Go to <strong>Tools → PayPal Buttons</strong>, create a Donate button, and copy the link. Replace <code>YOUR_PAYPAL_LINK</code> in the code below with your actual PayPal donate link.</li>
-        <li><strong>Venmo:</strong> Replace <code>@YourVenmoHandle</code> with your actual Venmo username. You can also generate a Venmo QR code at <a href="https://venmo.com" target="_blank">venmo.com</a> and add it as an image if you'd like.</li>
-        <li>Delete this yellow notice box once both are set up.</li>
-      </ol>
-    </div>
-    <!-- END SETUP NOTICE -->
-
-    <div class="donate-grid">
-
-      <!-- PAYPAL -->
-      <div class="donate-card ">
-        <span class="donate-card-icon">💳</span>
-        <h3>Donate via PayPal</h3>
-        <p>Use PayPal to make a secure one-time donation by credit card, debit card, or your PayPal balance. No PayPal account required.</p>
-        <a href="YOUR_PAYPAL_LINK" target="_blank" class="paypal-btn">
-          <span class="paypal-logo">🅿</span> Donate with PayPal
-        </a>
-      </div>
-
-      <!-- VENMO -->
-      <div class="donate-card ">
-        <span class="donate-card-icon">📱</span>
-        <h3>Donate via Venmo</h3>
-        <p>Send your donation directly through Venmo. Search for us by handle or scan the QR code in the app.</p>
-        <span class="venmo-handle">@YourVenmoHandle</span>
-        <a href="https://venmo.com/YourVenmoHandle" target="_blank" class="venmo-btn">
-          Open in Venmo
-        </a>
-      </div>
-
+    <div style="margin-top:2.5rem;background:var(--cream);border:1.5px solid var(--parch3);border-left:4px solid var(--sage);padding:2.5rem 3rem;">
+      <p class="sec-eyebrow" style="margin-bottom:.8rem;">Coming Soon</p>
+      <h3 style="font-family:'Marcellus',serif;font-size:1.4rem;color:var(--ink);margin-bottom:.8rem;">Online Donations Coming Soon</h3>
+      <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1.05rem;line-height:1.8;color:var(--ink2);opacity:.85;max-width:54ch;">We are currently setting up a secure donation platform. In the meantime, please <a href="contact.html" style="color:var(--sage);">contact us</a> if you would like to contribute to the NH Monarch Festival. Every donation makes a difference!</p>
     </div>
 
     <div class="disclaimer ">
