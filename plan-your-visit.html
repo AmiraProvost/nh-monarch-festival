@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Planning a visit to the NH Monarch Festival in Belmont, New Hampshire? Explore things to see and do in and around Belmont Village — trails, farms, history, and family attractions in the Lakes Region.">
+  <meta name="description" content="Plan your visit to the 14th Annual NH Monarch Festival on August 22, 2026 in Belmont, New Hampshire. Find directions, parking information, accessibility details, and everything you need to know before you arrive.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nhmonarchfestival.com/belmont.html">
+  <link rel="canonical" href="https://nhmonarchfestival.com/plan-your-visit.html">
 
-  <!-- Open Graph (Facebook / Social Sharing) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About Belmont Village · NH Monarch Festival 2026">
-  <meta property="og:description" content="Planning a visit to the NH Monarch Festival in Belmont, New Hampshire? Explore things to see and do in and around Belmont Village — trails, farms, history, and family attractions in the Lakes Region.">
+  <meta property="og:title" content="Plan Your Visit · NH Monarch Festival 2026">
+  <meta property="og:description" content="Plan your visit to the 14th Annual NH Monarch Festival on August 22, 2026 in Belmont, New Hampshire. Find directions, parking information, accessibility details, and everything you need to know before you arrive.">
   <meta property="og:image" content="https://nhmonarchfestival.com/images/Butterfly5.jpeg">
-  <meta property="og:url" content="https://nhmonarchfestival.com/belmont.html">
+  <meta property="og:url" content="https://nhmonarchfestival.com/plan-your-visit.html">
   <meta property="og:site_name" content="NH Monarch Festival">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Belmont Village · NH Monarch Festival 2026">
-  <meta name="twitter:description" content="Planning a visit to the NH Monarch Festival in Belmont, New Hampshire? Explore things to see and do in and around Belmont Village — trails, farms, history, and family attractions in the Lakes Region.">
+  <meta name="twitter:title" content="Plan Your Visit · NH Monarch Festival 2026">
+  <meta name="twitter:description" content="Plan your visit to the 14th Annual NH Monarch Festival on August 22, 2026 in Belmont, New Hampshire. Find directions, parking information, accessibility details, and everything you need to know before you arrive.">
   <meta name="twitter:image" content="https://nhmonarchfestival.com/images/Butterfly5.jpeg">
 
-<title>About Belmont Village &middot; NH Monarch Festival 2026</title>
+<title>Plan Your Visit &middot; NH Monarch Festival 2026</title>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EKELC7M1H"></script>
@@ -95,8 +95,6 @@ nav {
 .nav-links a:hover { color: var(--sage); }
 .nav-cta { background: var(--rust) !important; color: white !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; letter-spacing: .12em !important; }
 .nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
-
-/* Dropdowns */
 .nav-dropdown { position: relative; }
 .nav-dropdown > a { display: flex; align-items: center; gap: .3rem; cursor: pointer; }
 .nav-dropdown > a::after { content: '▾'; font-size: .55rem; opacity: .6; }
@@ -115,7 +113,6 @@ nav {
   transition: background .15s, color .15s;
 }
 .dropdown-menu a:hover { background: var(--parch2); color: var(--sage); }
-
 .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; cursor: pointer; z-index: 400; background: none; border: none; }
 .hamburger span { display: block; height: 2.5px; width: 100%; background: var(--sage); border-radius: 2px; transition: all .3s; }
 .hamburger.open span:nth-child(1) { transform: translateY(8.75px) rotate(45deg); }
@@ -165,46 +162,56 @@ nav {
 h2.sh { font-family: 'Marcellus', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--ink); line-height: 1.1; margin-bottom: .6rem; }
 p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.05rem; line-height: 1.8; color: var(--ink2); opacity: .85; max-width: 58ch; margin-bottom: 2.5rem; }
 
-/* ATTRACTION CARDS */
-.attraction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.attraction-card {
+/* PENDING NOTICE */
+.pending-notice {
+  background: #fff8e8; border: 1.5px solid var(--gold2);
+  border-left: 4px solid var(--gold); padding: 2rem 2.5rem;
+  display: flex; gap: 1.2rem; align-items: flex-start;
+}
+.pending-icon { font-size: 1.4rem; flex-shrink: 0; }
+.pending-notice h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--gold); margin-bottom: .4rem; }
+.pending-notice p { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; line-height: 1.7; color: var(--ink2); }
+.pending-notice a { color: var(--sage); }
+
+/* MAP PLACEHOLDER */
+.map-placeholder {
+  width: 100%; height: 400px; background: var(--parch2);
+  border: 1.5px solid var(--parch3); display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; margin-top: 2.5rem;
+}
+.map-placeholder span { font-size: 2.5rem; opacity: .4; }
+.map-placeholder p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: var(--ink2); opacity: .5; }
+
+/* INFO GRID */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+.info-card {
   background: var(--cream); border: 1.5px solid var(--parch3);
   border-top: 4px solid var(--mint); padding: 2rem 1.8rem;
-  text-decoration: none; display: block; transition: box-shadow .2s;
 }
-.attraction-card:hover { box-shadow: 0 8px 24px rgba(42,30,12,.1); }
-.attraction-card.highlight { border-top-color: var(--peach); }
-.attraction-tag {
-  font-size: .63rem; font-weight: 600; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--rust); display: block; margin-bottom: .5rem;
-}
-.attraction-card h4 { font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--sage); margin-bottom: .5rem; }
-.attraction-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .96rem; line-height: 1.65; color: var(--ink2); opacity: .85; }
-.attraction-link { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); margin-top: .8rem; display: block; }
+.info-card.accent { border-top-color: var(--peach); }
+.info-card h4 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .8rem; display: flex; align-items: center; gap: .6rem; }
+.info-card p, .info-card li { font-family: 'Sorts Mill Goudy', serif; font-size: .97rem; line-height: 1.7; color: var(--ink2); opacity: .85; }
+.info-card ul { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
+.info-card ul li::before { content: '&#10003;  '; color: var(--sage); font-weight: 700; }
+.info-card a { color: var(--sage); }
 
-/* SHAKER CALLOUT */
-.shaker-callout {
-  background: var(--sage); color: white; padding: 3rem 3.5rem;
-  position: relative; overflow: hidden; margin-bottom: 2rem;
+/* WHAT TO BRING */
+.bring-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+.bring-item {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  padding: 1.4rem 1.2rem; text-align: center;
 }
-.shaker-callout::before {
-  content: ''; position: absolute; top: -40px; right: -40px;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: rgba(255,255,255,.05);
-}
-.shaker-callout .callout-tag {
-  font-size: .65rem; font-weight: 600; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--mint2); display: block; margin-bottom: .6rem;
-}
-.shaker-callout h3 { font-family: 'Marcellus', serif; font-size: 1.5rem; color: white; margin-bottom: .8rem; }
-.shaker-callout p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.02rem; line-height: 1.75; color: rgba(255,255,255,.85); max-width: 60ch; margin-bottom: 1.5rem; }
-.shaker-callout a {
-  display: inline-block; background: var(--peach); color: var(--ink);
-  font-family: 'Jost', sans-serif; font-size: .68rem; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  padding: .75rem 2rem; text-decoration: none; transition: background .2s;
-}
-.shaker-callout a:hover { background: var(--yg2); }
+.bring-icon { font-size: 1.6rem; display: block; margin-bottom: .5rem; }
+.bring-item p { font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .06em; color: var(--ink2); }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--parch3); margin-top: 2rem; }
+.faq-item { border-bottom: 1px dotted var(--parch3); padding: 1.6rem 2rem; }
+.faq-item:last-child { border-bottom: none; }
+.faq-item h4 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
+.faq-item p { font-family: 'Sorts Mill Goudy', serif; font-size: .97rem; line-height: 1.7; color: var(--ink2); opacity: .85; }
+.faq-item a { color: var(--sage); }
 
 /* FOOTER */
 footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
@@ -229,8 +236,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .mobile-menu.open { display: flex; }
   .sec { padding: 3.5rem 1.5rem; }
   .page-header { padding: 3.5rem 1.5rem 2.5rem; }
-  .attraction-grid { grid-template-columns: 1fr; }
-  .shaker-callout { padding: 2.5rem 1.8rem; }
+  .info-grid { grid-template-columns: 1fr; }
+  .bring-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   footer { padding: 4rem 1.5rem 2rem; }
 }
@@ -245,12 +252,12 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <span>August 22, 2026</span><span class="dot">&#9670;</span>
     <span>Belmont Village, NH</span><span class="dot">&#9670;</span>
     <span>10am &#8211; 5pm</span><span class="dot">&#9670;</span>
-    <span>Explore the Lakes Region</span><span class="dot">&#9670;</span>
+    <span>Plan Your Visit</span><span class="dot">&#9670;</span>
     <span>14th Annual NH Monarch Festival</span><span class="dot">&#9670;</span>
     <span>August 22, 2026</span><span class="dot">&#9670;</span>
     <span>Belmont Village, NH</span><span class="dot">&#9670;</span>
     <span>10am &#8211; 5pm</span><span class="dot">&#9670;</span>
-    <span>Explore the Lakes Region</span><span class="dot">&#9670;</span>
+    <span>Plan Your Visit</span><span class="dot">&#9670;</span>
   </div>
 </div>
 
@@ -322,196 +329,210 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-eyebrow">Lakes Region, New Hampshire</p>
-    <h1>About Belmont Village</h1>
-    <p>Making a day of it? Belmont Village sits in the heart of New Hampshire&#8217;s beautiful Lakes Region, surrounded by trails, farms, history, and family-friendly attractions. Here are some of our favorite things to see and do while you&#8217;re in the area.</p>
+    <p class="page-eyebrow">August 22, 2026 &middot; Belmont Village, NH</p>
+    <h1>Plan Your Visit</h1>
+    <p>Everything you need to know before you arrive &#8212; venue location, parking, directions, accessibility, what to bring, and answers to common questions.</p>
   </div>
 </div>
 <div class="color-band"></div>
 
-<!-- CANTERBURY SHAKER VILLAGE CALLOUT -->
+<!-- VENUE & MAP -->
 <section class="sec">
   <div class="inner">
-    <div class="shaker-callout">
-      <span class="callout-tag">&#127981; A Special Connection</span>
-      <h3>Canterbury Shaker Village</h3>
-      <p>Canterbury Shaker Village is a National Historic Landmark and living museum dedicated to preserving the history and legacy of the Shaker community that once called this place home. It was also the home of the 2025 NH Monarch Festival &#8212; so it holds a special place in our hearts! Well worth a visit any time of year.</p>
-      <a href="https://shakers.org" target="_blank" rel="noopener noreferrer">Visit shakers.org &#8594;</a>
+    <p class="sec-eyebrow">Where We Are</p>
+    <h2 class="sh">Venue &amp; Location</h2>
+
+    <div class="pending-notice">
+      <span class="pending-icon">&#128205;</span>
+      <div>
+        <h3>Venue Confirmation Coming Soon</h3>
+        <p>We are finalizing our venue in Belmont Village, New Hampshire. The exact address, map, and parking details will be posted here as soon as they are confirmed. <a href="contact.html">Contact us</a> if you have questions, or follow us on <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer">Facebook</a> for the latest updates.</p>
+      </div>
     </div>
 
-<!-- OUTDOOR ACTIVITIES -->
-    <p class="sec-eyebrow">Get Outside</p>
-    <h2 class="sh">Outdoor Activities &amp; Trails</h2>
-    <p class="sp">The Lakes Region is an outdoor lover&#8217;s paradise &#8212; whether you prefer a leisurely lakeside stroll or a summit hike.</p>
-    <div class="attraction-grid">
+    <div class="map-placeholder">
+      <span>&#128506;</span>
+      <p>Venue map coming soon &mdash; check back closer to August 22, 2026</p>
+    </div>
 
-      <a href="https://www.belmontnh.org/Pages/Index/101208/area-recreation" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127939; Rail Trail</span>
-        <h4>Lake Winnisquam Scenic Trail</h4>
-        <p>A beautiful 1.8-mile paved rail trail running along the shores of Lake Winnisquam. Completely flat and perfect for walking, running, or biking with stunning lake views. Connects to the Laconia WOW Trail for even more miles of adventure.</p>
-        <span class="attraction-link">Learn more &#8594;</span>
-      </a>
-
-      <a href="https://www.gunstock.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127956; Recreation Area</span>
-        <h4>Gunstock Mountain Resort</h4>
-        <p>Just a short drive from Belmont, Gunstock offers year-round fun including hiking and biking trails, camping, zip lines, and a scenic chairlift ride in summer. A Lakes Region favorite for families and outdoor enthusiasts alike.</p>
-        <span class="attraction-link">gunstock.com &#8594;</span>
-      </a>
-
-      <a href="https://www.komoot.com/guide/2179494/attractions-around-belmont" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#9968; Hiking</span>
-        <h4>Piper Mountain Trail</h4>
-        <p>A popular local hiking trail that takes you through wooded terrain and opens out onto a beautiful bedrock ridge near the summit. A rewarding hike with lovely views of the surrounding Lakes Region landscape.</p>
-        <span class="attraction-link">Trail info &#8594;</span>
-      </a>
-
-      <a href="https://www.traillink.com/trail/village-spur-rail-trail/" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127939; Rail Trail</span>
-        <h4>Village Spur Rail Trail</h4>
-        <p>A hidden gem right in Belmont Village! This scenic four-mile round-trip trail follows the route of a historic 1889 railroad branch line along the banks of the winding Tioga River. The trail features two charming covered bridges, peaceful riverside views, and even a stretch through cattle pasture. Parking is available at the Belmont Mill on Mill Street. A lovely walk or bike ride for all ages.</p>
-        <span class="attraction-link">traillink.com &#8594;</span>
-      </a>
-
-      <a href="https://www.belmontnh.org/Pages/Index/50752/open-space-recreation-protected-places" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127795; Town Forest</span>
-        <h4>Jeff Marden Town Forest</h4>
-        <p>A 65-acre town forest right in Belmont, managed by the Belmont Conservation Commission and named in memory of beloved community conservationist Jeff Marden. The forest features walking trails, including universally accessible paths, through beautiful New Hampshire woodland. A quiet, peaceful escape just steps from the village.</p>
-        <span class="attraction-link">Learn more &#8594;</span>
-      </a>
-
-      <a href="https://www.weirs.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127754; Lakeside</span>
-        <h4>Weirs Beach</h4>
-        <p>One of New Hampshire&#8217;s most beloved lake destinations on the shores of Lake Winnipesaukee. A classic New England summer scene with a beach, boardwalk, arcades, boat cruises, and plenty of waterfront dining just minutes from Belmont.</p>
-        <span class="attraction-link">weirs.com &#8594;</span>
-      </a>
-
+    <div class="info-grid" style="margin-top:2.5rem;">
+      <div class="info-card">
+        <h4>&#128197; Festival Details</h4>
+        <ul>
+          <li>Date: Saturday, August 22, 2026</li>
+          <li>Hours: 10:00 AM &ndash; 5:00 PM</li>
+          <li>Location: Belmont Village, NH (TBD)</li>
+          <li>Rain or shine event</li>
+          <li>Free admission for children under 2</li>
+        </ul>
+      </div>
+      <div class="info-card accent">
+        <h4>&#128652; Getting There</h4>
+        <p>Belmont Village is located in the heart of New Hampshire&#8217;s Lakes Region, easily accessible from I-93. Detailed driving directions will be posted once the venue is confirmed. The nearest major city is Laconia, NH.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="color-band"></div>
 
-<!-- DINING & FARMS -->
+<!-- PARKING -->
 <section class="sec sec-alt">
   <div class="inner">
-    <p class="sec-eyebrow">Eat &amp; Explore</p>
-    <h2 class="sh">Farms &amp; Local Food</h2>
-    <p class="sp">The Lakes Region has some wonderful farm stands and local food destinations that are perfect for a stop before or after the festival.</p>
-    <div class="attraction-grid">
+    <p class="sec-eyebrow">Getting Parked</p>
+    <h2 class="sh">Parking Information</h2>
+    <p class="sp">We are working to ensure convenient and accessible parking for all festival visitors. Details will be confirmed along with the venue.</p>
 
-      <a href="https://www.beansandgreensfarm.com" target="_blank" rel="noopener noreferrer" class="attraction-card highlight">
-        <span class="attraction-tag">&#127807; Farm Stand</span>
-        <h4>Beans &amp; Greens Farm</h4>
-        <p>A beloved Lakes Region institution in nearby Gilford, Beans &amp; Greens is a family-run farm offering fresh produce, a bakery, deli, barnyard animals, a coffee carriage, and live events. Named Best Farmstand in the Lakes Region four years in a row. Fun for the whole family!</p>
-        <span class="attraction-link">beansandgreensfarm.com &#8594;</span>
-      </a>
+    <div class="pending-notice">
+      <span class="pending-icon">&#128663;</span>
+      <div>
+        <h3>Parking Map Coming Soon</h3>
+        <p>A detailed parking map, including accessible parking locations and any overflow areas, will be posted here once our venue is confirmed. We are committed to making parking as easy as possible for all attendees.</p>
+      </div>
+    </div>
 
-      <a href="https://smithorchard.net" target="_blank" rel="noopener noreferrer" class="attraction-card highlight">
-        <span class="attraction-tag">&#127822; Pick Your Own</span>
-        <h4>Smith Orchard</h4>
-        <p>A charming family-run orchard right here in Belmont, with roots going back to 1929 when Charlie Smith first planted 800 apple trees. Today the orchard offers pick-your-own apples and blueberries, fresh cider, cider donuts on weekends, jams, jellies, honey, and tractor rides. A New Hampshire Farm of Distinction and a wonderful local tradition!</p>
-        <span class="attraction-link">smithorchard.net &#8594;</span>
-      </a>
-
-      <a href="https://www.thetappublichouseinc.com" target="_blank" rel="noopener noreferrer" class="attraction-card highlight">
-        <span class="attraction-tag">&#127829; Local Dining</span>
-        <h4>Brookside Pizza II &amp; The Tap</h4>
-        <p>A Belmont staple since 1998, Brookside Pizza II is a go-to spot for delicious thin-crust pizza, hearty subs, pasta, and more. Connected to The Tap Public House with a full bar and plenty of beer on tap. Dine in, take out, or delivery &#8212; a perfect stop before or after the festival!</p>
-        <span class="attraction-link">thetappublichouseinc.com &#8594;</span>
-      </a>
-
-      <a href="https://www.stonemountainfarmnh.com" target="_blank" rel="noopener noreferrer" class="attraction-card highlight">
-        <span class="attraction-tag">&#127981; Farm</span>
-        <h4>Stone Mountain Farm</h4>
-        <p>A charming local farm in the Belmont area offering fresh, locally grown products. A great stop for those who love supporting local agriculture and finding quality New Hampshire-grown goods.</p>
-        <span class="attraction-link">Visit Stone Mountain Farm &#8594;</span>
-      </a>
-
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>&#9855; Accessible Parking</h4>
+        <p>Accessible parking spaces will be available close to the festival entrance for visitors with disabilities. Please bring your valid accessible parking placard or license plate. More details to come.</p>
+      </div>
+      <div class="info-card accent">
+        <h4>&#128652; Arrival Tips</h4>
+        <ul>
+          <li>Arrive early to secure convenient parking</li>
+          <li>Carpool when possible</li>
+          <li>Follow signage and volunteer directions on-site</li>
+          <li>Allow extra time if traveling with young children or mobility needs</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="color-band"></div>
 
-<!-- ARTS, CULTURE & HISTORY -->
+<!-- WHAT TO BRING -->
 <section class="sec">
   <div class="inner">
-    <p class="sec-eyebrow">Learn &amp; Discover</p>
-    <h2 class="sh">Arts, Culture &amp; History</h2>
-    <p class="sp">From wildlife education to natural history, the Lakes Region has plenty of enriching experiences for curious minds of all ages.</p>
-    <div class="attraction-grid">
-
-      <a href="https://prescottfarm.org" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127807; Environmental Education</span>
-        <h4>Prescott Farm Environmental Education Center</h4>
-        <p>A 160-acre nonprofit environmental education center in nearby Laconia, Prescott Farm is a wonderful complement to the spirit of the NH Monarch Festival. Explore 3+ miles of nature trails through woodlands, ponds, and fields with views of Lake Winnipesaukee, visit the Natural Playscape, and discover native plants and wildlife. Open 365 days a year from dawn to dusk &#8212; free to explore the trails!</p>
-        <span class="attraction-link">prescottfarm.org &#8594;</span>
-      </a>
-
-      <a href="https://petalsinthepines.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127803; A Special Connection</span>
-        <h4>Petals in the Pines</h4>
-        <p>The birthplace of the NH Monarch Festival! Donna Miller&#8217;s beloved 7-acre property in Canterbury is where it all began in 2012. A certified Nature Explore Outdoor Classroom, registered Monarch Waystation, and certified Pollinator Habitat, Petals in the Pines offers 2+ miles of trails, woodland labyrinths, a Pollinator Meadow, pick-your-own flowers, and nature programs for all ages. A very special place in our hearts.</p>
-        <span class="attraction-link">petalsinthepines.com &#8594;</span>
-      </a>
-
-      <a href="https://www.squamlakesciencecenter.org" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#129421; Wildlife &amp; Education</span>
-        <h4>Squam Lake Science Center</h4>
-        <p>An outstanding wildlife and environmental education center where visitors can walk a nature trail and observe live native animals including black bears, mountain lions, otters, and raptors up close. A wonderful family experience that pairs perfectly with the spirit of the festival.</p>
-        <span class="attraction-link">squamlakesciencecenter.org &#8594;</span>
-      </a>
-
-      <a href="https://shakers.org" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127981; Historic Landmark</span>
-        <h4>Canterbury Shaker Village</h4>
-        <p>A National Historic Landmark and living museum preserving the extraordinary legacy of the Shaker community. Explore beautifully preserved buildings, gardens, and exhibits telling the story of this remarkable group of people. Also the home of the 2025 NH Monarch Festival!</p>
-        <span class="attraction-link">shakers.org &#8594;</span>
-      </a>
-
+    <p class="sec-eyebrow">Be Prepared</p>
+    <h2 class="sh">What to Bring</h2>
+    <p class="sp">The festival is an outdoor event &#8212; here&#8217;s what we recommend packing for a comfortable and fun day!</p>
+    <div class="bring-grid">
+      <div class="bring-item">
+        <span class="bring-icon">&#9728;</span>
+        <p>Sunscreen &amp; Hat</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#128167;</span>
+        <p>Water Bottle</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#128247;</span>
+        <p>Camera</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#128096;</span>
+        <p>Comfortable Shoes</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#127381;</span>
+        <p>Bug Spray</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#128179;</span>
+        <p>Cash &amp; Cards</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#127381;</span>
+        <p>Reusable Bag</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#128105;&#8205;&#128102;</span>
+        <p>The Whole Family</p>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon">&#129419;</span>
+        <p>Monarch Curiosity!</p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="color-band"></div>
 
-<!-- ENTERTAINMENT & ATTRACTIONS -->
+<!-- ACCESSIBILITY -->
 <section class="sec sec-alt">
   <div class="inner">
-    <p class="sec-eyebrow">Fun for Everyone</p>
-    <h2 class="sh">Entertainment &amp; Attractions</h2>
-    <p class="sp">Whether you&#8217;re looking for live music, a little excitement, or a relaxing afternoon, there&#8217;s something for everyone in the Belmont area.</p>
-    <div class="attraction-grid">
+    <p class="sec-eyebrow">For All Visitors</p>
+    <h2 class="sh">Accessibility</h2>
+    <p class="sp">We are committed to making the NH Monarch Festival welcoming and accessible for everyone.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>&#9855; Mobility Accessibility</h4>
+        <ul>
+          <li>Accessible parking near the entrance</li>
+          <li>Accessible pathways throughout the festival grounds</li>
+          <li>Accessible restroom facilities</li>
+          <li>Seating areas available throughout</li>
+        </ul>
+      </div>
+      <div class="info-card accent">
+        <h4>&#128149; Family Friendly</h4>
+        <ul>
+          <li>Stroller-friendly pathways</li>
+          <li>Dedicated kids&#8217; activity area</li>
+          <li>Shaded rest areas</li>
+          <li>Family restroom facilities</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:.97rem;line-height:1.7;color:var(--ink2);opacity:.8;margin-top:2rem;">Have specific accessibility needs or questions? Please <a href="contact.html" style="color:var(--sage);">contact us</a> in advance and we will do our best to accommodate you.</p>
+  </div>
+</section>
 
-      <a href="https://www.banknhpavilion.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127925; Live Music</span>
-        <h4>Bank of NH Pavilion at Meadowbrook</h4>
-        <p>One of New England&#8217;s premier outdoor concert venues, hosting major national acts throughout the summer. If you&#8217;re planning a trip around the festival, check their summer lineup &#8212; you might catch a great show while you&#8217;re in the area!</p>
-        <span class="attraction-link">banknhpavilion.com &#8594;</span>
-      </a>
+<div class="color-band"></div>
 
-      <a href="https://www.funspotnh.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127918; Family Fun</span>
-        <h4>Funspot</h4>
-        <p>Officially the largest arcade in the world according to Guinness World Records, Funspot has been a Lakes Region institution since 1952! With over 600 games, 20-lane bowling, indoor and outdoor mini-golf, kiddie bumper cars, and a restaurant, it&#8217;s a rainy day dream and a sunny day bonus. Fun for all ages &#8212; kids and grown-ups alike.</p>
-        <span class="attraction-link">funspotnh.com &#8594;</span>
-      </a>
+<!-- FAQ -->
+<section class="sec">
+  <div class="inner">
+    <p class="sec-eyebrow">Common Questions</p>
+    <h2 class="sh">Frequently Asked Questions</h2>
+    <div class="faq-list">
 
-      <a href="https://daytonafunparknh.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#127950; Outdoor Fun</span>
-        <h4>Daytona Fun Park</h4>
-        <p>A classic Lakes Region destination packed with family-friendly thrills &#8212; go-karts, bumper boats, a high ropes adventure course, mini-golf, batting cages, and arcade games. Perfect for burning off energy after a day at the festival!</p>
-        <span class="attraction-link">daytonafunparknh.com &#8594;</span>
-      </a>
+      <div class="faq-item">
+        <h4>What is the admission fee?</h4>
+        <p>Ticket pricing will be announced closer to the event. Children under 2 are free. Visit our <a href="index.html#tickets">tickets page</a> for the latest information.</p>
+      </div>
 
-      <a href="https://www.hoborr.com" target="_blank" rel="noopener noreferrer" class="attraction-card">
-        <span class="attraction-tag">&#128642; Scenic Railroad</span>
-        <h4>Winnipesaukee Scenic Railroad</h4>
-        <p>All aboard for a beautiful train ride along the shores of Lake Winnipesaukee! The Winnipesaukee Scenic Railroad offers relaxing excursions for the whole family through stunning Lakes Region scenery. A wonderful, unique experience that kids absolutely love.</p>
-        <span class="attraction-link">hoborr.com &#8594;</span>
-      </a>
+      <div class="faq-item">
+        <h4>Is the festival held rain or shine?</h4>
+        <p>Yes! The NH Monarch Festival is a rain or shine event. We recommend bringing an umbrella or poncho just in case. In the event of severe weather, updates will be posted on our <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer">Facebook page</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Are pets allowed?</h4>
+        <p>Out of consideration for the monarch butterflies and other wildlife at the festival, we ask that pets be left at home. Service animals are always welcome.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is there food at the festival?</h4>
+        <p>Yes! Food vendors will be on-site. We also encourage you to explore the great local dining options in and around Belmont &#8212; check out our <a href="belmont.html">About Belmont</a> page for recommendations.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can I become a vendor?</h4>
+        <p>We welcome vendors whose products align with our monarch, milkweed, and pollinator theme. Visit our <a href="vendors.html">Vendor Application</a> page to apply.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How can I help at the festival?</h4>
+        <p>We&#8217;d love your help! Visit our <a href="volunteer.html">Volunteer</a> page to learn about opportunities and sign up.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>I have a question not answered here. Who do I contact?</h4>
+        <p>Please reach out through our <a href="contact.html">Contact Us</a> page and we&#8217;ll get back to you as soon as possible.</p>
+      </div>
 
     </div>
   </div>
