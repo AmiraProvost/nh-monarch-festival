@@ -154,7 +154,7 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
   transition: border-color .25s, box-shadow .25s;
 }
 .role-card:hover { border-color: var(--sage2); box-shadow: 0 8px 24px rgba(42,30,12,.08); }
-.role-card.general { grid-column: 1 / -1; border-left: 4px solid var(--sage); }
+.role-card.general { border-left: 4px solid var(--mint); }
 .role-num { font-family: 'Marcellus', serif; font-size: 2rem; color: var(--parch3); line-height: 1; flex-shrink: 0; }
 .role-body h3 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .3rem; }
 .role-tag {
@@ -171,6 +171,32 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
   font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   padding: .18rem .6rem; border: 1px solid var(--parch3); color: var(--ink2); opacity: .7;
 }
+
+/* ── VOLUNTEER FORM ── */
+.vform-wrap { background: var(--parch); padding: 5rem; }
+.vform-inner { max-width: 860px; margin: 0 auto; }
+.form-section-title { font-family: 'Jost', sans-serif; font-weight: 700; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); opacity: .8; padding-bottom: .6rem; border-bottom: 1px dotted var(--parch3); margin-bottom: 1.6rem; margin-top: 2.5rem; }
+.form-section-title:first-of-type { margin-top: 0; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.4rem; }
+.form-row.full { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: .4rem; }
+.field label { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink2); }
+.field label .req { color: var(--rust); margin-left: 2px; }
+.field input[type="text"], .field input[type="email"], .field input[type="tel"], .field textarea {
+  font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; color: var(--ink);
+  background: var(--cream); border: 1.5px solid var(--parch3); padding: .75rem 1rem;
+  outline: none; transition: border-color .2s; width: 100%;
+}
+.field input:focus, .field textarea:focus { border-color: var(--sage); }
+.field textarea { resize: vertical; min-height: 130px; }
+.checkbox-group { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 1.4rem; }
+.checkbox-item { display: flex; align-items: flex-start; gap: .7rem; cursor: pointer; }
+.checkbox-item input[type="checkbox"] { width: 16px; height: 16px; margin-top: 3px; accent-color: var(--sage); flex-shrink: 0; cursor: pointer; }
+.checkbox-item span { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; color: var(--ink2); line-height: 1.5; }
+.form-submit-row { display: flex; align-items: center; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+.submit-btn { background: var(--rust); color: white; font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; padding: 1rem 2.8rem; border: none; cursor: pointer; transition: background .2s, transform .2s; }
+.submit-btn:hover { background: var(--ink); transform: translateY(-2px); }
+.form-note { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .9rem; color: var(--ink2); opacity: .65; }
 
 /* ── CONTACT CTA ── */
 .contact-cta {
@@ -237,8 +263,10 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .sec { padding: 4rem 1.5rem; }
   .page-header { padding: 3.5rem 1.5rem 3rem; }
   .perks-grid, .roles-grid { grid-template-columns: 1fr; }
-  .role-card.general { grid-column: 1; }
+  
   .contact-cta { padding: 3.5rem 1.5rem; }
+  .vform-wrap { padding: 3.5rem 1.5rem; }
+  .form-row, .form-row.three { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .hamburger { display: flex !important; }
   footer { padding: 4rem 1.5rem 2rem; }
@@ -439,11 +467,112 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   </div>
 </section>
 
-<!-- CONTACT CTA -->
-<div class="contact-cta">
-  <h2>Ready to Volunteer?</h2>
-  <p>We&#8217;d love to hear from you! Reach out with your name, which role interests you, and a little about yourself. We&#8217;ll be in touch with next steps.</p>
-  <a href="contact.html" class="email-link">Contact Us</a>
+<!-- VOLUNTEER FORM -->
+<div class="vform-wrap">
+  <div class="vform-inner">
+    <p class="sec-eyebrow">Sign Up</p>
+    <h2 class="sh" style="margin-bottom:.5rem;">Volunteer Sign-Up Form</h2>
+    <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1.05rem;line-height:1.8;color:var(--ink2);opacity:.85;max-width:58ch;margin-bottom:2.5rem;">Thank you for your interest in volunteering! We are very appreciative of your support. Please fill out this form and we will be in contact with you within a few weeks.</p>
+
+    <form action="https://formspree.io/f/xzdybdro" method="POST">
+      <input type="hidden" name="_subject" value="New Volunteer Sign-Up – NH Monarch Festival 2026">
+
+      <!-- CONTACT INFORMATION -->
+      <p class="form-section-title">Contact Information</p>
+      <div class="form-row">
+        <div class="field">
+          <label for="full_name">First and Last Name <span class="req">*</span></label>
+          <input type="text" id="full_name" name="full_name" required placeholder="Jane Smith">
+        </div>
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="phone">Phone Number <span style="font-weight:400;opacity:.6;">(Optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="603-555-1234">
+        </div>
+      </div>
+
+      <!-- VOLUNTEER ROLES -->
+      <p class="form-section-title">Which volunteer role(s) interest you? <span class="req">*</span></p>
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="Setup before the event starts (7am - 10am)">
+          <span>Setup before the event starts (7am &ndash; 10am)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="Breakdown and clean up after the event ends (5pm - 7pm)">
+          <span>Breakdown and clean up after the event ends (5pm &ndash; 7pm)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="Pavilion assistant">
+          <span>Pavilion assistant (help monitor science and display stations under the Pavilion)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="Vendor assistant">
+          <span>Vendor assistant (help any vendors set up, watch their booths, relieve them for a short break, etc.)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="Kids' Activities helper">
+          <span>Kids&#8217; Activities helper (help with hands-on activities, games, and crafts)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="Traffic guidance">
+          <span>Traffic guidance (help guide attendees to designated parking areas and festival entrance)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="roles" value="General - open to any role">
+          <span>General: I&#8217;m open to any role and would love to help any way I can!</span>
+        </label>
+      </div>
+
+      <!-- AVAILABILITY -->
+      <p class="form-section-title">What times are you available? <span class="req">*</span></p>
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" name="availability" value="7am - 7pm (Entire day!)">
+          <span>7am &ndash; 7pm (Entire day!)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="availability" value="7am - 10am (Pre-festival setup)">
+          <span>7am &ndash; 10am (Pre-festival setup)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="availability" value="10am - 5pm (Full festival hours)">
+          <span>10am &ndash; 5pm (Full festival hours)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="availability" value="7am - 12pm (Mornings only)">
+          <span>7am &ndash; 12pm (Mornings only)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="availability" value="12pm - 5pm (Afternoons only)">
+          <span>12pm &ndash; 5pm (Afternoons only)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="availability" value="5pm - 7pm (Post-festival breakdown and cleanup)">
+          <span>5pm &ndash; 7pm (Post-festival breakdown and cleanup)</span>
+        </label>
+      </div>
+
+      <!-- ABOUT YOURSELF -->
+      <p class="form-section-title">About You <span class="req">*</span></p>
+      <div class="form-row full">
+        <div class="field">
+          <label for="about">Please tell us a little about yourself and why you would like to volunteer. <span style="font-weight:400;opacity:.6;">(This will help us determine the best volunteer role for you.)</span> <span class="req">*</span></label>
+          <textarea id="about" name="about" required placeholder="Tell us about yourself..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="submit-btn">Submit Application</button>
+        <p class="form-note">We&#8217;ll be in touch within a few weeks. Thank you!</p>
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- FOOTER -->
