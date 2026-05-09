@@ -650,7 +650,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <p class="hero-where">Tioga Pavilion at Belmont Village &ensp;·&ensp; 18 Mill St, Belmont, NH 03220</p>
     <p class="hero-hours">Festival open 10:00 am – 5:00 pm</p>
     <div class="hero-btns">
-      <a href="#tickets" class="btn btn-rust" style="min-width:180px;text-align:center;">Purchase Tickets</a>
+      <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989097301574" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="min-width:180px;text-align:center;">Purchase Tickets</a>
       <a href="#activities" class="btn btn-sage" style="min-width:180px;text-align:center;">See Activities</a>
     </div>
   </div>
@@ -687,7 +687,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <p class="tcard-type">Children</p>
         <p class="tcard-price">$4</p>
         <p class="tcard-per">Ages 3 – 12 years</p>
-        <a href="#" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
+        <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989097301574" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
       </div>
       <div class="tcard reveal d2">
         <div class="tbar" style="background:linear-gradient(90deg,var(--rust),var(--peach));"></div>
@@ -695,14 +695,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <p class="tcard-type">Adults</p>
         <p class="tcard-price">$7</p>
         <p class="tcard-per">Ages 13 – 64 years</p>
-        <a href="#" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
+        <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989097301574" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
       </div>
       <div class="tcard reveal d3">
         <div class="tbar" style="background:linear-gradient(90deg,var(--gold),var(--yg));"></div>
         <p class="tcard-type">Seniors</p>
         <p class="tcard-price">$5</p>
         <p class="tcard-per">Ages 65 &amp; older</p>
-        <a href="#" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
+        <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989097301574" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="width:100%;text-align:center;margin-top:1.5rem;">Purchase</a>
       </div>
     </div>
     <div class="free-note reveal">
@@ -741,7 +741,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
             <span style="font-size:1.1rem;flex-shrink:0;">&#128663;</span>
             <div>
               <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:.2rem;">Parking</p>
-              <p style="font-family:'Sorts Mill Goudy',serif;font-size:.98rem;color:var(--ink2);">Free parking on-site &nbsp;&middot;&nbsp; Accessible parking available &nbsp;&middot;&nbsp; Parking map coming soon</p>
+              <p style="font-family:'Sorts Mill Goudy',serif;font-size:.98rem;color:var(--ink2);">Free parking on-site &nbsp;&middot;&nbsp; Accessible parking available &nbsp;&middot;&nbsp; <a href="plan-your-visit.html#parking" style="color:var(--sage);">View parking map</a></p>
             </div>
           </div>
         </div>
@@ -1043,18 +1043,7 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-document.querySelectorAll('a[href="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const t = a.textContent.trim();
-    if (t.includes('Ticket') || t.includes('Purchase'))
-      alert('Ticket sales will open closer to August 22, 2026. Check back soon!');
-    else if (t.includes('Vendor') || t.includes('Application'))
-      window.location.href = 'vendors.html';
-    else if (t.includes('Waystation'))
-      alert('Visit the NH Division of Forests & Lands website to register your waystation.');
-  });
-});
+
 
 // ── LIGHTBOX ──
 const lightbox = document.getElementById('lightbox');
