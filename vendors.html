@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vendors · NH Monarch Festival 2026</title>
+<title>Meet Your Vendors · NH Monarch Festival 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -146,68 +146,23 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .info-card h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
 .info-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.6; color: var(--ink2); opacity: .78; }
 
-/* ── FORM ── */
-.form-wrap {
-  background: var(--parch);
-  border: 1.5px solid var(--parch3);
-  padding: 3.5rem 4rem;
-  margin-top: 3rem;
-  position: relative;
-}
-.form-wrap::before {
-  content: 'Vendor Application · August 22, 2026';
-  position: absolute; top: -10px; left: 2rem;
-  background: var(--parch); padding: 0 8px;
-  font-family: 'Jost', sans-serif; font-style: normal; font-weight: 500;
-  font-size: .88rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage2);
-}
-
-.form-section-title {
-  font-family: 'Marcellus', serif; font-size: .75rem; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--rust); opacity: .8; font-weight: 700;
-  padding-bottom: .6rem; border-bottom: 1px dotted var(--parch3);
-  margin-bottom: 1.6rem; margin-top: 2.5rem; font-weight: 700;
-}
-.form-section-title:first-of-type { margin-top: 0; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.4rem; }
-.form-row.full { grid-template-columns: 1fr; }
-.form-row.three { grid-template-columns: 1fr 1fr 1fr; }
-
-.field { display: flex; flex-direction: column; gap: .4rem; }
-label {
-  font-family: 'Jost', sans-serif; font-size: .68rem; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--ink2);
-}
-label .req { color: var(--rust); margin-left: 2px; }
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
-  font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; color: var(--ink);
+/* ── VENDOR GRID ── */
+.vendor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; margin-top: 1rem; }
+.vendor-card {
   background: var(--cream); border: 1.5px solid var(--parch3);
-  padding: .7rem 1rem; outline: none;
-  transition: border-color .2s, box-shadow .2s;
-  width: 100%;
+  border-top: 4px solid var(--sage); padding: 1.8rem 1.6rem;
+  display: flex; flex-direction: column; align-items: flex-start;
+  text-decoration: none; transition: box-shadow .2s;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--sage); box-shadow: 0 0 0 3px rgba(58,96,48,.08);
+.vendor-card:hover { box-shadow: 0 8px 24px rgba(42,30,12,.1); }
+.vendor-card h3 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--sage); line-height: 1.35; margin-bottom: .5rem; }
+.vendor-desc { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.65; color: var(--ink2); opacity: .8; margin-bottom: 1rem; }
+.vendor-link {
+  margin-top: auto; font-size: .7rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--rust);
+  padding-top: .2rem;
 }
-textarea { resize: vertical; min-height: 110px; }
-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2352401c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
-
-.checkbox-group { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 1.4rem; }
-.checkbox-item { display: flex; align-items: flex-start; gap: .7rem; cursor: pointer; }
-.checkbox-item input[type="checkbox"] { width: 16px; height: 16px; margin-top: 3px; accent-color: var(--sage); flex-shrink: 0; cursor: pointer; }
-.checkbox-item span { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; color: var(--ink2); line-height: 1.5; }
-
-.btn {
+.vendor-link-static { color: var(--ink2); opacity: .55; }
   display: inline-block; text-decoration: none;
   font-family: 'Jost', sans-serif;
   font-size: .68rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase;
@@ -220,26 +175,6 @@ select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmln
 
 .form-submit-row { display: flex; align-items: center; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
 .form-note { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .9rem; color: var(--ink2); opacity: .65; }
-
-/* ── SUCCESS MESSAGE ── */
-.success-msg {
-  display: none; background: var(--mint2); border: 1.5px solid var(--mint);
-  border-left: 4px solid var(--sage); padding: 2rem 2.4rem; margin-top: 2rem;
-  text-align: center;
-}
-.success-msg h3 { font-family: 'Marcellus', serif; font-size: 1.4rem; color: var(--sage); margin-bottom: .5rem; }
-.success-msg p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: var(--ink2); line-height: 1.7; }
-
-/* ── FORMSPREE NOTICE (admin only helper) ── */
-.setup-notice {
-  background: #fff8e8; border: 1.5px solid var(--gold2);
-  border-left: 4px solid var(--gold); padding: 2rem 2.4rem; margin-bottom: 3rem;
-}
-.setup-notice h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--gold); margin-bottom: .6rem; }
-.setup-notice ol { padding-left: 1.4rem; }
-.setup-notice li { font-family: 'Sorts Mill Goudy', serif; font-size: .97rem; color: var(--ink2); line-height: 1.7; margin-bottom: .3rem; }
-.setup-notice code { background: var(--parch2); padding: .1rem .4rem; font-size: .9rem; color: var(--rust); }
-.setup-notice a { color: var(--sage); }
 
 /* ── FOOTER ── */
 footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
@@ -282,8 +217,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .sec { padding: 4rem 1.5rem; }
   .page-header { padding: 3.5rem 1.5rem 3rem; }
   .info-grid { grid-template-columns: 1fr; }
-  .form-wrap { padding: 2.5rem 1.5rem; }
-  .form-row, .form-row.three { grid-template-columns: 1fr; }
+  .vendor-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .hamburger { display: flex !important; }
   footer { padding: 4rem 1.5rem 2rem; }
@@ -299,12 +233,12 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <span>August 22, 2026</span><span class="dot">◆</span>
     <span>Belmont Village, NH</span><span class="dot">◆</span>
     <span>10am – 5pm</span><span class="dot">◆</span>
-    <span>Vendor Applications Now Open!</span><span class="dot">◆</span>
+    <span>Meet Our 2026 Vendors!</span><span class="dot">◆</span>
     <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
     <span>August 22, 2026</span><span class="dot">◆</span>
     <span>Belmont Village, NH</span><span class="dot">◆</span>
     <span>10am – 5pm</span><span class="dot">◆</span>
-    <span>Vendor Applications Now Open!</span><span class="dot">◆</span>
+    <span>Meet Our 2026 Vendors!</span><span class="dot">◆</span>
   </div>
 </div>
 
@@ -377,57 +311,198 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <div class="page-header">
   <div class="page-header-inner">
     <p class="page-eyebrow">Vendor Information</p>
-    <h1>Festival Vendors</h1>
-    <p>Thank you for your overwhelming interest in vending at the 14th Annual NH Monarch Festival! We have received a tremendous number of applications and are no longer accepting new submissions at this time.</p>
+    <h1>Meet Your Vendors</h1>
+    <p>We're thrilled to welcome this incredible lineup of local artisans, growers, makers, and community organizations to the 14th Annual NH Monarch Festival. Stop by their booths on August 22 to shop, learn, and celebrate together.</p>
   </div>
 </div>
 
 <div class="color-band"></div>
 
-<!-- VENDOR INFO -->
-<section class="sec" style="background:var(--cream);">
-  <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">What to Expect</p>
-      <h2 class="sh">Festival Vendor Details</h2>
-      <p class="sp">The NH Monarch Festival draws attendees of all ages from across New Hampshire and beyond. It's a wonderful opportunity to connect with your community while supporting monarch conservation.</p>
-    </div>
-    <div class="info-grid" style="margin-top:3rem;">
-      <div class="info-card reveal d1">
-        <span class="info-card-icon">📅</span>
-        <h3>Event Date &amp; Hours</h3>
-        <p>Saturday, August 22, 2026 from 10am to 5pm at Tioga Pavilion at Belmont Village, 18 Mill St, Belmont, NH 03220. Setup begins at 8am.</p>
-      </div>
-      <div class="info-card reveal d2">
-        <span class="info-card-icon">🦋</span>
-        <h3>Who We Welcome</h3>
-        <p>Artisans, crafters, food vendors, nonprofits, conservation organizations, and businesses whose products or mission align with our nature-focused community event.</p>
-      </div>
-      <div class="info-card reveal d3">
-        <span class="info-card-icon">📬</span>
-        <h3>Application Status</h3>
-        <p>Vendor applications are now closed. If you have already submitted an application, our team will be in touch at the email you provided.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="color-band"></div>
-
-<!-- APPLICATIONS CLOSED NOTICE -->
+<!-- VENDOR GRID -->
 <section class="sec" style="background:var(--parch);">
   <div class="inner">
-    <div class="reveal" style="max-width:700px;margin:0 auto;text-align:center;">
-      <span style="font-size:2.8rem;display:block;margin-bottom:1.2rem;">🦋</span>
-      <p class="sec-eyebrow" style="justify-content:center;">Applications Closed</p>
-      <h2 class="sh" style="margin-bottom:1.2rem;">Vendor Applications Are Now Closed</h2>
-      <p class="sp" style="max-width:54ch;margin:0 auto 1.8rem;">
-        We have been absolutely overwhelmed by the incredible response from our community — thank you! Due to the tremendous number of applications received, we are no longer accepting new vendor submissions for the 14th Annual NH Monarch Festival.
-      </p>
-      <p class="sp" style="max-width:54ch;margin:0 auto 2.5rem;">
-        If you have already submitted an application, our team will be in touch at the email you provided. We look forward to seeing you at the festival on <strong>Saturday, August 22, 2026</strong>!
-      </p>
-      <a href="contact.html" class="btn btn-sage" style="margin-right:.8rem;">Contact Us</a>
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <p class="sp" style="margin:0 auto;">From fresh florals and handmade crafts to sweet treats and conservation groups, here's who you'll find at this year's festival.</p>
+    </div>
+
+    <div class="vendor-grid">
+
+      <a href="https://petalsinthepines.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Petals in the Pines</h3>
+        <p class="vendor-desc">A seasonal flower farm in Canterbury offering field-grown, pick-your-own blooms alongside nature trails, labyrinths, and nature-themed programs for kids and families.</p>
+        <span class="vendor-link">petalsinthepines.com →</span>
+      </a>
+
+      <a href="https://nhaudubon.org/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>NH Audubon</h3>
+        <p class="vendor-desc">A nonprofit dedicated to protecting New Hampshire's birds and wildlife through conservation, education, and 7,500 acres of sanctuary land across the state.</p>
+        <span class="vendor-link">nhaudubon.org →</span>
+      </a>
+
+      <a href="http://www.tanglewoodhollow.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Tanglewood Hollow</h3>
+        <p class="vendor-desc">A Concord shop and discovery space offering nature-inspired curriculum, trail gear, and apparel for budding young explorers.</p>
+        <span class="vendor-link">tanglewoodhollow.com →</span>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61568710705059" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Avisha Pinecone Keepsakes</h3>
+        <p class="vendor-desc">Nature-inspired keepsakes and handmade gifts crafted with pinecones and natural materials.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="https://www.facebook.com/people/Mae-Florals/61568948061510/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Mae Florals</h3>
+        <p class="vendor-desc">Fresh-cut flower arrangements and floral gifts for everyday moments and special occasions.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="http://loftyambitionsart.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Lofty Ambitions Art</h3>
+        <p class="vendor-desc">Vibrant custom pet and wildlife portraits by NH artist Rayanna Boewe, available as prints and commissions.</p>
+        <span class="vendor-link">loftyambitionsart.com →</span>
+      </a>
+
+      <a href="https://www.facebook.com/people/Petals-Pages/100057131813176" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Petals &amp; Pages</h3>
+        <p class="vendor-desc">A small shop blending fresh florals with curated books and paper goods.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="http://kathiefife.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Kathie Fife, Lyme Ecologist &amp; Artist</h3>
+        <p class="vendor-desc">Fine art photography of New Hampshire landscapes and historic sites, plus nature-inspired fabric art, available as prints, cards, and bookmarks.</p>
+        <span class="vendor-link">kathiefife.com →</span>
+      </a>
+
+      <a href="http://prescottfarm.org/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Prescott Farm</h3>
+        <p class="vendor-desc">A nonprofit environmental education center in Laconia offering 160 acres of trails and gardens, plus camps and hands-on nature programs for all ages.</p>
+        <span class="vendor-link">prescottfarm.org →</span>
+      </a>
+
+      <a href="http://instagram.com/wickedwyrd" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Wicked Wyrd</h3>
+        <p class="vendor-desc">Handmade witchy and nature-inspired curiosities and craft goods.</p>
+        <span class="vendor-link">Visit on Instagram →</span>
+      </a>
+
+      <a href="http://instagram.com/buttonwood.shop" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Buttonwood Shop</h3>
+        <p class="vendor-desc">A small-batch shop of handmade goods and gifts.</p>
+        <span class="vendor-link">Visit on Instagram →</span>
+      </a>
+
+      <div class="vendor-card reveal">
+        <h3>Marylee's Tiedye</h3>
+        <p class="vendor-desc">Marylee French of Chichester hand-dyes tie-dye clothing and accessories, including butterfly and monarch-themed shirts for kids and adults, available in short and long sleeves.</p>
+        <span class="vendor-link vendor-link-static">Find them at the festival</span>
+      </div>
+
+      <a href="http://greenthumbcrafts.com" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Green Thumb Crafts</h3>
+        <p class="vendor-desc">Nature photography printed on framed art, tote bags, and accessories featuring butterflies, flowers, and the New Hampshire outdoors.</p>
+        <span class="vendor-link">greenthumbcrafts.com →</span>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61572380801194" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Caliopy Sunflower Studios</h3>
+        <p class="vendor-desc">Sunflower and nature-themed art and handmade goods.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="http://www.fassettfarmnursery.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Fassett Farm Nursery</h3>
+        <p class="vendor-desc">A native perennial nursery and garden design service in Jaffrey, growing plants that support pollinators, wildlife, and the food web.</p>
+        <span class="vendor-link">fassettfarmnursery.com →</span>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61578014251591" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Goldenrod Garden Design</h3>
+        <p class="vendor-desc">Garden design services for pollinator-friendly, native landscapes.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="https://www.instagram.com/rustandwondermetalworks/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Rust &amp; Wonder Metalworks</h3>
+        <p class="vendor-desc">Handforged metal art and garden decor.</p>
+        <span class="vendor-link">Visit on Instagram →</span>
+      </a>
+
+      <a href="http://danglesbydeb.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Dangles by Deb</h3>
+        <p class="vendor-desc">Fun, whimsical handmade earrings for every occasion, from nature and animals to holidays and more.</p>
+        <span class="vendor-link">danglesbydeb.com →</span>
+      </a>
+
+      <a href="http://www.heebeegeebs.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>HeeBee Geebs Flower Jewelry</h3>
+        <p class="vendor-desc">Jewelry handcrafted from real, preserved flower petals — earrings, necklaces, and bracelets that capture a bloom in full color.</p>
+        <span class="vendor-link">heebeegeebs.com →</span>
+      </a>
+
+      <div class="vendor-card reveal">
+        <h3>Heidi's Handmade</h3>
+        <p class="vendor-desc">NH handmade ceramics built for everyday use — mugs, noodle bowls, flowerpots, and garden decor, including playful snail planters and cat &amp; dog vases. Microwave, oven, and dishwasher safe.</p>
+        <span class="vendor-link vendor-link-static">Find them at the festival</span>
+      </div>
+
+      <a href="https://www.facebook.com/share/1JFevtb6Tf/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Lady Gage Basketry, LLC</h3>
+        <p class="vendor-desc">Handwoven baskets crafted in traditional and contemporary styles.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="https://www.communityclaycenter.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Community Clay Center</h3>
+        <p class="vendor-desc">A nonprofit ceramic teaching studio in Plymouth offering pottery classes, workshops, and a gallery space for ages 6 and up.</p>
+        <span class="vendor-link">communityclaycenter.com →</span>
+      </a>
+
+      <a href="https://belmontnh.gov/boards/conservation-commission/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Belmont Conservation Commission</h3>
+        <p class="vendor-desc">The town board dedicated to protecting Belmont's natural resources, wetlands, and open spaces for the community.</p>
+        <span class="vendor-link">belmontnh.gov →</span>
+      </a>
+
+      <a href="https://belmontpubliclibrary.org/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Belmont Public Library</h3>
+        <p class="vendor-desc">Belmont's community library, offering books, programs, and resources for residents of all ages.</p>
+        <span class="vendor-link">belmontpubliclibrary.org →</span>
+      </a>
+
+      <div class="vendor-card reveal">
+        <h3>Friends of Shaker Robotics</h3>
+        <span class="vendor-link vendor-link-static">Find them at the festival</span>
+      </div>
+
+      <a href="https://www.facebook.com/share/14VJiiYsP1N/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Mama Bear Baking Co</h3>
+        <p class="vendor-desc">Home-baked goods made with care, from cookies to seasonal treats.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100049979361683" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>His Special Cupcakes, LLC</h3>
+        <p class="vendor-desc">Cupcakes and sweet treats baked for every occasion.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+      <a href="https://www.goodfellasgrubfoodtruck.com/" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>Goodfellas Grub Food Truck</h3>
+        <p class="vendor-desc">A Southern NH food truck serving gourmet smash burgers and Italian-American eats, family run by two brothers.</p>
+        <span class="vendor-link">goodfellasgrubfoodtruck.com →</span>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61582575622400" target="_blank" rel="noopener noreferrer" class="vendor-card reveal">
+        <h3>The Pink Crumb</h3>
+        <p class="vendor-desc">Handcrafted baked goods and sweet treats.</p>
+        <span class="vendor-link">Visit on Facebook →</span>
+      </a>
+
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:3.5rem;">
       <a href="index.html#tickets" class="btn btn-rust">Get Tickets</a>
     </div>
   </div>
@@ -451,7 +526,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
           <li><a href="index.html#tickets">Purchase Tickets</a></li>
           <li><a href="index.html#schedule">Schedule</a></li>
           <li><a href="index.html#activities">Activities</a></li>
-          <li><a href="vendors.html">Vendor Information</a></li>
+          <li><a href="vendors.html">Meet Your Vendors</a></li>
           <li><a href="volunteer.html">Volunteer</a></li>
           <li><a href="plan-your-visit.html">Plan Your Visit</a></li>
         </ul>
@@ -501,11 +576,6 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Show success message if Formspree redirects back with ?success
-if (window.location.search.includes('success')) {
-  document.getElementById('successMsg').style.display = 'block';
-  document.querySelector('form').style.display = 'none';
-}
 </script>
 </body>
 </html>
