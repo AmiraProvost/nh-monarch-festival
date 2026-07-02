@@ -248,21 +248,30 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .bio-role { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; display: block; }
 .bio-name { font-family: 'Marcellus', serif; font-size: 1.8rem; color: var(--ink); margin-bottom: 1.5rem; }
 .bio-text p { font-family: 'Sorts Mill Goudy', serif; font-size: 1.05rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1.4rem; }
-.bio-placeholder {
-  background: var(--mint2); border-left: 4px solid var(--mint); padding: 1rem 1.4rem;
-  font-family: 'Jost', sans-serif; font-size: .85rem; font-style: italic; color: var(--sage2); margin-bottom: 1.4rem;
-}
+.bio-signature { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.25rem; color: var(--sage2); margin-top: 1.5rem; }
 .bio-quote {
   margin: 3rem 0; padding: 2.5rem; background: var(--cream); border: 1.5px solid var(--parch3);
   border-left: 4px solid var(--rust); position: relative;
 }
 .bio-quote p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.25rem; color: var(--ink); line-height: 1.6; }
 .bio-quote cite { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sage2); font-style: normal; display: block; margin-top: 1rem; }
-.facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); margin: 3rem 0; }
-.fact-card { background: var(--cream); padding: 1.8rem 1.6rem; text-align: center; }
-.fact-card .fact-icon { font-size: 1.6rem; opacity: .6; display: block; margin-bottom: .6rem; }
-.fact-card h4 { font-family: 'Marcellus', serif; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--sage); margin-bottom: .4rem; }
-.fact-card p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .92rem; color: var(--ink2); opacity: .8; }
+.faq-list { margin: 2rem 0 3rem; }
+.faq-item { padding: 1.5rem 0; border-bottom: 1px dotted var(--parch3); }
+.faq-item:first-child { border-top: 1px dotted var(--parch3); }
+.faq-q { font-family: 'Marcellus', serif; font-size: 1.08rem; color: var(--sage); margin-bottom: .5rem; }
+.faq-a { font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; color: var(--ink2); line-height: 1.75; opacity: .9; }
+.hobby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0 3rem; }
+.hobby-card { background: var(--cream); border: 1.5px solid var(--parch3); overflow: hidden; }
+.hobby-photo-frame {
+  aspect-ratio: 4 / 3; background: var(--parch); display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: .6rem; color: var(--sage); opacity: .4; overflow: hidden;
+}
+.hobby-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hobby-photo-frame svg { width: 38px; height: 38px; }
+.hobby-photo-frame p { font-family: 'Jost', sans-serif; font-size: .62rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.hobby-card-body { padding: 1.5rem 1.6rem; }
+.hobby-card h4 { font-family: 'Marcellus', serif; font-size: 1.02rem; color: var(--ink); margin-bottom: .5rem; }
+.hobby-card p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .92rem; color: var(--ink2); opacity: .85; line-height: 1.6; }
 .bio-cta { margin-top: 3rem; padding: 2.5rem; background: var(--parch); border: 1.5px solid var(--parch3); text-align: center; }
 .bio-cta h3 { font-family: 'Marcellus', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: .6rem; }
 .bio-cta p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: var(--ink2); opacity: .85; margin-bottom: 1.5rem; }
@@ -270,7 +279,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 @media (max-width: 860px) {
   .bio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .bio-photo { position: static; }
-  .facts-grid { grid-template-columns: 1fr; }
+  .hobby-grid { grid-template-columns: 1fr; }
 }
 
 </style>
@@ -377,54 +386,94 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <span class="bio-role">Festival Organizer &amp; Event Coordinator</span>
         <h2 class="bio-name">Amira Provost</h2>
 
-        <div class="bio-placeholder">📝 PLACEHOLDER — Opening paragraph: How did you first get involved with monarchs and conservation? What drew you in? (2–4 sentences)</div>
-        <p>[Your opening story goes here.]</p>
-
-        <div class="bio-placeholder">📝 PLACEHOLDER — Your background: years of experience, relevant training/education, other conservation work or affiliations (e.g. NH Audubon, Monarch Watch, citizen science projects).</div>
-        <p>[Your background goes here.]</p>
-
-        <div class="bio-placeholder">📝 PLACEHOLDER — Why the festival matters to you: what you hope people take away from attending, and what keeps you doing this every year.</div>
-        <p>[Your "why this matters" story goes here.]</p>
-
-        <div class="bio-placeholder">📝 PLACEHOLDER — A personal touch: something outside of monarchs — hobbies, family, where you live, what you do when you're not organizing the festival. Helps people feel like they know you.</div>
-        <p>[A personal detail or two goes here.]</p>
+        <p>Welcome! Thank you for visiting my "About Me" page!</p>
+        <p>I'm often asked, "How did you get involved with monarchs and conservation?" That's easy. I blame my friend, Brandon. Every year, I'm always outside, crawling around on the ground, taking macro photos of all the bugs, little creatures, and small flora. Years ago, I took a photo of a caterpillar I found and shared it on Facebook. Brandon told me it was a monarch caterpillar and that they were "becoming a rare sighting." Those words sent me on a deep dive of learning as much as I could about the species.</p>
+        <p>It was a domino effect: I started collecting monarch eggs and rearing them each season, observing and learning as much as I could about the life cycle and their predators. And then, I started to collect a little data on the specimens because I'm a curious and inquisitive person. I started tagging the adult butterflies and created a Monarch Waystation.</p>
+        <p>And then, I learned about the NH Monarch Festival and the Millers' conservation efforts. They invited me to participate in the Festival with my own science station. I brought live specimens and microscopes. I gave presentations on how to test the health of butterflies, take measurements and collect data, and tag butterflies. The Millers and I worked together for a few years to create a memorable experience for attendees.</p>
+        <p>And then&#8230;at the end of the 2024 monarch season, the Millers announced their retirement from the Festival. They asked me if I would like to continue running the event. It was a spectacular honor (and a bit terrifying), but I accepted the new coordinator position.</p>
+        <p>Since then, I've immersed myself into all things monarch-related. I left a robotics head-coaching position to focus on festival planning. I attend several monthly webinars and trainings, continue to collect data, and participate in community science projects. Last year, I joined the New Hampshire Audubon and volunteered with their nanotagging project. This year, I joined the Belmont Conservation Commission.</p>
+        <p>I'm continually learning as much as I can and I intend to honor Jim's and Donna's commitment to conservation and educating the community. Some of my goals for the Festival's future include: connecting with other State and Local organizations, growing the Festival while still staying true to its mission, and providing the public with training and learning opportunities outside of the event date.</p>
+        <p class="bio-signature">~ Amira</p>
       </div>
 
       <div class="bio-photo reveal d2">
-        <div class="bio-photo-frame">
-          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 14 C24 4, 8 2, 6 16 C5 24, 16 28, 28 24 L30 30 L32 24 C44 28, 55 24, 54 16 C52 2, 36 4, 30 14 Z M28 30 C18 34, 8 44, 14 52 C20 58, 27 48, 29 36 M32 30 C42 34, 52 44, 46 52 C40 58, 33 48, 31 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="30" y1="14" x2="30" y2="44" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <p>Photo Coming Soon</p>
+        <div class="bio-photo-frame" style="opacity:1;">
+          <img src="images/amira/amira-portrait.jpg" alt="Amira Provost smiling outdoors near a garden bed" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <div class="bio-photo-caption"><p>[Optional photo caption — e.g. "Amira tagging a monarch at last year's festival"]</p></div>
+        <div class="bio-photo-caption"><p>Amira at the Founder's Oak in New Braunfels, Texas. 2026.</p></div>
       </div>
     </div>
 
     <!-- PULL QUOTE -->
     <div class="bio-quote reveal">
-      <p>&#8220;[Optional pull-quote — one or two sentences in your own words about why this work matters to you. Pulled out big and bold like this, it's a nice way to add personality to the page.]&#8221;</p>
+      <p>&#8220;Together, we will be the rising tide that lifts all boats.&#8221;</p>
       <cite>&#8212; Amira Provost</cite>
     </div>
 
-    <!-- QUICK FACTS -->
+    <!-- FAQ -->
     <div class="reveal">
-      <p class="sec-eyebrow">A Few Quick Facts</p>
-      <h2 class="sh" style="margin-bottom:1.5rem;">Get to Know Amira</h2>
+      <p class="sec-eyebrow">Frequently Asked</p>
+      <h2 class="sh" style="margin-bottom:1rem;">A Few Questions I Get a Lot</h2>
     </div>
-    <div class="facts-grid reveal">
-      <div class="fact-card">
-        <span class="fact-icon">🦋</span>
-        <h4>Years Involved</h4>
-        <p>[e.g. "5 years"]</p>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <p class="faq-q">How many years have you been involved with monarchs?</p>
+        <p class="faq-a">Since 2020, officially.</p>
       </div>
-      <div class="fact-card">
-        <span class="fact-icon">📍</span>
-        <h4>Based In</h4>
-        <p>[Your town/area]</p>
+      <div class="faq-item">
+        <p class="faq-q">What's your favorite part about doing all this?</p>
+        <p class="faq-a">The difference it makes and how fulfilling it feels.</p>
       </div>
-      <div class="fact-card">
-        <span class="fact-icon">💚</span>
-        <h4>Favorite Part of the Festival</h4>
-        <p>[e.g. "The butterfly release" or "Meeting new vendors"]</p>
+      <div class="faq-item">
+        <p class="faq-q">What's your least favorite part?</p>
+        <p class="faq-a">The fact I don't have clones of myself to get even more stuff done. And the fact I can't learn information Matrix-style.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Why are you "The Monarch Matriarch"?</p>
+        <p class="faq-a">Because "Mother of Monarchs" and "Crazy Cat(erpillar) Lady" were already taken.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What did you do before becoming the Festival coordinator?</p>
+        <p class="faq-a">I still do most of what I did before becoming the new Festival coordinator. I still volunteer, help, and mentor several NH/VT robotics programs. Occasionally, I do CAD work for a couple of clients and tutor STEM subjects. I'm also a graphics designer, registered civil engineer-in-training, and author.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Do you have time for any hobbies?</p>
+        <p class="faq-a">Yes and always! I enjoy gardening, traveling, pottery, woodworking, learning, photography, painting, and anything that involves creativity and designing stuff. I also love spending time with family and my dogs.</p>
+      </div>
+    </div>
+
+    <!-- HOBBIES -->
+    <div class="reveal">
+      <p class="sec-eyebrow">A Peek Outside the Festival</p>
+      <h2 class="sh" style="margin-bottom:1.5rem;">A Few of My Hobbies</h2>
+    </div>
+    <div class="hobby-grid reveal">
+      <div class="hobby-card">
+        <div class="hobby-photo-frame">
+          <img src="images/amira/pottery.jpg" alt="A handmade ceramic bowl with a pink glazed interior and painted floral pattern">
+        </div>
+        <div class="hobby-card-body">
+          <h4>Pottery</h4>
+          <p>It's a blank slate of unlimited possibilities and what I call "my mental vacation."</p>
+        </div>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-photo-frame">
+          <img src="images/amira/painting.jpg" alt="A colorful wall mural of Pokémon characters including Charizard, Blastoise, Raichu, and Venusaur">
+        </div>
+        <div class="hobby-card-body">
+          <h4>Painting</h4>
+          <p>I love turning a space into something special.</p>
+        </div>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-photo-frame">
+          <img src="images/amira/photography.jpg" alt="A close-up photograph of a hummingbird's iridescent head and feathers">
+        </div>
+        <div class="hobby-card-body">
+          <h4>Photography</h4>
+          <p>I try to capture the world through my eyes, even if the camera doesn't always succeed.</p>
+        </div>
       </div>
     </div>
 
