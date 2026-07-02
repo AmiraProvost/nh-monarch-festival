@@ -254,6 +254,17 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .mobile-menu .m-cta { margin-top: 1.5rem; display: block; background: var(--rust); color: white !important; text-align: center; padding: 1rem; font-weight: 700; }
 .mobile-menu-close { position: absolute; top: 1.2rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--ink2); background: none; border: none; font-family: sans-serif; line-height: 1; }
 
+.btn {
+  display: inline-block; text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: .68rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase;
+  padding: .82rem 2rem; transition: all .25s; cursor: pointer; border: none;
+}
+.btn-rust { background: var(--rust); color: var(--cream); }
+.btn-rust:hover { background: var(--ink); }
+.btn-sage { background: transparent; border: 1.5px solid var(--sage); color: var(--sage); }
+.btn-sage:hover { background: var(--sage); color: var(--cream); }
+
 /* ── REVEAL ── */
 
 
@@ -633,4 +644,8 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.getElementById('menuClose');
 hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
-menuClose.addEventListener('click', () 
+menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); }));
+</script>
+</body>
+</html>

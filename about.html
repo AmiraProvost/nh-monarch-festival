@@ -589,4 +589,13 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
 <script>
 const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mo
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+hamburger.addEventListener('click', function() { mobileMenu.classList.add('open'); hamburger.classList.add('open'); });
+menuClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(function(a) {
+  a.addEventListener('click', function() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+});
+</script>
+</body>
+</html>
