@@ -267,61 +267,6 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .free-note h4 { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--sage); margin-bottom: .5rem; }
 .free-note p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .95rem; color: var(--ink2); line-height: 1.6; }
 
-/* ── SCHEDULE ── */
-#schedule { background: var(--cream); }
-.schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
-.timeline { margin-top: 1.5rem; }
-.tl-item { display: flex; gap: 1.2rem; margin-bottom: 2rem; position: relative; }
-.tl-item::after { content: ''; position: absolute; left: 2.5rem; top: 2.4rem; bottom: -1.2rem; width: 1px; background: linear-gradient(to bottom, var(--parch3), transparent); }
-.tl-item:last-child::after { display: none; }
-.tl-time { font-family: 'Marcellus', serif; font-size: .82rem; color: var(--gold); min-width: 3.2rem; padding-top: .18rem; flex-shrink: 0; }
-.tl-dot { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: var(--cream); border: 1.5px solid var(--peach); margin-top: .18rem; display: flex; align-items: center; justify-content: center; }
-.tl-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--rust); opacity: .7; }
-.tl-body strong { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--ink); display: block; margin-bottom: .15rem; }
-.tl-body span { font-family: 'Sorts Mill Goudy', serif; font-size: .93rem; color: var(--ink2); opacity: .7; }
-.schedule-photo { position: sticky; top: 90px; }
-.schedule-photo img { width: 100%; height: 420px; object-fit: cover; display: block; }
-.photo-caption { padding: .8rem 1rem; background: var(--parch); border: 1px solid var(--parch3); border-top: none; }
-.photo-caption p { font-family: 'IM Fell English', serif; font-style: italic; font-size: .92rem; color: var(--sage2); }
-
-/* ── ACTIVITIES ── */
-#activities { background: var(--parch); }
-.activities-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-bottom: 4rem; }
-.act-photo img { width: 100%; height: 380px; object-fit: cover; display: block; }
-.act-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); }
-.act-card { background: var(--cream); padding: 1.8rem 1.6rem; transition: background .2s, transform .2s; border-top: 5px solid transparent; }
-.act-card:hover { background: white; transform: translateY(-3px); border-top-color: var(--orange); }
-.act-card:nth-child(3n+1):hover { border-top-color: var(--mint); }
-.act-card:nth-child(3n+2):hover { border-top-color: var(--yg); }
-.act-card:nth-child(3n+3):hover { border-top-color: var(--peach); }
-.act-icon { font-size: 1.5rem; opacity: .6; display: block; margin-bottom: .7rem; }
-.act-card h3 { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--ink); margin-bottom: .35rem; }
-.act-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .92rem; line-height: 1.55; color: var(--ink2); opacity: .78; }
-.adults-section { margin-top: 4rem; padding: 3rem; background: var(--cream); border: 1.5px solid var(--parch3); border-left: 4px solid var(--sage2); }
-.adults-section h3 { font-family: 'Marcellus', serif; font-size: 1.2rem; color: var(--sage); margin-bottom: 1rem; }
-.adults-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
-.adults-list li { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; color: var(--ink2); list-style: none; display: flex; gap: .6rem; align-items: flex-start; }
-.adults-list li::before { content: '◆'; font-size: .4rem; color: var(--sage2); margin-top: .5rem; flex-shrink: 0; }
-
-/* ── GALLERY ── */
-#gallery { background: linear-gradient(160deg, #e8f5ec 0%, var(--cream) 60%, #fef0e0 100%); }
-.gallery-mosaic {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr;
-  grid-template-rows: 280px 280px;
-  gap: 3px; margin-top: 2.5rem;
-  border: 1.5px solid var(--parch3);
-}
-.gitem { overflow: hidden; cursor: pointer; }
-.gitem:first-child { grid-row: span 2; }
-.gitem img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; display: block; }
-.gitem:hover img { transform: scale(1.05); }
-.gallery-row2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-top: 3px; background: var(--parch3); }
-.gitem2 { overflow: hidden; height: 200px; cursor: pointer; }
-.gitem2 img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; display: block; }
-.gitem2:hover img { transform: scale(1.05); }
-.gallery-caption { margin-top: 1.2rem; text-align: center; font-family: 'IM Fell English', serif; font-style: italic; font-size: 1rem; color: var(--sage2); }
-
 /* ── VENDORS ── */
 #vendors { background: linear-gradient(160deg, var(--parch) 0%, #fef5e4 100%); }
 .vendor-layout { display: block; }
@@ -477,55 +422,18 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .reveal.vis { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
 
-/* ── LIGHTBOX ── */
-.lightbox-overlay {
-  display: none; position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,.92); align-items: center; justify-content: center;
-  cursor: zoom-out;
-}
-.lightbox-overlay.active { display: flex; }
-.lightbox-img {
-  max-width: 90vw; max-height: 90vh;
-  object-fit: contain; box-shadow: 0 0 60px rgba(0,0,0,.6);
-  cursor: default; animation: lbFadeIn .2s ease;
-}
-@keyframes lbFadeIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
-.lightbox-close {
-  position: fixed; top: 1.2rem; right: 1.5rem;
-  color: white; font-size: 2rem; cursor: pointer;
-  background: none; border: none; line-height: 1; opacity: .7; transition: opacity .2s;
-}
-.lightbox-close:hover { opacity: 1; }
-.lightbox-caption {
-  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
-  font-family: 'IM Fell English', serif; font-style: italic;
-  font-size: .95rem; color: rgba(255,255,255,.65); text-align: center;
-  pointer-events: none;
-}
-.lightbox-nav {
-  position: fixed; top: 50%; transform: translateY(-50%);
-  background: rgba(255,255,255,.1); border: none; color: white;
-  font-size: 1.8rem; padding: .8rem 1rem; cursor: pointer;
-  transition: background .2s; line-height: 1;
-}
-.lightbox-nav:hover { background: rgba(255,255,255,.2); }
-.lightbox-prev { left: 1rem; }
-.lightbox-next { right: 1rem; }
-
 @media (max-width: 920px) {
   nav { padding: .65rem 1.5rem; }
   .nav-links { display: none; }
   #hero { grid-template-columns: 1fr; display: flex; flex-direction: column; }
   .hero-r { padding: 2.5rem 2rem; order: -1; }
   .sec { padding: 4.5rem 1.5rem; }
-  .ticket-grid, .schedule-grid, .activities-intro, .vendor-layout,
+  .ticket-grid, .vendor-layout,
   .monarch-layout, .workshops-layout, .footer-grid, .resources-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .sites-grid, .act-grid { grid-template-columns: 1fr; }
-  .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .gitem:first-child { grid-row: auto; }
-  .lifecycle, .adults-list { grid-template-columns: 1fr; }
+  .sites-grid { grid-template-columns: 1fr; }
+  .lifecycle { grid-template-columns: 1fr; }
   .cons-cta { flex-direction: column; }
-  .monarch-plate, .schedule-photo, .wcard { position: static; }
+  .monarch-plate, .wcard { position: static; }
   .orn-rule { padding: .4rem 1.5rem; }
   .hamburger { display: flex !important; }
   .mobile-menu { display: none; }
@@ -586,8 +494,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" id="menuClose">✕</button>
     <ul>
-      <li><a href="#schedule" class="mob-link">Schedule</a></li>
-      <li><a href="#activities" class="mob-link">Activities</a></li>
+      <li><a href="schedule.html" class="mob-link">Schedule</a></li>
+      <li><a href="activities.html" class="mob-link">Activities</a></li>
       <li><a href="vendors.html" class="mob-link">Vendors</a></li>
       <li><a href="volunteer.html" class="mob-link">Volunteer</a></li>
       <li><a href="plan-your-visit.html" class="mob-link">Plan Your Visit</a></li>
@@ -600,7 +508,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <li><a href="donate.html" class="mob-link">Donate</a></li>
       <li><a href="press.html" class="mob-link">Press &amp; Media</a></li>
       <li><a href="https://www.facebook.com/NHMonarchFestival" class="mob-link" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-      <li><a href="#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="gallery.html" class="mob-link">Gallery</a></li>
     </ul>
     <a href="#tickets" class="btn m-cta mob-link">Buy Tickets</a>
   </div>
@@ -608,8 +516,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <li class="nav-dropdown">
       <a href="#">Festival</a>
       <div class="dropdown-menu">
-        <a href="#schedule">Schedule</a>
-        <a href="#activities">Activities</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="activities.html">Activities</a>
         <a href="vendors.html">Vendors</a>
         <a href="volunteer.html">Volunteer</a>
         <a href="plan-your-visit.html">Plan Your Visit</a>
@@ -634,7 +542,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
     </li>
-    <li><a href="#gallery" style="display:flex;align-items:center;">Gallery</a></li>
+    <li><a href="gallery.html" style="display:flex;align-items:center;">Gallery</a></li>
     <li><a href="#tickets" class="nav-cta">Buy Tickets</a></li>
   </ul>
 </nav>
@@ -651,7 +559,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <p class="hero-hours">Festival open 10:00 am – 5:00 pm</p>
     <div class="hero-btns">
       <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989667456924" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="min-width:180px;text-align:center;">Purchase Tickets</a>
-      <a href="#activities" class="btn btn-sage" style="min-width:180px;text-align:center;">See Activities</a>
+      <a href="activities.html" class="btn btn-sage" style="min-width:180px;text-align:center;">See Activities</a>
     </div>
   </div>
   <div class="hero-r">
@@ -714,101 +622,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
 <div class="color-band"></div>
 
-<!-- VENUE & PARKING -->
-<section id="venue" class="sec" style="background:var(--parch);">
-  <div class="inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
-      <div>
-        <p class="sec-eyebrow">Find Us</p>
-        <h2 class="sh">Venue &amp; Parking</h2>
-        <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1.05rem;line-height:1.8;color:var(--ink2);opacity:.85;margin-bottom:1.5rem;">Join us at Tioga Pavilion at Belmont Village for a day of monarch education, conservation, and community fun!</p>
-        <div style="display:flex;flex-direction:column;gap:.8rem;margin-bottom:2rem;">
-          <div style="display:flex;gap:1rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;flex-shrink:0;">&#128197;</span>
-            <div>
-              <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:.2rem;">Date &amp; Time</p>
-              <p style="font-family:'Sorts Mill Goudy',serif;font-size:.98rem;color:var(--ink2);">Saturday, August 22, 2026 &nbsp;&middot;&nbsp; 10:00 AM &ndash; 5:00 PM</p>
-            </div>
-          </div>
-          <div style="display:flex;gap:1rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;flex-shrink:0;">&#128205;</span>
-            <div>
-              <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:.2rem;">Location</p>
-              <p style="font-family:'Sorts Mill Goudy',serif;font-size:.98rem;color:var(--ink2);">Tioga Pavilion at Belmont Village &nbsp;&middot;&nbsp; 18 Mill St, Belmont, NH 03220</p>
-            </div>
-          </div>
-          <div style="display:flex;gap:1rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;flex-shrink:0;">&#128663;</span>
-            <div>
-              <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:.2rem;">Parking</p>
-              <p style="font-family:'Sorts Mill Goudy',serif;font-size:.98rem;color:var(--ink2);">Free parking on-site &nbsp;&middot;&nbsp; Accessible parking available &nbsp;&middot;&nbsp; <a href="plan-your-visit.html#parking" style="color:var(--sage);">View parking map</a></p>
-            </div>
-          </div>
-        </div>
-        <a href="plan-your-visit.html" style="display:inline-block;background:var(--rust);color:white;font-family:'Jost',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.85rem 2.2rem;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#2a1e0c'" onmouseout="this.style.background='var(--rust)'">Plan Your Visit &#8594;</a>
-      </div>
-      <div style="border:1.5px solid var(--parch3);height:360px;overflow:hidden;">
-        <iframe
-          width="100%"
-          height="360"
-          style="border:0;"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://maps.google.com/maps?q=18+Mill+St,+Belmont,+NH+03220&output=embed">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="color-band"></div>
-
 <!-- SCHEDULE -->
 <section id="schedule" class="sec" style="background:var(--cream);">
   <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">Day of Event</p>
-      <h2 class="sh">Schedule & Timeline</h2>
-      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.8rem;">Details to come closer to festival date</p>
-      <p class="sp">Check back as we get closer to August 22, 2026 for the full schedule of events, presentations, and activities!</p>
-    </div>
-    <div class="schedule-grid">
-      <div class="timeline reveal">
-        <div class="tl-item">
-          <span class="tl-time" style="color:var(--rust);font-size:1rem;">10:00</span><div class="tl-dot" style="border-color:var(--rust);width:24px;height:24px;"></div>
-          <div class="tl-body"><strong style="color:var(--rust);font-size:1.05rem;">Festival Opens! 🎉</strong><span>Gates open — activities, booths, and presentations begin</span></div>
-        </div>
-
-        <div class="tl-item">
-          <span class="tl-time">All Day</span><div class="tl-dot"></div>
-          <div class="tl-body"><strong>Kid Activities</strong><span>Pollinator Passport, Caterpillar Crawl, Migration Race, Monarch Craft Station, Hopscotch, Face Painting, Photo Backdrops, Butterfly "Hunt," Interactive Science Stations, Scavenger Hunt Trivia, Kaleidoscope Tree, and free prizes throughout the day!</span></div>
-        </div>
-
-        <div class="tl-item">
-          <span class="tl-time">All Day</span><div class="tl-dot"></div>
-          <div class="tl-body"><strong>Adult Opportunities</strong><span>Native plant gardening talks, nature journaling, monarch learning stations, garden design consultations, conservation group presentations, community science projects, tagging demonstrations, and more.</span></div>
-        </div>
-
-        <div class="tl-item">
-          <span class="tl-time">All Day</span><div class="tl-dot"></div>
-          <div class="tl-body"><strong>Vendors</strong><span>Local artisans and crafters, nurseries, conservation groups, food vendors, soda and beverage station, face painter, and NHMF merch. There is something for everyone!</span></div>
-        </div>
-
-        <div class="tl-item">
-          <span class="tl-time">All Day</span><div class="tl-dot"></div>
-          <div class="tl-body"><strong>Town Amenities</strong><span>Belmont Public Library's Story Walk, local parks, the Rail Trail, covered bridges, and more!</span></div>
-        </div>
-
-        <div class="tl-item">
-          <span class="tl-time" style="color:var(--rust);font-size:1rem;">5:00</span><div class="tl-dot" style="border-color:var(--rust);width:24px;height:24px;"></div>
-          <div class="tl-body"><strong style="color:var(--rust);font-size:1.05rem;">Festival Closes</strong><span>Festival ends at 5:00 pm — thank you for celebrating with us!</span></div>
-        </div>
-      </div>
-      <div class="schedule-photo reveal d2">
-        <img src="images/festival1.jpeg" alt="Festival gathering" style="width:100%;height:420px;object-fit:cover;display:block;">
-        <div class="photo-caption"><p>Attendees gather on the festival lawn for a presentation — one of many throughout the day</p></div>
-      </div>
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto;">
+      <p class="sec-eyebrow" style="justify-content:center;">Day of Event</p>
+      <h2 class="sh">Schedule &amp; Timeline</h2>
+      <p class="sp" style="margin:0 auto 2rem;">From gates opening at 10am to the closing bell at 5pm, the day is packed with kid activities, adult opportunities, vendors, and more.</p>
+      <a href="schedule.html" class="btn btn-rust">See Full Schedule &#8594;</a>
     </div>
   </div>
 </section>
@@ -818,51 +639,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- ACTIVITIES -->
 <section id="activities" class="sec" style="background:var(--parch);">
   <div class="inner">
-    <div class="activities-intro">
-      <div class="reveal">
-        <p class="sec-eyebrow">Tons of Fun for Everyone</p>
-        <h2 class="sh">List of Activities</h2>
-        <p class="sp">There's something magical around every corner — earn your wings, watch monarchs transform, and parade like a migrating butterfly. Here are some of the potential activities we hope to offer this year (to be determined closer to festival date):</p>
-        <div style="margin-top:1.8rem;background:var(--mint2);padding:1.4rem 1.6rem;border-left:4px solid var(--mint);">
-          <h4 style="font-family:'Marcellus',serif;font-size:1rem;color:var(--sage);margin-bottom:.5rem;">Kid Activities</h4>
-          <p style="font-family:'Jost',sans-serif;font-size:.95rem;color:var(--ink2);line-height:1.65;">We offer several activities for kids of all ages. We are working on several new things for kids to enjoy. Some of this year's activities may include:</p>
-        </div>
-      </div>
-      <div class="act-photo reveal d2">
-        <img src="images/festival3.jpeg" alt="Child watching monarch enclosures" style="width:100%;height:380px;object-fit:cover;display:block;">
-        <div class="photo-caption" style="padding:.8rem 1rem;background:var(--parch2);border:1px solid var(--parch3);border-top:none;">
-          <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:.82rem;color:var(--sage2);">A child looks up in wonder at the monarch enclosures — one of the festival's most beloved moments</p>
-        </div>
-      </div>
-    </div>
-    <div class="act-grid reveal">
-      <div class="act-card"><span class="act-icon">📋</span><h3>Pollinator Passport</h3><p>Pick up your Passport at the entrance, collect stamps at each station, and turn it in for a special prize!</p></div>
-      <div class="act-card"><span class="act-icon">🐛</span><h3>Caterpillar Crawl</h3><p>Using burlap bags, crawl across the field to "molt" into the next instar. Make it all the way to pupation!</p></div>
-      <div class="act-card"><span class="act-icon">🗺️</span><h3>Migration Race</h3><p>Red light, green light — race like a migrating monarch south to Mexico!</p></div>
-      <div class="act-card"><span class="act-icon">🌳</span><h3>Kaleidoscope Tree</h3><p>Hang your origami or colored butterfly on our community butterfly tree.</p></div>
-      <div class="act-card"><span class="act-icon">🎨</span><h3>Face Painting</h3><p>Professional face painter on-site throughout the day.</p></div>
-      <div class="act-card"><span class="act-icon">📸</span><h3>Photo Backdrops</h3><p>Enjoy taking photos with our new wooden backdrops. Be a caterpillar, butterfly, or our latest conservation hero!</p></div>
-      <div class="act-card"><span class="act-icon">🔍</span><h3>Scavenger Hunt Trivia</h3><p>Find the monarch egg symbol and answer the science questions for a prize.</p></div>
-      <div class="act-card"><span class="act-icon">🦋</span><h3>Butterfly "Hunt"</h3><p>Using a butterfly net, try to capture the fake monarch butterfly for a prize.</p></div>
-      <div class="act-card"><span class="act-icon">🎁</span><h3>Free Prizes</h3><p>Win prizes throughout the day.</p></div>
-      <div class="act-card"><span class="act-icon">🎭</span><h3>Monarch Craft Station</h3><p>Create origami butterflies, color life cycle pages, make your own monarch mask, and build your own caterpillar.</p></div>
-      <div class="act-card"><span class="act-icon">👣</span><h3>Hopscotch</h3><p>Hop your way through the monarch life cycle and migration.</p></div>
-      <div class="act-card"><span class="act-icon">🔬</span><h3>Interactive Science Stations</h3><p>Check out all the different stations under the pavilion. View specimens under the microscope, learn more about milkweed and the ecosystem, and learn about ways you can help.</p></div>
-    </div>
-    <div class="adults-section reveal">
-      <h3>Adult Opportunities</h3>
-      <ul class="adults-list">
-        <li>Native plant gardening mini talks from vendors</li>
-        <li>Nature journaling with a local guide</li>
-        <li>Monarch learning stations with helpful information and free seeds</li>
-        <li>Host plants and how to grow them</li>
-        <li>Garden design consultation with expert gardeners</li>
-        <li>Conservation group presentations and data sharing</li>
-        <li>Community science projects and ways to contribute</li>
-        <li>Latest technology and science studies</li>
-        <li>Tagging demonstrations, including both sticker tags and the latest nanotags</li>
-        <li>Ways you can help our pollinators</li>
-      </ul>
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto;">
+      <p class="sec-eyebrow" style="justify-content:center;">Tons of Fun for Everyone</p>
+      <h2 class="sh">List of Activities</h2>
+      <p class="sp" style="margin:0 auto 2rem;">Earn your wings, watch monarchs transform, and parade like a migrating butterfly — plus talks, tagging demos, and hands-on learning for the grown-ups too.</p>
+      <a href="activities.html" class="btn btn-sage">See All Activities &#8594;</a>
     </div>
   </div>
 </section>
@@ -877,95 +658,24 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <div class="reveal">
           <p class="sec-eyebrow">Marketplace</p>
           <h2 class="sh">Vendors &amp; Exhibitors</h2>
-          <p class="sp">Explore booths filled with native plants, local art, delicious food, conservation science, and so much more. Every table is a new discovery!</p>
-          <p style="font-family:'Jost',sans-serif;font-size:.88rem;color:var(--ink2);margin-top:.8rem;font-style:italic;">(Vendor information will be updated closer to the festival date. Please check back later for a full list.)</p>
+          <p class="sp">Explore booths filled with native plants, local art, delicious food, conservation science, and so much more. Every table is a new discovery — 30 local vendors and counting!</p>
         </div>
         <div class="vendor-grid reveal">
-          <div class="vcard"><span class="vicon">🌱</span><h3>Native Plants</h3><p>Milkweed, pollinator plants, and natives to take habitat home with you.</p></div>
-          <div class="vcard"><span class="vicon">🔬</span><h3>Science &amp; Research</h3><p>Citizen science projects, OE testing, nanotagging, and Monarch Watch data.</p></div>
-          <div class="vcard"><span class="vicon">🎨</span><h3>Native Artists</h3><p>Butterfly-inspired pottery, fine art prints, fiber arts with plant dyes.</p></div>
-          <div class="vcard"><span class="vicon">🌿</span><h3>Conservation Groups</h3><p>NH Audubon, Newfound Lake Region Association, Belmont Conservation Commission.</p></div>
-          <div class="vcard"><span class="vicon">🍯</span><h3>Local Food &amp; Farm</h3><p>Herbalists, tea makers, local farms, baked goods, and food trucks.</p></div>
-          <div class="vcard"><span class="vicon">📚</span><h3>Education</h3><p>UNH Cooperative Extension, NH Fish &amp; Game, nature guides, and children's books.</p></div>
+          <div class="vcard"><span class="vicon">🌸</span><h3>Garden &amp; Floral</h3><p>Petals in the Pines, Mae Florals, Fassett Farm Nursery, Goldenrod Garden Design, and more.</p></div>
+          <div class="vcard"><span class="vicon">🎨</span><h3>Artisan Crafts</h3><p>Handmade jewelry, pottery, tie-dye, metalwork, basketry, and fine art from local makers.</p></div>
+          <div class="vcard"><span class="vicon">🦋</span><h3>Conservation Groups</h3><p>NH Audubon, Prescott Farm, Belmont Conservation Commission, and more.</p></div>
+          <div class="vcard"><span class="vicon">🧁</span><h3>Food &amp; Treats</h3><p>Cupcakes, baked goods, and Goodfellas Grub food truck.</p></div>
+          <div class="vcard"><span class="vicon">🖌️</span><h3>Face Painting</h3><p>Professional face painting for unforgettable festival memories.</p></div>
+          <div class="vcard"><span class="vicon">📚</span><h3>Community &amp; Nonprofits</h3><p>Belmont Public Library, Community Clay Center, Friends of Shaker Robotics, and more.</p></div>
         </div>
-
+        <div class="reveal" style="margin-top:2rem;">
+          <a href="vendors.html" class="btn btn-rust">Meet All Our Vendors &#8594;</a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
-
-<div class="color-band"></div>
-
-<!-- GALLERY -->
-<section id="gallery" class="sec" style="background:var(--cream);">
-  <div class="inner">
-    <div class="reveal">
-      <p class="sec-eyebrow">Gallery</p>
-      <h2 class="sh">Festival in Pictures</h2>
-      <p class="sp">A glimpse into the magic of past festivals — tagging ceremonies, wonder-filled moments with live specimens, community gatherings, and the breathtaking monarchs themselves.</p>
-    </div>
-    <div class="gallery-mosaic reveal">
-      <div class="gitem"><img src="images/Butterfly1.jpeg" alt="Monarch on sunflower"></div>
-      <div class="gitem"><img src="images/festival1.jpeg" alt="Donna Miller presenting a milkweed class"></div>
-      <div class="gitem"><img src="images/Butterfly2.jpeg" alt="Monarch warming her wings"></div>
-      <div class="gitem"><img src="images/festival4.jpeg" alt="Monarch landing"></div>
-      <div class="gitem"><img src="images/festival5.jpeg" alt="Jim Miller holding a monarch"></div>
-    </div>
-    <div class="gallery-row2 reveal">
-      <div class="gitem2"><img src="images/Butterfly3.jpeg" alt="Monarch wings in the sun"></div>
-      <div class="gitem2"><img src="images/Butterfly4.jpeg" alt="Two monarchs on flowers"></div>
-      <div class="gitem2"><img src="images/Butterfly5.jpeg" alt="Female monarch on golden rod"></div>
-      <div class="gitem2"><img src="images/Butterfly6.jpeg" alt="Monarch nectaring on sunflower"></div>
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/Caterpillar1.jpeg" alt="Monarch caterpillar on a milkweed leaf"></div>
-      <div class="gitem2"><img src="images/Caterpillar2.jpeg" alt="Monarch egg and two caterpillars showing size differences"></div>
-      <div class="gitem2"><img src="images/Caterpillar3.jpeg" alt="Caterpillar on milkweed"></div>
-      <div class="gitem2"><img src="images/Caterpillar4.jpeg" alt="Caterpillar in milkweed flowers"></div>
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/Caterpillar-J1.jpeg" alt="Caterpillar in prepupation J-position"></div>
-      <div class="gitem2"><img src="images/Chrysalis1.jpeg" alt="Monarch chrysalis"></div>
-      <div class="gitem2"><img src="images/Chrysalis2.jpeg" alt="Newly formed chrysalis"></div>
-      <div class="gitem2"><img src="images/Egg1.jpeg" alt="Monarch egg on young milkweed"></div>
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/Egg2.jpeg" alt="Monarch egg test"></div>
-      <div class="gitem2"><img src="images/Tagging1.jpeg" alt="Monarch Watch tagging"></div>
-      <div class="gitem2"><img src="images/Macro2.jpeg" alt="Details of a monarch's hairy back"></div>
-      <div class="gitem2"><img src="images/festival13a.jpeg" alt="Monarch science station"></div>
-
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/Macro3.jpeg" alt="Monarch closeup"></div>
-      <div class="gitem2"><img src="images/Macro5.jpeg" alt="Monarch head and forelegs closeup"></div>
-      <div class="gitem2"><img src="images/festival20.jpeg" alt="A monarch landed on a baby"></div>
-      <div class="gitem2"><img src="images/festival17.jpg" alt="Attendees watching a caterpillar pupate"></div>
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/Macro7.jpeg" alt="Monarch wing macro"></div>
-      <div class="gitem2"><img src="images/MilkweedEco1.jpeg" alt="Red milkweed beetles"></div>
-      <div class="gitem2"><img src="images/Milkweedseeds1.jpeg" alt="Milkweed seed pods"></div>
-      <div class="gitem2"><img src="images/festival16.jpeg" alt="A monarch butterfly eclosing"></div>
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/Pollinator2.jpeg" alt="Pollinator on flower"></div>
-      <div class="gitem2"><img src="images/Pollinator3.jpeg" alt="Swallowtail on milkweed"></div>
-      <div class="gitem2"><img src="images/festival2.jpeg" alt="Donna Miller talking about migration"></div>
-      <div class="gitem2"><img src="images/festival19.jpeg" alt="Local author reading her monarch book"></div>
-    </div>
-    <div class="gallery-row2 reveal" style="margin-top:3px;">
-      <div class="gitem2"><img src="images/festival3.jpeg" alt="Attendees checking out chrysalises"></div>
-      <div class="gitem2"><img src="images/festival5.jpeg" alt="Kids with monarchs"></div>
-      <div class="gitem2"><img src="images/festival6.jpeg" alt="Festival activities"></div>
-      <div class="gitem2"><img src="images/Butterfly1.jpeg" alt="Monarch on sunflower"></div>
-    </div>
-    <p class="gallery-caption reveal">Share your festival photographs on socials using <strong>#NHMonarchFestival</strong> — your photos may be featured here!</p>
-  </div>
-</section>
-
-<div class="color-band"></div>
 
 <!-- MONARCH EDUCATION -->
 
@@ -1001,8 +711,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <h5>Festival</h5>
         <ul>
           <li><a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989667456924" target="_blank" rel="noopener noreferrer">Purchase Tickets</a></li>
-          <li><a href="#schedule">Schedule</a></li>
-          <li><a href="#activities">Activities</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="activities.html">Activities</a></li>
           <li><a href="vendors.html">Vendor Information</a></li>
           <li><a href="volunteer.html">Volunteer</a></li>
           <li><a href="plan-your-visit.html">Plan Your Visit</a></li>
@@ -1023,7 +733,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <ul>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="donate.html">Donate</a></li>
-          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
           <li><a href="press.html">Press &amp; Media</a></li>
         </ul>
       </div>
@@ -1037,15 +747,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     </div>
   </div>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox-overlay" id="lightbox">
-  <button class="lightbox-close" id="lbClose">✕</button>
-  <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</button>
-  <img class="lightbox-img" id="lbImg" src="" alt="">
-  <button class="lightbox-nav lightbox-next" id="lbNext">&#8250;</button>
-  <p class="lightbox-caption" id="lbCaption"></p>
-</div>
 
 <script>
 // Mobile menu
@@ -1063,60 +764,6 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-
-
-// ── LIGHTBOX ──
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const lbCaption = document.getElementById('lbCaption');
-const lbClose = document.getElementById('lbClose');
-const lbPrev = document.getElementById('lbPrev');
-const lbNext = document.getElementById('lbNext');
-
-const galleryImgs = Array.from(document.querySelectorAll('.gitem img, .gitem2 img'));
-let currentIndex = 0;
-
-function openLightbox(index) {
-  currentIndex = index;
-  const img = galleryImgs[index];
-  lbImg.src = img.src;
-  lbImg.alt = img.alt;
-  lbCaption.textContent = img.alt;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function showPrev() {
-  currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
-  openLightbox(currentIndex);
-}
-
-function showNext() {
-  currentIndex = (currentIndex + 1) % galleryImgs.length;
-  openLightbox(currentIndex);
-}
-
-galleryImgs.forEach((img, i) => {
-  img.parentElement.style.cursor = 'zoom-in';
-  img.parentElement.addEventListener('click', () => openLightbox(i));
-});
-
-lbClose.addEventListener('click', closeLightbox);
-lbPrev.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
-lbNext.addEventListener('click', e => { e.stopPropagation(); showNext(); });
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-
-document.addEventListener('keydown', e => {
-  if (!lightbox.classList.contains('active')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') showPrev();
-  if (e.key === 'ArrowRight') showNext();
-});
 </script>
 </body>
 </html>
