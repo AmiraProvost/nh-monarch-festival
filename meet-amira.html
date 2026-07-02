@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Activities · NH Monarch Festival 2026</title>
+<title>Meet Amira · NH Monarch Festival 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -146,31 +146,31 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .info-card h3 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
 .info-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.6; color: var(--ink2); opacity: .78; }
 
-
-/* ── ACTIVITIES ── */
-.activities-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
-.act-photo { position: sticky; top: 90px; }
-.act-photo img { width: 100%; height: 420px; object-fit: cover; display: block; }
-.act-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); }
-.act-card { background: var(--cream); padding: 1.8rem 1.6rem; transition: background .2s, transform .2s; border-top: 5px solid transparent; }
-.act-card:hover { background: white; transform: translateY(-3px); border-top-color: var(--orange); }
-.act-card:nth-child(3n+1):hover { border-top-color: var(--mint); }
-.act-card:nth-child(3n+2):hover { border-top-color: var(--yg); }
-.act-card:nth-child(3n+3):hover { border-top-color: var(--peach); }
-.act-icon { font-size: 1.5rem; opacity: .6; display: block; margin-bottom: .7rem; }
-.act-card h3 { font-family: 'Marcellus', serif; font-size: .95rem; color: var(--ink); margin-bottom: .35rem; }
-.act-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .92rem; line-height: 1.55; color: var(--ink2); opacity: .78; }
-.adults-section { margin-top: 4rem; padding: 3rem; background: var(--cream); border: 1.5px solid var(--parch3); border-left: 4px solid var(--sage2); }
-.adults-section h3 { font-family: 'Marcellus', serif; font-size: 1.2rem; color: var(--sage); margin-bottom: 1rem; }
-.adults-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
-.adults-list li { font-family: 'Sorts Mill Goudy', serif; font-size: .98rem; color: var(--ink2); list-style: none; display: flex; gap: .6rem; align-items: flex-start; }
-.adults-list li::before { content: '◆'; font-size: .4rem; color: var(--sage2); margin-top: .5rem; flex-shrink: 0; }
-@media (max-width: 860px) {
-  .activities-intro { grid-template-columns: 1fr; gap: 2.5rem; }
-  .act-photo { position: static; }
-  .act-grid { grid-template-columns: 1fr; }
-  .adults-list { grid-template-columns: 1fr; }
+/* ── VENDOR GRID ── */
+.vendor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; margin-top: 1rem; }
+.vendor-card {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  border-top: 4px solid var(--sage); padding: 0 0 1.6rem;
+  display: flex; flex-direction: column; align-items: flex-start;
+  text-decoration: none; transition: box-shadow .2s; overflow: hidden;
 }
+.vendor-card:hover { box-shadow: 0 8px 24px rgba(42,30,12,.1); }
+.vendor-img {
+  display: block; width: 100%; height: 150px; background: var(--parch);
+  border-bottom: 1px solid var(--parch3); overflow: hidden; flex-shrink: 0;
+}
+.vendor-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.vendor-img-contain img { object-fit: contain; padding: 1rem; background: var(--cream); }
+.vendor-img-placeholder { display: flex; align-items: center; justify-content: center; color: var(--sage); opacity: .35; }
+.vendor-img-placeholder svg { width: 46px; height: 46px; }
+.vendor-card h3 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--sage); line-height: 1.35; margin: 1.4rem 1.6rem .5rem; }
+.vendor-desc { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.65; color: var(--ink2); opacity: .8; margin: 0 1.6rem 1rem; }
+.vendor-link {
+  margin-top: auto; font-size: .7rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--rust);
+  padding: .2rem 1.6rem 0;
+}
+.vendor-link-static { color: var(--ink2); opacity: .55; }
 
 .btn {
   display: inline-block; text-decoration: none;
@@ -182,6 +182,9 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .btn-rust:hover { background: var(--ink); }
 .btn-sage { background: transparent; border: 1.5px solid var(--sage); color: var(--sage); }
 .btn-sage:hover { background: var(--sage); color: var(--cream); }
+
+.form-submit-row { display: flex; align-items: center; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+.form-note { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .9rem; color: var(--ink2); opacity: .65; }
 
 /* ── FOOTER ── */
 footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
@@ -224,13 +227,53 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .sec { padding: 4rem 1.5rem; }
   .page-header { padding: 3.5rem 1.5rem 3rem; }
   .info-grid { grid-template-columns: 1fr; }
+  .vendor-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .hamburger { display: flex !important; }
   footer { padding: 4rem 1.5rem 2rem; }
 }
 
+/* ── BIO ── */
+.bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 3rem; }
+.bio-photo { position: sticky; top: 90px; }
+.bio-photo-frame {
+  width: 100%; aspect-ratio: 4 / 5; background: var(--parch);
+  border: 1.5px solid var(--parch3); display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; color: var(--sage); opacity: .4;
+}
+.bio-photo-frame svg { width: 70px; height: 70px; }
+.bio-photo-frame p { font-family: 'Jost', sans-serif; font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.bio-photo-caption { padding: .8rem 1rem; background: var(--parch); border: 1px solid var(--parch3); border-top: none; }
+.bio-photo-caption p { font-family: 'IM Fell English', serif; font-style: italic; font-size: .92rem; color: var(--sage2); }
+.bio-role { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; display: block; }
+.bio-name { font-family: 'Marcellus', serif; font-size: 1.8rem; color: var(--ink); margin-bottom: 1.5rem; }
+.bio-text p { font-family: 'Sorts Mill Goudy', serif; font-size: 1.05rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1.4rem; }
+.bio-placeholder {
+  background: var(--mint2); border-left: 4px solid var(--mint); padding: 1rem 1.4rem;
+  font-family: 'Jost', sans-serif; font-size: .85rem; font-style: italic; color: var(--sage2); margin-bottom: 1.4rem;
+}
+.bio-quote {
+  margin: 3rem 0; padding: 2.5rem; background: var(--cream); border: 1.5px solid var(--parch3);
+  border-left: 4px solid var(--rust); position: relative;
+}
+.bio-quote p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.25rem; color: var(--ink); line-height: 1.6; }
+.bio-quote cite { font-family: 'Jost', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sage2); font-style: normal; display: block; margin-top: 1rem; }
+.facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); margin: 3rem 0; }
+.fact-card { background: var(--cream); padding: 1.8rem 1.6rem; text-align: center; }
+.fact-card .fact-icon { font-size: 1.6rem; opacity: .6; display: block; margin-bottom: .6rem; }
+.fact-card h4 { font-family: 'Marcellus', serif; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--sage); margin-bottom: .4rem; }
+.fact-card p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .92rem; color: var(--ink2); opacity: .8; }
+.bio-cta { margin-top: 3rem; padding: 2.5rem; background: var(--parch); border: 1.5px solid var(--parch3); text-align: center; }
+.bio-cta h3 { font-family: 'Marcellus', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: .6rem; }
+.bio-cta p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: var(--ink2); opacity: .85; margin-bottom: 1.5rem; }
+.bio-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 860px) {
+  .bio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bio-photo { position: static; }
+  .facts-grid { grid-template-columns: 1fr; }
+}
+
 </style>
-</head>
 
 <body>
 
@@ -241,12 +284,12 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <span>August 22, 2026</span><span class="dot">◆</span>
     <span>Belmont Village, NH</span><span class="dot">◆</span>
     <span>10am – 5pm</span><span class="dot">◆</span>
-    <span>See All the Activities!</span><span class="dot">◆</span>
+    <span>Meet Our Festival Organizer!</span><span class="dot">◆</span>
     <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
     <span>August 22, 2026</span><span class="dot">◆</span>
     <span>Belmont Village, NH</span><span class="dot">◆</span>
     <span>10am – 5pm</span><span class="dot">◆</span>
-    <span>See All the Activities!</span><span class="dot">◆</span>
+    <span>Meet Our Festival Organizer!</span><span class="dot">◆</span>
   </div>
 </div>
 
@@ -318,57 +361,81 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-eyebrow">Tons of Fun for Everyone</p>
-    <h1>List of Activities</h1>
-    <p>There's something magical around every corner — earn your wings, watch monarchs transform, and enjoy all the wonders. We hope to offer all kinds of fun for children of all ages.</p>
+    <p class="page-eyebrow">Behind the Festival</p>
+    <h1>Meet Amira</h1>
+    <p>The story, the passion, and the person behind the NH Monarch Festival.</p>
   </div>
 </div>
 
 <div class="color-band"></div>
 
-<!-- ACTIVITIES -->
-<section class="sec" style="background:var(--parch);">
+<!-- BIO -->
+<section class="sec" style="background:var(--cream);">
   <div class="inner">
-    <div class="activities-intro">
-      <div class="act-grid reveal">
-        <div class="act-card"><span class="act-icon">📋</span><h3>Pollinator Passport</h3><p>Pick up your Passport at the entrance, collect stamps at each station, and turn it in for a special prize!</p></div>
-        <div class="act-card"><span class="act-icon">🐛</span><h3>Caterpillar Crawl</h3><p>Using burlap bags, crawl across the field to "molt" into the next instar. Make it all the way to pupation!</p></div>
-        <div class="act-card"><span class="act-icon">🗺️</span><h3>Migration Race</h3><p>Red light, green light — race like a migrating monarch south to Mexico!</p></div>
-        <div class="act-card"><span class="act-icon">🌳</span><h3>Kaleidoscope Tree</h3><p>Hang your origami or colored butterfly on our community butterfly tree.</p></div>
-        <div class="act-card"><span class="act-icon">🎨</span><h3>Face Painting</h3><p>Professional face painter on-site throughout the day.</p></div>
-        <div class="act-card"><span class="act-icon">📸</span><h3>Photo Backdrops</h3><p>Enjoy taking photos with our new wooden backdrops. Be a caterpillar, butterfly, or our latest conservation hero!</p></div>
-        <div class="act-card"><span class="act-icon">🔍</span><h3>Scavenger Hunt Trivia</h3><p>Find the monarch egg symbol and answer the science questions for a prize.</p></div>
-        <div class="act-card"><span class="act-icon">🦋</span><h3>Butterfly "Hunt"</h3><p>Using a butterfly net, try to capture the fake monarch butterfly for a prize.</p></div>
-        <div class="act-card"><span class="act-icon">🎁</span><h3>Free Prizes</h3><p>Win prizes throughout the day.</p></div>
-        <div class="act-card"><span class="act-icon">🎭</span><h3>Monarch Craft Station</h3><p>Create origami butterflies, color life cycle pages, make your own monarch mask, and build your own caterpillar.</p></div>
-        <div class="act-card"><span class="act-icon">👣</span><h3>Hopscotch</h3><p>Hop your way through the monarch life cycle and migration.</p></div>
-        <div class="act-card"><span class="act-icon">🔬</span><h3>Interactive Science Stations</h3><p>Check out all the different stations under the pavilion. View specimens under the microscope, learn more about milkweed and the ecosystem, and learn about ways you can help.</p></div>
+    <div class="bio-grid">
+      <div class="bio-text reveal">
+        <span class="bio-role">Festival Organizer &amp; Event Coordinator</span>
+        <h2 class="bio-name">Amira Provost</h2>
+
+        <div class="bio-placeholder">📝 PLACEHOLDER — Opening paragraph: How did you first get involved with monarchs and conservation? What drew you in? (2–4 sentences)</div>
+        <p>[Your opening story goes here.]</p>
+
+        <div class="bio-placeholder">📝 PLACEHOLDER — Your background: years of experience, relevant training/education, other conservation work or affiliations (e.g. NH Audubon, Monarch Watch, citizen science projects).</div>
+        <p>[Your background goes here.]</p>
+
+        <div class="bio-placeholder">📝 PLACEHOLDER — Why the festival matters to you: what you hope people take away from attending, and what keeps you doing this every year.</div>
+        <p>[Your "why this matters" story goes here.]</p>
+
+        <div class="bio-placeholder">📝 PLACEHOLDER — A personal touch: something outside of monarchs — hobbies, family, where you live, what you do when you're not organizing the festival. Helps people feel like they know you.</div>
+        <p>[A personal detail or two goes here.]</p>
       </div>
-      <div class="act-photo reveal d2">
-        <img src="images/festival3.jpeg" alt="Child watching monarch enclosures" style="width:100%;height:420px;object-fit:cover;display:block;">
-        <div class="photo-caption" style="padding:.8rem 1rem;background:var(--parch2);border:1px solid var(--parch3);border-top:none;">
-          <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:.82rem;color:var(--sage2);">A child looks up in wonder at the monarch enclosures — one of the festival's most beloved moments</p>
+
+      <div class="bio-photo reveal d2">
+        <div class="bio-photo-frame">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 14 C24 4, 8 2, 6 16 C5 24, 16 28, 28 24 L30 30 L32 24 C44 28, 55 24, 54 16 C52 2, 36 4, 30 14 Z M28 30 C18 34, 8 44, 14 52 C20 58, 27 48, 29 36 M32 30 C42 34, 52 44, 46 52 C40 58, 33 48, 31 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="30" y1="14" x2="30" y2="44" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p>Photo Coming Soon</p>
         </div>
+        <div class="bio-photo-caption"><p>[Optional photo caption — e.g. "Amira tagging a monarch at last year's festival"]</p></div>
       </div>
-    </div>
-    <div class="adults-section reveal">
-      <h3>Adult Opportunities</h3>
-      <ul class="adults-list">
-        <li>Native plant gardening mini talks from vendors</li>
-        <li>Nature journaling with a local guide</li>
-        <li>Monarch learning stations with helpful information and free seeds</li>
-        <li>Host plants and how to grow them</li>
-        <li>Garden design consultation with expert gardeners</li>
-        <li>Conservation group presentations and data sharing</li>
-        <li>Community science projects and ways to contribute</li>
-        <li>Latest technology and science studies</li>
-        <li>Tagging demonstrations, including both sticker tags and the latest nanotags</li>
-        <li>Ways you can help our pollinators</li>
-      </ul>
     </div>
 
-    <div class="reveal" style="text-align:center;margin-top:3.5rem;">
-      <a href="index.html#tickets" class="btn btn-rust">Get Tickets</a>
+    <!-- PULL QUOTE -->
+    <div class="bio-quote reveal">
+      <p>&#8220;[Optional pull-quote — one or two sentences in your own words about why this work matters to you. Pulled out big and bold like this, it's a nice way to add personality to the page.]&#8221;</p>
+      <cite>&#8212; Amira Provost</cite>
+    </div>
+
+    <!-- QUICK FACTS -->
+    <div class="reveal">
+      <p class="sec-eyebrow">A Few Quick Facts</p>
+      <h2 class="sh" style="margin-bottom:1.5rem;">Get to Know Amira</h2>
+    </div>
+    <div class="facts-grid reveal">
+      <div class="fact-card">
+        <span class="fact-icon">🦋</span>
+        <h4>Years Involved</h4>
+        <p>[e.g. "5 years"]</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-icon">📍</span>
+        <h4>Based In</h4>
+        <p>[Your town/area]</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-icon">💚</span>
+        <h4>Favorite Part of the Festival</h4>
+        <p>[e.g. "The butterfly release" or "Meeting new vendors"]</p>
+      </div>
+    </div>
+
+    <!-- CLOSING CTA -->
+    <div class="bio-cta reveal">
+      <h3>Want to Say Hello?</h3>
+      <p>Have a question, a story to share, or just want to connect? I'd love to hear from you.</p>
+      <div class="bio-cta-btns">
+        <a href="contact.html" class="btn btn-rust">Contact Us &#8594;</a>
+        <a href="volunteer.html" class="btn btn-sage">Volunteer With Us &#8594;</a>
+      </div>
     </div>
   </div>
 </section>

@@ -270,16 +270,6 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 /* ── VENDORS ── */
 #vendors { background: linear-gradient(160deg, var(--parch) 0%, #fef5e4 100%); }
 .vendor-layout { display: block; }
-.vendor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--parch3); border: 1.5px solid var(--parch3); margin-top: 2rem; }
-.vcard { background: var(--cream); padding: 1.8rem 1.6rem; transition: background .2s; border-top: 3px solid transparent; }
-.vcard:hover { background: var(--parch); border-top-color: var(--peach); }
-.vicon { font-size: 1.4rem; display: block; margin-bottom: .7rem; opacity: .6; }
-.vcard h3 { font-family: 'Marcellus', serif; font-size: .92rem; color: var(--ink); margin-bottom: .3rem; }
-.vcard p { font-family: 'Sorts Mill Goudy', serif; font-size: .92rem; line-height: 1.5; color: var(--ink2); opacity: .75; }
-.vendor-photo img { width: 100%; height: 320px; object-fit: cover; display: block; }
-.vendor-apply { margin-top: 2rem; padding: 2.2rem; background: var(--cream); border: 1.5px solid var(--parch3); }
-.vendor-apply h4 { font-family: 'Marcellus', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .5rem; }
-.vendor-apply p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; color: var(--ink2); opacity: .8; margin-bottom: 1.2rem; line-height: 1.6; }
 .known-vendors { margin-top: 3rem; }
 .known-vendors h4 { font-family: 'Marcellus', serif; font-size: 1rem; color: var(--sage); margin-bottom: 1rem; }
 .vendor-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -559,7 +549,9 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <p class="hero-hours">Festival open 10:00 am – 5:00 pm</p>
     <div class="hero-btns">
       <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989667456924" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="min-width:180px;text-align:center;">Purchase Tickets</a>
+      <a href="schedule.html" class="btn btn-sage" style="min-width:180px;text-align:center;">See Schedule</a>
       <a href="activities.html" class="btn btn-sage" style="min-width:180px;text-align:center;">See Activities</a>
+      <a href="vendors.html" class="btn btn-sage" style="min-width:180px;text-align:center;">See Vendors</a>
     </div>
   </div>
   <div class="hero-r">
@@ -625,11 +617,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- SCHEDULE -->
 <section id="schedule" class="sec" style="background:var(--cream);">
   <div class="inner">
-    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto;">
-      <p class="sec-eyebrow" style="justify-content:center;">Day of Event</p>
+    <div class="reveal">
+      <p class="sec-eyebrow">Day of Event</p>
       <h2 class="sh">Schedule &amp; Timeline</h2>
-      <p class="sp" style="margin:0 auto 2rem;">From gates opening at 10am to the closing bell at 5pm, the day is packed with kid activities, adult opportunities, vendors, and more.</p>
-      <a href="schedule.html" class="btn btn-rust">See Full Schedule &#8594;</a>
+      <p class="sp" style="margin-bottom:2rem;">From gates opening at 10am to the closing bell at 5pm, the day is packed with kid activities, adult opportunities, vendors, and more.</p>
+      <a href="schedule.html" class="btn btn-sage">See Full Schedule &#8594;</a>
     </div>
   </div>
 </section>
@@ -639,10 +631,10 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- ACTIVITIES -->
 <section id="activities" class="sec" style="background:var(--parch);">
   <div class="inner">
-    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto;">
-      <p class="sec-eyebrow" style="justify-content:center;">Tons of Fun for Everyone</p>
+    <div class="reveal">
+      <p class="sec-eyebrow">Tons of Fun for Everyone</p>
       <h2 class="sh">List of Activities</h2>
-      <p class="sp" style="margin:0 auto 2rem;">Earn your wings, watch monarchs transform, and parade like a migrating butterfly — plus talks, tagging demos, and hands-on learning for the grown-ups too.</p>
+      <p class="sp" style="margin-bottom:2rem;">Earn your wings, watch monarchs transform, and parade like a migrating butterfly — plus talks, tagging demos, and hands-on learning for the grown-ups too.</p>
       <a href="activities.html" class="btn btn-sage">See All Activities &#8594;</a>
     </div>
   </div>
@@ -658,18 +650,10 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <div class="reveal">
           <p class="sec-eyebrow">Marketplace</p>
           <h2 class="sh">Vendors &amp; Exhibitors</h2>
-          <p class="sp">Explore booths filled with native plants, local art, delicious food, conservation science, and so much more. Every table is a new discovery — 30 local vendors and counting!</p>
-        </div>
-        <div class="vendor-grid reveal">
-          <div class="vcard"><span class="vicon">🌸</span><h3>Garden &amp; Floral</h3><p>Petals in the Pines, Mae Florals, Fassett Farm Nursery, Goldenrod Garden Design, and more.</p></div>
-          <div class="vcard"><span class="vicon">🎨</span><h3>Artisan Crafts</h3><p>Handmade jewelry, pottery, tie-dye, metalwork, basketry, and fine art from local makers.</p></div>
-          <div class="vcard"><span class="vicon">🦋</span><h3>Conservation Groups</h3><p>NH Audubon, Prescott Farm, Belmont Conservation Commission, and more.</p></div>
-          <div class="vcard"><span class="vicon">🧁</span><h3>Food &amp; Treats</h3><p>Cupcakes, baked goods, and Goodfellas Grub food truck.</p></div>
-          <div class="vcard"><span class="vicon">🖌️</span><h3>Face Painting</h3><p>Professional face painting for unforgettable festival memories.</p></div>
-          <div class="vcard"><span class="vicon">📚</span><h3>Community &amp; Nonprofits</h3><p>Belmont Public Library, Community Clay Center, Friends of Shaker Robotics, and more.</p></div>
+          <p class="sp">Watch demonstrations, listen to mini-presentations, and explore booths filled with native plants, local art, delicious food, conservation science, and so much more. Every space is a new discovery!</p>
         </div>
         <div class="reveal" style="margin-top:2rem;">
-          <a href="vendors.html" class="btn btn-rust">Meet All Our Vendors &#8594;</a>
+          <a href="vendors.html" class="btn btn-sage">Meet All Our Vendors &#8594;</a>
         </div>
       </div>
 
@@ -686,7 +670,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   <h2 style="font-family:'Marcellus',serif;font-size:clamp(2.2rem,4vw,3.8rem);color:white;line-height:1.1;margin-bottom:1rem;position:relative;z-index:1;">We Hope to See You<br><span style="color:var(--yg2);">August 22, 2026!</span></h2>
   <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.75);max-width:50ch;margin:0 auto 2.5rem;line-height:1.7;position:relative;z-index:1;">Bring your family, your curiosity, and your best butterfly costume. The monarchs are counting on us!</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
-    <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989667456924" target="_blank" rel="noopener noreferrer" class="btn" style="background:var(--peach);color:var(--ink);padding:.9rem 2.4rem;">Purchase Tickets</a>
+    <a href="https://www.eventbrite.com/e/14th-annual-nh-monarch-festival-tickets-1989667456924" target="_blank" rel="noopener noreferrer" class="btn btn-rust" style="padding:.9rem 2.4rem;">Purchase Tickets</a>
   </div>
   <div style="margin-top:3rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;position:relative;z-index:1;">
     <div style="text-align:center;"><span style="font-family:'Marcellus',serif;font-size:2.2rem;color:var(--peach);display:block;line-height:1;">10am</span><span style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);">Doors Open</span></div>
