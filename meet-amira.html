@@ -264,7 +264,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .hobby-card { background: var(--cream); border: 1.5px solid var(--parch3); overflow: hidden; }
 .hobby-photo-frame {
   aspect-ratio: 4 / 3; background: var(--parch); display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: .6rem; color: var(--sage); opacity: .4; overflow: hidden;
+  flex-direction: column; gap: .6rem; overflow: hidden;
 }
 .hobby-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hobby-photo-frame svg { width: 38px; height: 38px; }
@@ -281,6 +281,43 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .bio-photo { position: static; }
   .hobby-grid { grid-template-columns: 1fr; }
 }
+
+.hobby-photo-frame { cursor: zoom-in; }
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.92); align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-img {
+  max-width: 90vw; max-height: 90vh;
+  object-fit: contain; box-shadow: 0 0 60px rgba(0,0,0,.6);
+  cursor: default; animation: lbFadeIn .2s ease;
+}
+@keyframes lbFadeIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+.lightbox-close {
+  position: fixed; top: 1.2rem; right: 1.5rem;
+  color: white; font-size: 2rem; cursor: pointer;
+  background: none; border: none; line-height: 1; opacity: .7; transition: opacity .2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-caption {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: .95rem; color: rgba(255,255,255,.65); text-align: center;
+  pointer-events: none;
+}
+.lightbox-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.1); border: none; color: white;
+  font-size: 1.8rem; padding: .8rem 1rem; cursor: pointer;
+  transition: background .2s; line-height: 1;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,.2); }
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
 
 </style>
 
@@ -489,7 +526,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <!-- CLOSING CTA -->
     <div class="bio-cta reveal">
       <h3>Want to Say Hello?</h3>
-      <p>Have a question, a story to share, or just want to connect? I'd love to hear from you.</p>
+      <p>Have a question or monarch story you'd like to share? Please feel free to share!</p>
       <div class="bio-cta-btns">
         <a href="contact.html" class="btn btn-rust">Contact Us &#8594;</a>
         <a href="volunteer.html" class="btn btn-sage">Volunteer With Us &#8594;</a>
@@ -497,6 +534,15 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lbClose">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</button>
+  <img class="lightbox-img" id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext">&#8250;</button>
+  <p class="lightbox-caption" id="lbCaption"></p>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -565,6 +611,58 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── LIGHTBOX ──
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCaption = document.getElementById('lbCaption');
+const lbClose = document.getElementById('lbClose');
+const lbPrev = document.getElementById('lbPrev');
+const lbNext = document.getElementById('lbNext');
+
+const hobbyImgs = Array.from(document.querySelectorAll('.hobby-photo-frame img'));
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  const img = hobbyImgs[index];
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCaption.textContent = img.alt;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + hobbyImgs.length) % hobbyImgs.length;
+  openLightbox(currentIndex);
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % hobbyImgs.length;
+  openLightbox(currentIndex);
+}
+
+hobbyImgs.forEach((img, i) => {
+  img.parentElement.addEventListener('click', () => openLightbox(i));
+});
+
+lbClose.addEventListener('click', closeLightbox);
+lbPrev.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+lbNext.addEventListener('click', e => { e.stopPropagation(); showNext(); });
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'ArrowRight') showNext();
+});
 
 </script>
 </body>
