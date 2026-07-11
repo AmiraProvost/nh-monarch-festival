@@ -319,6 +319,47 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .lightbox-prev { left: 1rem; }
 .lightbox-next { right: 1rem; }
 
+/* CREDENTIALS SECTION */
+.cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.cred-card {
+  background: var(--cream);
+  border: 1px solid var(--parch3);
+  padding: 1.9rem 2rem;
+  position: relative;
+}
+.cred-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--mint), var(--yg));
+}
+.cred-card.wide { grid-column: 1 / -1; }
+.cred-card h4 {
+  font-family: 'Marcellus', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 1rem;
+  padding-bottom: .8rem; border-bottom: 1px dotted var(--parch3);
+}
+.cred-card ul { list-style: none; }
+.cred-card li {
+  font-family: 'Jost', sans-serif; font-size: .92rem; font-weight: 400; color: var(--ink2);
+  line-height: 1.6; padding-left: 1.1rem; position: relative; margin-bottom: .65rem;
+}
+.cred-card li:last-child { margin-bottom: 0; }
+.cred-card li::before {
+  content: '◆'; position: absolute; left: 0; top: .1rem; font-size: .5rem; color: var(--rust); opacity: .7;
+}
+.cred-card li .yrs {
+  display: block; font-size: .7rem; font-weight: 600; letter-spacing: .06em; color: var(--sage2);
+  text-transform: uppercase; margin-top: .1rem;
+}
+.cred-summary-line {
+  font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: var(--sage2);
+  margin-bottom: 1.1rem; padding: .9rem 1.1rem; background: var(--mint2); border-radius: 4px;
+}
+.cred-two-col { columns: 2; column-gap: 2.5rem; }
+.cred-two-col li { break-inside: avoid; }
+@media (max-width: 720px) {
+  .cred-grid { grid-template-columns: 1fr; }
+  .cred-two-col { columns: 1; }
+}
+
 </style>
 
 <body>
@@ -417,6 +458,75 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
 <div class="color-band"></div>
 
+<!-- CREDENTIALS -->
+<section class="sec" style="background:var(--parch);" id="credentials">
+  <div class="inner">
+    <p class="sec-eyebrow">Behind the Science</p>
+    <h2 class="sh" style="margin-bottom:.9rem;">Credentials, Certifications &amp; Background</h2>
+    <p style="font-family:'Sorts Mill Goudy', serif; font-size:1.08rem; line-height:1.75; color:var(--ink2); max-width:68ch; margin-bottom:3rem;">
+      Beyond the personal story, here's the training, credentials, and professional background behind the science &mdash;
+      because good conservation work is built on real experience, not just enthusiasm.
+    </p>
+
+    <div class="cred-grid">
+
+      <div class="cred-card">
+        <h4>Monarch &amp; Conservation Credentials</h4>
+        <ul>
+          <li>Registered Monarch Waystation #35479 <span class="yrs">Monarch Watch</span></li>
+          <li>Monarch Tagging Participant <span class="yrs">Monarch Watch &middot; 2021&ndash;Present</span></li>
+          <li>Member &amp; Monarch Project Volunteer <span class="yrs">NH Audubon &middot; 2025&ndash;Present</span></li>
+          <li>Citizen Science Data Collection <span class="yrs">2020&ndash;Present</span></li>
+          <li>Member, 2026&ndash;2029 Term <span class="yrs">Belmont Conservation Commission</span></li>
+        </ul>
+      </div>
+
+      <div class="cred-card">
+        <h4>Community Involvement</h4>
+        <ul>
+          <li>Volunteer, Pollinator Fest <span class="yrs">NH Audubon &middot; 2026&ndash;Present</span></li>
+          <li>Event Coordinator, NH Monarch Festival <span class="yrs">2025&ndash;Present</span></li>
+          <li>Volunteer, NH Monarch Festival <span class="yrs">2022&ndash;Present</span></li>
+          <li>Coach, Mentor, &amp; Volunteer, VEX Robotics <span class="yrs">2019&ndash;Present</span></li>
+          <li>STEM Tutor <span class="yrs">2016&ndash;Present</span></li>
+        </ul>
+      </div>
+
+      <div class="cred-card wide">
+        <h4>Monarch-Specific Coursework &amp; Training</h4>
+        <p class="cred-summary-line">50+ hours of monarch-specific webinars, trainings, and coursework completed since 2024, including but not limited to:</p>
+        <ul class="cred-two-col">
+          <li>North American Monarch Institute Course <span class="yrs">Monarch Joint Venture</span></li>
+          <li>Monarch Larva Monitoring Project Course <span class="yrs">Monarch Joint Venture</span></li>
+          <li>Integrated Monarch Monitoring Program Course <span class="yrs">Monarch Joint Venture &middot; In Progress</span></li>
+          <li>Community Science for Monarch Conservation Course <span class="yrs">Monarch Joint Venture &middot; In Progress</span></li>
+          <li>Symbolic Monarch Migration Project Course <span class="yrs">Monarch Joint Venture &middot; In Progress</span></li>
+          <li>Gardening for Monarchs and More Course <span class="yrs">Monarch Joint Venture</span></li>
+          <li>Monarch Waystations Workshops (In Person) <span class="yrs">NH Audubon</span></li>
+          <li>Conservation and Lepidoptera Trainings (Ongoing) <span class="yrs">UNH Extension</span></li>
+        </ul>
+      </div>
+
+      <div class="cred-card wide">
+        <h4>Educational &amp; Professional Background</h4>
+        <ul class="cred-two-col">
+          <li>Bachelor of Science, Civil Engineering</li>
+          <li>Bachelor of Arts in English, with a Minor in Architectural Design</li>
+          <li>Two Associate's Degrees, Science and Computer-Aided Design</li>
+          <li>Several graduate credits toward a Masters of Science in Civil &amp; Environmental Engineering</li>
+          <li>Registered Engineer-in-Training (EIT) <span class="yrs">State of Texas</span></li>
+          <li>15+ Years, Land Development &amp; Civil Engineering</li>
+          <li>33+ Years, CAD/Drafting Experience</li>
+          <li>8+ Years, Graphic Designer</li>
+          <li>10+ Years, Independent Author Experience</li>
+          <li>DraftSight Certificate in 2D Design &amp; Drafting</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- BIO -->
 <section class="sec" style="background:var(--cream);">
   <div class="inner">
@@ -454,8 +564,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
     <!-- PULL QUOTE -->
     <div class="bio-quote reveal">
-      <p>&#8220;Preserve and cherish the pale blue dot, the only home we've ever known.&#8221;</p>
-      <cite>&#8212; Carl Sagan</cite>
+      <p>&#8220;The creation of a thousand forests is in one acorn.&#8221;</p>
+      <cite>&#8212; Ralph Waldo Emerson</cite>
     </div>
 
     <!-- FAQ -->
