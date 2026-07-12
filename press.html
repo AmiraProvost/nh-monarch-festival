@@ -107,6 +107,10 @@ nav {
 .btn-rust:hover { background: var(--ink); }
 .btn-sage { background: transparent; border: 1.5px solid var(--sage); color: var(--sage); }
 .btn-sage:hover { background: var(--sage); color: var(--cream); }
+.btn-gold { background: var(--gold2); color: var(--ink); }
+.btn-gold:hover { background: var(--gold); }
+.btn-cream { background: var(--cream); color: var(--rust); }
+.btn-cream:hover { background: white; color: var(--ink); }
 
 /* PAGE HEADER */
 .page-header {
@@ -199,8 +203,8 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 }
 .mc-text h3 { font-family: 'Marcellus', serif; font-size: 1.3rem; color: white; margin-bottom: .6rem; position: relative; z-index: 1; }
 .mc-text p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,.8); line-height: 1.7; position: relative; z-index: 1; }
-.mc-text a { color: var(--mint2); }
-.mc-text a:hover { color: white; }
+.mc-text a:not(.btn) { color: var(--mint2); }
+.mc-text a:not(.btn):hover { color: white; }
 
 /* SOCIAL */
 .social-row { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
@@ -495,7 +499,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <p>We welcome media at the festival and are happy to arrange interviews, provide photo access, or answer any questions about the event or monarch conservation.</p>
         <div style="margin-top:1.6rem;position:relative;z-index:1;">
           <p style="font-family:'Jost',sans-serif;font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.6rem;">Point of Contact</p>
-          <p style="font-family:'Marcellus',serif;font-size:1.05rem;color:white;margin-bottom:1rem;">Amira Provost, Event Coordinator</p>
+          <p style="font-family:'Marcellus',serif;font-style:normal;font-size:1.05rem;color:white;margin-bottom:1rem;">Amira Provost, Event Coordinator</p>
+          <a href="meet-amira.html#credentials" class="btn btn-cream" style="margin-bottom:1rem;">Learn More About Amira</a>
           <img src="images/press-contact-email.png" alt="TheMonarchMatriarch@gmail.com" style="height:22px;display:block;margin-bottom:1rem;">
           <p style="font-family:'Sorts Mill Goudy',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.8);">Text or leave a voicemail: <a href="tel:+16033266408">603.326.6408</a></p>
         </div>
