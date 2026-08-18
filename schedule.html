@@ -167,6 +167,18 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
   .schedule-photo { position: static; }
 }
 
+/* ── PRESENTATION AGENDA ── */
+.agenda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+.agenda-col-title {
+  font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--sage);
+  padding-bottom: .8rem; margin-bottom: .5rem; border-bottom: 1.5px solid var(--parch3);
+}
+.agenda-col .tl-item { margin-bottom: 1.6rem; }
+.agenda-col .tl-time { color: var(--gold); }
+@media (max-width: 860px) {
+  .agenda-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
 .btn {
   display: inline-block; text-decoration: none;
   font-family: 'Jost', sans-serif;
@@ -317,7 +329,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   <div class="page-header-inner">
     <p class="page-eyebrow">Day of Event</p>
     <h1>Schedule &amp; Timeline</h1>
-    <p>Here's how the day unfolds — from gates opening to the closing bell. We don't have a set schedule of individual presentations yet, but here's what you can count on throughout the day.</p>
+    <p>Here's how the day unfolds — from gates opening to the closing bell — plus the full lineup of live presentations happening throughout the festival.</p>
   </div>
 </div>
 
@@ -370,6 +382,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         </div>
 
         <div class="tl-item">
+          <span class="tl-time" style="color:var(--rust);font-size:1rem;">4:30</span><div class="tl-dot" style="border-color:var(--rust);width:24px;height:24px;"></div>
+          <div class="tl-body"><strong style="color:var(--rust);font-size:1.05rem;">Admission Closes</strong><span>Last entry at 4:30 pm — the festival stays open until 5:00</span></div>
+        </div>
+
+        <div class="tl-item">
           <span class="tl-time" style="color:var(--rust);font-size:1rem;">5:00</span><div class="tl-dot" style="border-color:var(--rust);width:24px;height:24px;"></div>
           <div class="tl-body"><strong style="color:var(--rust);font-size:1.05rem;">Festival Closes</strong><span>Festival ends at 5:00 pm — thank you for celebrating with us!</span></div>
         </div>
@@ -382,6 +399,89 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
     <div class="reveal" style="text-align:center;margin-top:3.5rem;">
       <a href="index.html#tickets" class="btn btn-rust">Get Tickets</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTATION AGENDA -->
+<section class="sec" id="agenda" style="background:var(--parch);">
+  <div class="inner">
+    <p class="sec-eyebrow">Live Talks &amp; Demonstrations</p>
+    <h2 class="sh">Presentation Agenda</h2>
+    <p class="sp">Every talk runs twice — once in the morning and once in the afternoon — so you never have to choose between two you want to see. All presentations take place on the festival lawn near the main pavilion.</p>
+
+    <div class="agenda-grid">
+      <div class="agenda-col reveal">
+        <h3 class="agenda-col-title">Morning Session</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-time">10:00</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Festival Begins</strong><span>Gates open, presentations get underway</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">10:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>How to Grow Milkweed</strong><span>Donna Miller</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">11:00</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Lyme Disease &amp; Tick Testing</strong><span>Kathie Fife</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">11:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>The Pollinator Garden Certification</strong><span>Donna Miller</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">12:00</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Migration Research &amp; Results</strong><span>Lindsay Herlihy (NH Audubon) &amp; Amira (NHMF)</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">12:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>OE, Community Science &amp; Monarch Watch Tagging</strong><span>Amira</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time" style="color:var(--rust);">1:00</span><div class="tl-dot" style="border-color:var(--rust);"></div>
+            <div class="tl-body"><strong style="color:var(--rust);">Nanotagging Demonstration &amp; Butterfly Release</strong><span>Lindsay &amp; Amira</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-col reveal d2">
+        <h3 class="agenda-col-title">Afternoon Session</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-time">1:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>How to Grow Milkweed</strong><span>Donna Miller</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">2:00</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Lyme Disease &amp; Tick Testing</strong><span>Kathie Fife</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">2:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>The Pollinator Garden Certification</strong><span>Donna Miller</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">3:00</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Migration Research &amp; Results</strong><span>Lindsay Herlihy (NH Audubon) &amp; Amira (NHMF)</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">3:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>OE, Community Science &amp; Monarch Watch Tagging</strong><span>Amira</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time" style="color:var(--rust);">4:00</span><div class="tl-dot" style="border-color:var(--rust);"></div>
+            <div class="tl-body"><strong style="color:var(--rust);">Nanotagging Demonstration &amp; Butterfly Release</strong><span>Lindsay &amp; Amira</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">4:30</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Admission Closes</strong><span>Last entry — festival open until 5:00</span></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">5:00</span><div class="tl-dot"></div>
+            <div class="tl-body"><strong>Festival Ends</strong><span>Thank you for celebrating with us!</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
