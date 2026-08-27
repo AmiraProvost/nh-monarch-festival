@@ -190,6 +190,17 @@ p.sp { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: 1.
 .pr-contact a { color: var(--sage); text-decoration: none; }
 .pr-contact a:hover { text-decoration: underline; }
 
+/* PRESS RELEASE VIDEO + PHOTOS */
+.pr-video { width: 100%; display: block; margin: 1.5rem 0 .6rem; border: 1px solid var(--parch3); background: #000; }
+.pr-video-caption { font-family: 'Jost', sans-serif; font-size: .78rem; color: var(--ink2); opacity: .6; text-align: center; margin-bottom: 2rem; }
+.pr-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.8rem 0; }
+.pr-photo-grid figure { margin: 0; }
+.pr-photo-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; border: 1px solid var(--parch3); }
+.pr-photo-grid figcaption { font-family: 'Jost', sans-serif; font-size: .72rem; color: var(--ink2); opacity: .65; margin-top: .5rem; text-align: center; }
+@media (max-width: 700px) {
+  .pr-photo-grid { grid-template-columns: 1fr; }
+}
+
 /* MEDIA CONTACT CARD */
 .media-contact-card {
   background: linear-gradient(135deg, var(--sage) 0%, #2a5028 100%);
@@ -280,16 +291,18 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- FESTIVE BANNER -->
 <div class="festival-banner">
   <div class="festival-banner-inner">
-    <span>14th Annual NH Monarch Festival</span><span class="dot">&#9670;</span>
-    <span>August 22, 2026</span><span class="dot">&#9670;</span>
-    <span>Belmont Village, NH</span><span class="dot">&#9670;</span>
-    <span>10am &#8211; 5pm</span><span class="dot">&#9670;</span>
-    <span>Press &amp; Media Resources Available</span><span class="dot">&#9670;</span>
-    <span>14th Annual NH Monarch Festival</span><span class="dot">&#9670;</span>
-    <span>August 22, 2026</span><span class="dot">&#9670;</span>
-    <span>Belmont Village, NH</span><span class="dot">&#9670;</span>
-    <span>10am &#8211; 5pm</span><span class="dot">&#9670;</span>
-    <span>Press &amp; Media Resources Available</span><span class="dot">&#9670;</span>
+    <span>Thank You for an Amazing Festival!</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>See You Next Year!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Vendors & Activities · Live Specimens</span><span class="dot">◆</span>
+    <span>Thank You for an Amazing Festival!</span><span class="dot">◆</span>
+    <span>August 22, 2026</span><span class="dot">◆</span>
+    <span>Belmont Village, NH</span><span class="dot">◆</span>
+    <span>10am – 5pm</span><span class="dot">◆</span>
+    <span>See You Next Year!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Vendors & Activities · Live Specimens</span><span class="dot">◆</span>
   </div>
 </div>
 
@@ -318,7 +331,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <li><a href="https://www.facebook.com/NHMonarchFestival" class="mob-link" target="_blank" rel="noopener noreferrer">Facebook</a></li>
       <li><a href="gallery.html" class="mob-link">Gallery</a></li>
     </ul>
-    <a href="index.html#tickets" class="btn m-cta mob-link">Thank You</a>
+    <a href="project-monarch.html" class="btn m-cta mob-link">Track the Monarchs</a>
   </div>
   <ul class="nav-links">
     <li class="nav-dropdown">
@@ -343,16 +356,16 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       </div>
     </li>
     <li><a href="gallery.html" style="display:flex;align-items:center;">Gallery</a></li>
-    <li><a href="index.html#tickets" class="nav-cta">Thank You</a></li>
+    <li><a href="project-monarch.html" class="nav-cta">Track the Monarchs</a></li>
   </ul>
 </nav>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-eyebrow">Media Resources</p>
+        <p class="page-eyebrow">Media Resources</p>
     <h1>Press &amp; Media</h1>
-    <p>Welcome, members of the press! Everything you need to cover the 14th Annual NH Monarch Festival is right here &#8212; event facts, a press release, boilerplate copy, and contact information for interview requests.</p>
+    <p>Welcome, members of the press! Here's everything you need to cover the 14th Annual NH Monarch Festival &#8212; the event recap, our official press release, boilerplate copy, and contact information for interview requests.</p>
   </div>
 </div>
 
@@ -361,11 +374,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- FACT SHEET -->
 <section class="sec" style="background:var(--cream);">
   <div class="inner">
-    <p class="page-eyebrow">Quick Reference</p>
+        <p class="page-eyebrow">Quick Reference</p>
     <h2 class="sh">Event Fact Sheet</h2>
     <p class="sp">Key details about the 2026 NH Monarch Festival for use in articles, event listings, and social media posts.</p>
     <div class="fact-sheet">
-      <div class="fact-row">
+        <div class="fact-row">
         <span class="fact-label">Event Name</span>
         <span class="fact-value">14th Annual NH Monarch Festival</span>
       </div>
@@ -382,8 +395,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <span class="fact-value">Tioga Pavilion at Belmont Village, 18 Mill St, Belmont, NH 03220</span>
       </div>
       <div class="fact-row">
-        <span class="fact-label">Expected Attendance</span>
-        <span class="fact-value">Approximately 300 attendees</span>
+        <span class="fact-label">Attendance</span>
+        <span class="fact-value">Nearly 300 attendees, vendors, and volunteers</span>
       </div>
       <div class="fact-row">
         <span class="fact-label">Admission</span>
@@ -418,30 +431,56 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- PRESS RELEASE -->
 <section class="sec" style="background:var(--parch);">
   <div class="inner">
-    <p class="page-eyebrow">Official Announcement</p>
+        <p class="page-eyebrow">Official Announcement</p>
     <h2 class="sh">Press Release</h2>
     <p class="sp">The following press release is approved for publication. Please contact us before making any edits to quoted material.</p>
     <div class="press-release">
-      <p class="pr-date">For Immediate Release &#183; Summer 2026</p>
-      <h2 class="pr-headline">Annual NH Monarch Festival To Be Held in Belmont on August 22, 2026</h2>
-      <p class="pr-subhead">Family-friendly event celebrates monarch butterflies and conservation efforts with kids&#8217; activities, fun learning experiences, and a variety of vendors and exhibitors</p>
+        <p class="pr-date">For Immediate Release &#183; August 2026</p>
+      <h2 class="pr-headline">14th Annual NH Monarch Festival Marks New Hampshire's First BlūMorpho Monarch Tagging</h2>
+      <p class="pr-subhead">Nearly 300 attendees, vendors, and volunteers gathered in Belmont for a day celebrating monarch conservation, capped by a historic nanotagged butterfly release</p>
+
+      <video class="pr-video" controls preload="metadata" poster="images/press/release-video-poster.jpg">
+        <source src="images/press/butterfly-release-ceremony.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="pr-video-caption">Watch: The butterfly release ceremony at this year's festival</p>
+
       <div class="pr-body">
-        <p><strong>BELMONT, NH</strong> &#8212; The 14th annual NH Monarch Festival will be held on Saturday, August 22, 2026, at the Tioga Pavilion in Belmont, NH. This family-friendly event runs from 10:00 AM to 5:00 PM and is open to all ages.</p>
-        <p>The festival celebrates the monarch butterfly, its remarkable migration, the importance of milkweed and conservation efforts, and much more.Once among the most abundant butterflies in North America, the monarch population has declined more than 80% since the 1990s. Loss of habitat, pesticide use, and overwintering challenges are among some of the contributing factors of this decline.</p>
-        <p>This year, the NH Monarch Festival has partnered with several conservation and community groups to bring awareness to monarchs, milkweed, and conservation efforts in a fun and educational setting. The event will feature live specimens, several science and educational stations, kids&#8217; activities, food and beverage, and a variety of vendors and exhibitors.</p>
-        <p>And, for the first time, the Festival will feature a historic tagging demonstration. With the help of NH Audubon, the Festival will tag a couple of monarch butterflies with the latest nanotag technology created by Cellular Tracking Technologies and the Project Monarch app. Officially launched last year, these Bluetooth-enabled, solar-powered tags are helping scientists understand migration patterns in real-time. This is the first time New Hampshire will be deploying these tags.</p>
+        <p><strong>BELMONT, N.H.</strong> &#8212; The 14th annual NH Monarch Festival was held in Belmont Village, New Hampshire, on Saturday, August 22, 2026. Nearly 300 people &#8212; including attendees, vendors, and volunteers &#8212; came together to celebrate the monarch butterfly. Over twenty vendors showcased their artwork. This family-friendly event offered new kids&#8217; games and crafts, face painting, a robot butterfly, and a new photo backdrop &#8212; all while celebrating and educating the public about the monarch butterfly, the importance of milkweed, and conservation efforts.</p>
+
+        <p>A total of seven butterflies were released at the Festival &#8212; two of them with the newest radio tagging technology: the CTT Bl&#363;Morpho radio tag. Cellular Tracking Technologies (CTT), a company specializing in GPS and cellular tracking products for scientific research, developed the new Bl&#363;Morpho tags and helped launch the Project Monarch Collaboration last year. Weighing less than a single grain of rice, these new Bl&#363;Morpho tags are solar powered, have Bluetooth capabilities, and are giving scientists the opportunity to see tracking data in real time.</p>
+
+        <p>A couple of days prior to the Festival, event coordinator and monarch citizen scientist Amira Provost partnered with biologist Lindsay Herlihy from New Hampshire Audubon to beta test the first-ever Bl&#363;Morpho tag in the state. Working carefully with a male monarch, they successfully adhered the device to the butterfly and released it later that afternoon.</p>
+
+        <div class="pr-photo-grid">
+          <figure>
+            <img src="images/press/IMG_1067.jpg" alt="Applying the BlūMorpho tag to a monarch's thorax">
+            <figcaption>Applying the tag</figcaption>
+          </figure>
+          <figure>
+            <img src="images/press/IMG_1061.jpg" alt="Tagged monarch shown next to a quarter and dime for scale">
+            <figcaption>Shown next to a quarter and dime for scale</figcaption>
+          </figure>
+          <figure>
+            <img src="images/press/IMG_1191.jpg" alt="Close-up of the BlūMorpho tag on the monarch's body">
+            <figcaption>The BlūMorpho tag, in place</figcaption>
+          </figure>
+        </div>
+
         <blockquote>
-          <p>&#8220;The Monarch Festival is not just about pretty butterflies. It&#8217;s about helping and supporting an entire ecosystem. It&#8217;s also about bringing together the community in a fun and educational setting and inspiring people of all ages to help make a difference. Because if the monarchs thrive, we all benefit.&#8221;</p>
-          <cite>&#8212; Amira Provost, NHMF Coordinator and monarch citizen scientist</cite>
+          <p>&#8220;This is absolutely exciting!&#8221; says Provost. &#8220;These Bl&#363;Morpho tags will help scientists better understand where monarchs travel and migrate to. And the best part? The data can be viewed in real time through the Project Monarch app.&#8221;</p>
         </blockquote>
-        <p>Admission is $4 for children ages 3&#8211;12, $7 for adults, and $5 for seniors. Children two or younger and any attendee in an appropriate pollinator costume are admitted for free.</p>
-        <p>If you are interested in learning more, visit <a href="https://www.nhmonarchfestival.com" style="color:var(--sage);">www.nhmonarchfestival.com</a> or contact Amira Provost at <a href="contact.html" style="color:var(--sage);">Contact Us</a>.</p>
+
+        <p>Together, Herlihy and Provost successfully released three nanotagged monarchs. Including the pre-festival beta test, three monarchs now carry an NHMF nanotag. &#8220;NHMF-BetaTest&#8221; stayed local in Belmont for a couple of days before traveling to Vermont. &#8220;NHMF-Mike,&#8221; named in honor of Provost&#8217;s father-in-law who passed away in July, has remained in the Belmont area. &#8220;NHMF-SarahJ,&#8221; named by one of the Festival&#8217;s generous sponsors, traveled north to Ashland before heading southwest toward Danbury.</p>
+
+        <p>Anyone wanting to learn more about the Bl&#363;Morpho radio tags or track the three above-mentioned butterflies can download the Project Monarch app or visit <a href="project-monarch.html" style="color:var(--sage);">nhmonarchfestival.com/project-monarch.html</a> for more information, updates, and instructions on how to use the app.</p>
+
         <div class="pr-boilerplate">
-          <h4>About the NH Monarch Festival</h4>
+        <h4>About the NH Monarch Festival</h4>
           <p>The NH Monarch Festival is an annual community event dedicated to celebrating and conserving the monarch butterfly and other pollinators. Now in its 14th year, the festival brings together families, nature enthusiasts, educators, and conservation organizations for a day of learning, fun, and hands-on engagement with one of nature&#8217;s most remarkable creatures.</p>
         </div>
         <div class="pr-contact">
-          <h4>Media Contact</h4>
+        <h4>Media Contact</h4>
           <p>NH Monarch Festival<br>
           Email: <a href="contact.html">Contact Us</a><br>
           Website: <a href="https://www.nhmonarchfestival.com">www.nhmonarchfestival.com</a><br>
@@ -457,12 +496,12 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- BOILERPLATE + SOCIAL -->
 <section class="sec" style="background:var(--cream);">
   <div class="inner">
-    <p class="page-eyebrow">Ready to Use</p>
+        <p class="page-eyebrow">Ready to Use</p>
     <h2 class="sh">Boilerplate &amp; Social</h2>
     <p class="sp">Feel free to copy and use the following description in articles, event listings, social posts, and program guides. We can also customize the boilerplate for your needs.</p>
     <div class="boilerplate-box">
-      <p id="boilerplateText">The NH Monarch Festival is an annual celebration of the monarch butterfly, milkweed, and community science. It is held each August during peak migration. This year's festival takes place Saturday, August 22, 2026, from 10am to 5pm at the Tioga Pavilion in Belmont, NH. Now in its 14th year, the festival continues to bring together families, nature enthusiasts, and conservation advocates of all ages. Attendees can spend the day learning from experts, exploring hands-on science stations, shopping with local artisans, joining in kid activities, and witnessing the latest nanotagging efforts, capped off with a butterfly release. Admission starts at $4; attendees in appropriate pollinator costumes get in free. For more information, please visit <a href="https://www.nhmonarchfestival.com" style="color:var(--sage);">www.nhmonarchfestival.com</a>.</p>
-      <button class="copy-btn" onclick="copyBoilerplate()">&#128203; Copy to Clipboard</button>
+        <p id="boilerplateText">The NH Monarch Festival is an annual celebration of the monarch butterfly, milkweed, and community science, held each August during peak migration. The 14th Annual Festival took place Saturday, August 22, 2026, from 10am to 5pm at the Tioga Pavilion in Belmont, NH, bringing together nearly 300 attendees, vendors, and volunteers. Guests spent the day learning from experts, exploring hands-on science stations, shopping with local artisans, joining in kids' activities, and witnessing New Hampshire's first BlūMorpho monarch nanotagging, capped off with a butterfly release. For more information, please visit <a href="https://www.nhmonarchfestival.com" style="color:var(--sage);">www.nhmonarchfestival.com</a>.</p>
+      <button class="copy-btn" onclick="copyBoilerplate()">Copy to Clipboard</button>
     </div>
     <div style="margin-top:3rem;">
       <h3 style="font-family:'Marcellus',serif;font-size:1.2rem;color:var(--ink);margin-bottom:.5rem;">Official Hashtag</h3>
@@ -471,7 +510,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <span style="font-family:'Marcellus',serif;font-size:1.4rem;color:var(--sage);">#NHMonarchFestival</span>
       </div>
       <div class="social-row">
-        <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" class="social-btn">&#128216; Facebook</a>
+        <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" class="social-btn">Facebook</a>
       </div>
     </div>
   </div>
@@ -480,7 +519,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- INTERVIEW & PHOTO REQUESTS -->
 <div style="padding:0 5rem 5rem;background:var(--cream);">
   <div class="inner">
-    <div class="media-contact-card">
+        <div class="media-contact-card">
       <div class="mc-text">
         <h3>Interview &amp; Photo Requests</h3>
         <p>We welcome media at the festival and are happy to arrange interviews, provide photo access, or answer any questions about the event or monarch conservation.</p>
@@ -500,9 +539,9 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <footer>
   <div class="inner" style="max-width:1100px;margin:0 auto;">
     <div class="footer-grid">
-      <div>
+        <div>
         <div class="footer-brand-row">
-          <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+        <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
           <div class="fbrand-name">NH Monarch<br>Festival</div>
         </div>
         <p class="ftagline">Celebrating nature&#8217;s most remarkable journey &#8212; right here in New Hampshire. Educational, fun, and open to all ages.</p>
@@ -511,7 +550,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <div class="footer-col">
         <h5>Festival</h5>
         <ul>
-          <li><a href="index.html#tickets">Thank You</a></li>
+          <li><a href="project-monarch.html">Track the Monarchs</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -519,7 +558,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <ul>
           <li><a href="about.html">About NHMF</a></li>
           <li><a href="monarch.html">About Monarchs</a></li>
-          <li><a href="project-monarch.html">Track the Monarchs</a></li>
           <li><a href="resources.html">Important Resources</a></li>
           <li><a href="belmont.html">About Belmont</a></li>
           <li><a href="https://petalsinthepines.com/" target="_blank" rel="noopener noreferrer">Petals in the Pines</a></li>
@@ -537,9 +575,9 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       </div>
     </div>
     <div class="fbottom">
-      <p>&#169; 2026 NH Monarch Festival &nbsp;&#183;&nbsp; All rights reserved &nbsp;&#183;&nbsp; Belmont, New Hampshire</p>
+        <p>&#169; 2026 NH Monarch Festival &nbsp;&#183;&nbsp; All rights reserved &nbsp;&#183;&nbsp; Belmont, New Hampshire</p>
       <p style="display:flex;align-items:center;gap:1.2rem;">
-        <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" style="color:rgba(242,232,208,.55);text-decoration:none;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;" onmouseover="this.style.color='rgba(242,232,208,.95)'" onmouseout="this.style.color='rgba(242,232,208,.55)'">&#128216; Facebook</a>
+        <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" style="color:rgba(242,232,208,.55);text-decoration:none;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;" onmouseover="this.style.color='rgba(242,232,208,.95)'" onmouseout="this.style.color='rgba(242,232,208,.55)'">Facebook</a>
         <span>#NHMonarchFestival</span>
       </p>
     </div>
@@ -561,7 +599,7 @@ function copyBoilerplate() {
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('.copy-btn');
     var original = btn.innerHTML;
-    btn.innerHTML = '&#9989; Copied!';
+    btn.innerHTML = 'Copied!';
     setTimeout(function() { btn.innerHTML = original; }, 2000);
   });
 }

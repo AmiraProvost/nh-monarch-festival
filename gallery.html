@@ -251,7 +251,10 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .reveal.vis { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
 
+.gallery-divider { height: 6px; background: linear-gradient(90deg, var(--mint) 0%, var(--yg) 25%, var(--peach) 50%, var(--rust) 75%, var(--mint) 100%); margin: 3.5rem -5rem; }
+
 @media (max-width: 920px) {
+  .gallery-divider { margin: 3rem -1.5rem; }
   nav { padding: .65rem 1.5rem; }
   .nav-links { display: none; }
   .sec { padding: 4rem 1.5rem; }
@@ -270,16 +273,18 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- FESTIVE BANNER -->
 <div class="festival-banner">
   <div class="festival-banner-inner">
-    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>Thank You for an Amazing Festival!</span><span class="dot">◆</span>
     <span>August 22, 2026</span><span class="dot">◆</span>
     <span>Belmont Village, NH</span><span class="dot">◆</span>
     <span>10am – 5pm</span><span class="dot">◆</span>
-    <span>Browse Our Photo Gallery!</span><span class="dot">◆</span>
-    <span>14th Annual NH Monarch Festival</span><span class="dot">◆</span>
+    <span>See You Next Year!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Vendors & Activities · Live Specimens</span><span class="dot">◆</span>
+    <span>Thank You for an Amazing Festival!</span><span class="dot">◆</span>
     <span>August 22, 2026</span><span class="dot">◆</span>
     <span>Belmont Village, NH</span><span class="dot">◆</span>
     <span>10am – 5pm</span><span class="dot">◆</span>
-    <span>Browse Our Photo Gallery!</span><span class="dot">◆</span>
+    <span>See You Next Year!</span><span class="dot">◆</span>
+    <span>Monarch Tagging · Vendors & Activities · Live Specimens</span><span class="dot">◆</span>
   </div>
 </div>
 
@@ -308,7 +313,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <li><a href="https://www.facebook.com/NHMonarchFestival" class="mob-link" target="_blank" rel="noopener noreferrer">Facebook</a></li>
       <li><a href="gallery.html" class="mob-link">Gallery</a></li>
     </ul>
-    <a href="index.html#tickets" class="btn m-cta mob-link">Thank You</a>
+    <a href="project-monarch.html" class="btn m-cta mob-link">Track the Monarchs</a>
   </div>
   <ul class="nav-links">
     <li class="nav-dropdown">
@@ -333,14 +338,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       </div>
     </li>
     <li><a href="gallery.html" style="display:flex;align-items:center;">Gallery</a></li>
-    <li><a href="index.html#tickets" class="nav-cta">Thank You</a></li>
+    <li><a href="project-monarch.html" class="nav-cta">Track the Monarchs</a></li>
   </ul>
 </nav>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-eyebrow">Gallery</p>
+        <p class="page-eyebrow">Gallery</p>
     <h1>Festival in Pictures</h1>
     <p>A glimpse into the magic of past festivals — tagging ceremonies, wonder-filled moments with live specimens, community gatherings, and the breathtaking monarchs themselves.</p>
   </div>
@@ -351,12 +356,17 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- GALLERY -->
 <section class="sec" style="background:linear-gradient(160deg, #e8f5ec 0%, var(--cream) 60%, #fef0e0 100%);">
   <div class="inner">
-    <div class="gallery-mosaic reveal">
+        <div class="gallery-mosaic reveal">
       <div class="gitem"><img src="images/Butterfly1.jpeg" alt="Monarch on sunflower"></div>
       <div class="gitem"><img src="images/festival1.jpeg" alt="Donna Miller presenting a milkweed class"></div>
       <div class="gitem"><img src="images/Butterfly2.jpeg" alt="Monarch warming her wings"></div>
       <div class="gitem"><img src="images/festival4.jpeg" alt="Monarch landing"></div>
       <div class="gitem"><img src="images/festival5.jpeg" alt="Jim Miller holding a monarch"></div>
+    </div>
+
+    <div class="reveal" style="margin:3.5rem 0 1.5rem;">
+      <p class="sec-eyebrow" style="margin-bottom:.4rem;">2026 Recap</p>
+      <h2 class="sh" style="font-size:1.7rem;">Festival Highlights</h2>
     </div>
     <div class="gallery-row2 reveal" style="margin-top:3px;">
       <div class="gitem2"><img src="images/2026-FestivalPhotos/IMG_1274.jpg" alt="Families gathered at festival tents with kids' crafts and activities"></div>
@@ -412,8 +422,15 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <div class="gitem2"><img src="images/2026-FestivalPhotos/IMG_1319.jpg" alt="Crowd gathered at the butterfly release area"></div>
       <div class="gitem2"><img src="images/2026-FestivalPhotos/IMG_1323.jpg" alt="Festival volunteers posing with a giant monarch butterfly wing cutout"></div>
     </div>
+
+    <div class="gallery-divider"></div>
+
+    <div class="reveal" style="margin:0 0 1.5rem;">
+      <p class="sec-eyebrow" style="margin-bottom:.4rem;">Through the Years</p>
+      <h2 class="sh" style="font-size:1.7rem;">Past Festivals &amp; Monarch Life</h2>
+    </div>
     <div class="gallery-row2 reveal">
-      <div class="gitem2"><img src="images/Butterfly3.jpeg" alt="Monarch wings in the sun"></div>
+        <div class="gitem2"><img src="images/Butterfly3.jpeg" alt="Monarch wings in the sun"></div>
       <div class="gitem2"><img src="images/Butterfly4.jpeg" alt="Two monarchs on flowers"></div>
       <div class="gitem2"><img src="images/Butterfly5.jpeg" alt="Female monarch on golden rod"></div>
       <div class="gitem2"><img src="images/Butterfly6.jpeg" alt="Monarch nectaring on sunflower"></div>
@@ -476,10 +493,10 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- FOOTER -->
 <footer>
   <div class="inner">
-    <div class="footer-grid">
+        <div class="footer-grid">
       <div>
         <div class="footer-brand-row">
-          <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
+        <img src="images/NHMF-LOGO13.png" alt="NHMF Logo" class="flogo">
           <div class="fbrand-name">NH Monarch<br>Festival</div>
         </div>
         <p class="ftagline">Celebrating nature's most remarkable journey — right here in New Hampshire. Educational, fun, and open to all ages.</p>
@@ -488,7 +505,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <div class="footer-col">
         <h5>Festival</h5>
         <ul>
-          <li><a href="index.html#tickets">Thank You</a></li>
+          <li><a href="project-monarch.html">Track the Monarchs</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -496,7 +513,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
         <ul>
           <li><a href="about.html">About NHMF</a></li>
           <li><a href="monarch.html">About Monarchs</a></li>
-          <li><a href="project-monarch.html">Track the Monarchs</a></li>
           <li><a href="resources.html">Important Resources</a></li>
           <li><a href="belmont.html">About Belmont</a></li>
           <li><a href="https://petalsinthepines.com/" target="_blank" rel="noopener noreferrer">Petals in the Pines</a></li>
@@ -514,7 +530,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       </div>
     </div>
     <div class="fbottom">
-      <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
+        <p>© 2026 NH Monarch Festival &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Belmont, New Hampshire</p>
       <p style="display:flex;align-items:center;gap:1.2rem;">
         <a href="https://www.facebook.com/NHMonarchFestival" target="_blank" rel="noopener noreferrer" style="color:rgba(242,232,208,.55);text-decoration:none;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;transition:color .2s;" onmouseover="this.style.color='rgba(242,232,208,.95)'" onmouseout="this.style.color='rgba(242,232,208,.55)'">&#x1F4D8; Facebook</a>
         <span>#NHMonarchFestival</span>
