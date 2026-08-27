@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Important Resources &middot; NH Monarch Festival 2026</title>
+<title>Track the Monarchs &middot; NH Monarch Festival</title>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=IM+Fell+English:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -217,6 +217,53 @@ span.resource-title { color: var(--ink); }
 .course-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .95rem; line-height: 1.65; color: var(--ink2); opacity: .8; }
 .course-card .link-text { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); margin-top: .8rem; display: block; }
 
+/* APP STEP WALKTHROUGH */
+.app-step {
+  display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: center;
+  margin-bottom: 3.2rem;
+}
+.app-step.reverse { grid-template-columns: 1fr 280px; }
+.app-step.reverse .app-step-img { order: 2; }
+.app-step-img img {
+  width: 100%; display: block; border-radius: 10px; border: 1px solid var(--parch3);
+  box-shadow: 0 10px 30px rgba(42,30,12,.14);
+}
+.app-step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%; background: var(--rust); color: #fff;
+  font-family: 'Marcellus', serif; font-size: .95rem; margin-bottom: .8rem; flex-shrink: 0;
+}
+.app-step-body h4 { font-family: 'Marcellus', serif; font-size: 1.2rem; color: var(--sage); margin-bottom: .5rem; }
+.app-step-body p { font-family: 'Sorts Mill Goudy', serif; font-size: 1rem; line-height: 1.7; color: var(--ink2); opacity: .85; }
+@media (max-width: 760px) {
+  .app-step, .app-step.reverse { grid-template-columns: 1fr; }
+  .app-step.reverse .app-step-img { order: 0; }
+  .app-step-img { max-width: 320px; margin: 0 auto; }
+}
+
+/* BUTTERFLY BIO CARDS */
+.butterfly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.butterfly-card {
+  background: var(--cream); border: 1.5px solid var(--parch3);
+  border-top: 4px solid var(--rust); overflow: hidden;
+}
+.butterfly-card img { width: 100%; display: block; }
+.butterfly-card-body { padding: 1.4rem 1.6rem; }
+.butterfly-card h4 { font-family: 'Marcellus', serif; font-size: 1.1rem; color: var(--sage); margin-bottom: .2rem; }
+.butterfly-card .tag-id { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); opacity: .8; margin-bottom: .6rem; display: block; }
+.butterfly-card p { font-family: 'Sorts Mill Goudy', serif; font-size: .93rem; line-height: 1.65; color: var(--ink2); opacity: .85; }
+@media (max-width: 760px) {
+  .butterfly-grid { grid-template-columns: 1fr; }
+}
+
+/* PLACEHOLDER NOTICE */
+.placeholder-block {
+  background: repeating-linear-gradient(45deg, var(--parch2), var(--parch2) 10px, var(--parch) 10px, var(--parch) 20px);
+  border: 1.5px dashed var(--parch3); padding: 1.6rem 1.8rem; margin-bottom: 1rem;
+}
+.placeholder-block p { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-size: .98rem; line-height: 1.7; color: var(--ink2); opacity: .85; }
+.placeholder-tag { font-size: .65rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: .6rem; }
+
 /* FOOTER */
 footer { background: var(--ink); color: var(--parch); padding: 5rem 5rem 3rem; position: relative; overflow: hidden; }
 footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--mint), var(--peach), var(--gold2), var(--peach), var(--mint)); }
@@ -243,6 +290,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .org-grid { grid-template-columns: 1fr; }
   .nursery-grid { grid-template-columns: 1fr; }
   .course-grid { grid-template-columns: 1fr; }
+  .butterfly-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   footer { padding: 4rem 1.5rem 2rem; }
 }
@@ -323,58 +371,143 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-eyebrow">Conservation &amp; Education</p>
-    <h1>Important Resources</h1>
-    <p>Everything you need to grow milkweed, plant for pollinators, connect with monarch organizations, find native plants near you, and keep learning &#8212; curated by the NH Monarch Festival team.</p>
+    <p class="page-eyebrow">Real-Time Migration Tracking</p>
+    <h1>Track the Monarchs</h1>
+    <p>Follow our nanotagged monarchs on their journey south using the free Project Monarch app &#8212; see live detections, migration routes, and how far they've traveled since being released right here in Belmont.</p>
   </div>
 </div>
 <div class="color-band"></div>
 
-<!-- GROWING MILKWEED AND MEADOWS -->
+<!-- HISTORIC RELEASE -->
 <section class="sec">
   <div class="inner">
-    <p class="sec-eyebrow">Get Growing</p>
-    <h2 class="sh">Growing Milkweed &amp; Meadows</h2>
-    <p class="sp">Everything you need to start growing milkweed and native wildflowers, whether you have a window box or an acre of lawn.</p>
-    <div class="resource-list">
+    <p class="sec-eyebrow">A Historic Moment</p>
+    <h2 class="sh">The First Nanotagged Release at NHMF</h2>
+    <div class="placeholder-block">
+      <span class="placeholder-tag">Placeholder &mdash; To Be Replaced</span>
+      <p>[Placeholder text: a paragraph about the historic nanotag release at the NH Monarch Festival will go here &mdash; details on the significance of this year's release, the partnership with Cellular Tracking Technologies and NH Audubon, and what it means for monarch migration research.]</p>
+    </div>
+  </div>
+</section>
 
-      <div class="resource-item">
-        <span class="resource-icon">&#127807;</span>
-        <div class="resource-body">
-          <a href="https://monarchjointventure.org/mjvprograms/habitat/planting-and-growing-milkweed" target="_blank" rel="noopener noreferrer" class="resource-title">Planting and Growing Milkweed</a>
-          <p class="resource-note">A comprehensive guide from Monarch Joint Venture covering seed stratification, outdoor planting, indoor starting, and transplanting milkweed for monarch habitat.</p>
+<div class="color-band"></div>
+
+<!-- HOW TO USE THE APP -->
+<section class="sec" style="background:var(--parch);">
+  <div class="inner">
+    <p class="sec-eyebrow">Step-by-Step</p>
+    <h2 class="sh">How to Find Our Tagged Monarchs</h2>
+    <p class="sp" style="margin-bottom:3rem;">Follow these steps in the free Project Monarch app to find NHMF-SarahJ, NHMF-MIKE, and NHMF-BetaTest &mdash; and watch their journey unfold in real time.</p>
+
+    <div class="app-step">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3252.jpg" alt="Download the Project Monarch app"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">1</span>
+        <h4>Download the App</h4>
+        <p>Search for <strong>Project Monarch</strong> in the App Store or Google Play and download it &mdash; it's free. (Don't confuse it with the similarly-named Monarch Watch or iNaturalist apps.)</p>
+      </div>
+    </div>
+
+    <div class="app-step reverse">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3253.jpg" alt="Create a login and launch the app"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">2</span>
+        <h4>Create an Account &amp; Launch</h4>
+        <p>Create a login and sign in, then tap the orange <strong>LAUNCH</strong> button to enter the app.</p>
+      </div>
+    </div>
+
+    <div class="app-step">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3254.jpg" alt="Read the introduction and tap Done"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">3</span>
+        <h4>Read the Introduction</h4>
+        <p>Project Monarch will walk you through some background on the project and how the tiny tracking devices work. Once you've read through it, tap <strong>Done</strong>.</p>
+      </div>
+    </div>
+
+    <div class="app-step reverse">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3255.jpg" alt="Tap Data at the bottom of the screen"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">4</span>
+        <h4>Open the Data Tab</h4>
+        <p>Tap <strong>DATA</strong> at the bottom of the screen &mdash; this is where you'll find all three NHMF nanotags.</p>
+      </div>
+    </div>
+
+    <div class="app-step">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3256.jpg" alt="Choose the map or butterfly icon"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">5</span>
+        <h4>Pick Map or List View</h4>
+        <p>Tap the <strong>map icon</strong> (top right) for a live, real-time map of all detections, or tap the <strong>butterfly icon</strong> to search for a specific tagged monarch by name.</p>
+      </div>
+    </div>
+
+    <div class="app-step reverse">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3257.jpg" alt="Live map of monarch locations"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">6</span>
+        <h4>Explore the Live Map</h4>
+        <p>Zoom in on New Hampshire to see, in real time, where the NHMF butterflies currently are. The map updates every few minutes. Tap on any butterfly icon to see its full name and how far it's traveled from its release location.</p>
+      </div>
+    </div>
+
+    <div class="app-step">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3259.jpg" alt="Search for NHMF tagged monarchs"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">7</span>
+        <h4>Search for &ldquo;NHMF&rdquo;</h4>
+        <p>From the butterfly list view, tap the search icon and type <strong>NHMF</strong> &mdash; all three of our tagged monarchs will pop up: NHMF-SarahJ, NHMF-MIKE, and NHMF-BetaTest. Tap on any one to see more information.</p>
+      </div>
+    </div>
+
+    <div class="app-step reverse">
+      <div class="app-step-img"><img src="images/project-monarch/IMG_3261.jpg" alt="Understanding the detection map"></div>
+      <div class="app-step-body">
+        <span class="app-step-num">8</span>
+        <h4>Reading an Individual Map</h4>
+        <p>Tap a butterfly's name to see its full detection history, then tap the map icon to see its data points. Each <strong>blue dot</strong> is a detected data point from the nanotag. The <strong>red star</strong> marks where the nanotag was deployed &mdash; the spot where the butterfly was released.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="color-band"></div>
+
+<!-- MEET THE BUTTERFLIES -->
+<section class="sec">
+  <div class="inner">
+    <p class="sec-eyebrow">Meet Our Monarchs</p>
+    <h2 class="sh">The NHMF Nanotagged Butterflies</h2>
+    <p class="sp" style="margin-bottom:2rem;">Three monarchs currently carry an NHMF nanotag. Search &ldquo;NHMF&rdquo; in the app to follow all three.</p>
+    <div class="butterfly-grid">
+
+      <div class="butterfly-card">
+        <img src="images/project-monarch/IMG_3262.jpg" alt="NHMF-MIKE detection map">
+        <div class="butterfly-card-body">
+          <h4>NHMF-MIKE</h4>
+          <span class="tag-id">Tag Id: 1020EE61</span>
+          <p>The first nanotagged butterfly released at the Festival. Mike was named in honor of Amira's father-in-law, who passed away in mid-July.</p>
         </div>
       </div>
 
-      <div class="resource-item">
-        <span class="resource-icon">&#127807;</span>
-        <div class="resource-body">
-          <a href="https://monarchwatch.org/milkweed/prop.htm" target="_blank" rel="noopener noreferrer" class="resource-title">How to Cold Stratify and Germinate Milkweed Seed</a>
-          <p class="resource-note">This is for starting seeds indoors. The easy way to plant milkweed seed is to plant it outside in your garden just before the ground freezes, around late October. From Monarch Watch.</p>
+      <div class="butterfly-card">
+        <img src="images/project-monarch/IMG_3263.jpg" alt="NHMF-SarahJ detection map">
+        <div class="butterfly-card-body">
+          <h4>NHMF-SarahJ</h4>
+          <span class="tag-id">Tag Id: BFFAB7FA</span>
+          <p>The second and final nanotagged monarch released at the Festival. SarahJ was named by one of our amazing sponsors.</p>
         </div>
       </div>
 
-      <div class="resource-item">
-        <span class="resource-icon">&#127795;</span>
-        <div class="resource-body">
-          <a href="https://extension.unh.edu/resource/wildflower-meadows-plant-selection-and-establishment" target="_blank" rel="noopener noreferrer" class="resource-title">Wildflower Meadows &#8212; Plant Selection &amp; Establishment</a>
-          <p class="resource-note">This is local information from research at UNH with plant lists for NH gardens. Once you get to this page there are several more links on related subjects. Good stuff!</p>
-        </div>
-      </div>
-
-      <div class="resource-item">
-        <span class="resource-icon">&#127968;</span>
-        <div class="resource-body">
-          <a href="https://www.monarchwatch.org/waystations/" target="_blank" rel="noopener noreferrer" class="resource-title">Monarch Waystation</a>
-          <p class="resource-note">Instructions on how to create a Monarch Waystation. Make sure to register it too!</p>
-        </div>
-      </div>
-
-      <div class="resource-item">
-        <span class="resource-icon">&#127979;</span>
-        <div class="resource-body">
-          <a href="https://www.nwf.org/Eco-Schools-US/Campaigns/Schoolyard-Habitats" target="_blank" rel="noopener noreferrer" class="resource-title">Create a Schoolyard Butterfly Habitat</a>
-          <p class="resource-note">Many schools are creating butterfly gardens. Here is a great resource to get started! From the National Wildlife Federation&#8217;s Schoolyard Habitats&#174; program.</p>
+      <div class="butterfly-card" style="grid-column: 1 / -1;">
+        <img src="images/project-monarch/IMG_3260.jpg" alt="NHMF-BetaTest detection map" style="max-height:280px;object-fit:cover;object-position:top;">
+        <div class="butterfly-card-body">
+          <h4>NHMF-BetaTest</h4>
+          <span class="tag-id">Tag Id: D2DF8C13</span>
+          <p>Tagged two days prior to the Festival to test the technology and make sure everything was working. Beta stayed in Belmont for a couple of days before flying to Vermont.</p>
         </div>
       </div>
 
@@ -384,131 +517,54 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 
 <div class="color-band"></div>
 
-<!-- WHERE TO BUY NATIVE PLANTS -->
-<section class="sec sec-alt">
+<!-- LEARN MORE -->
+<section class="sec" style="background:var(--parch);">
   <div class="inner">
-    <p class="sec-eyebrow">Shop Local</p>
-    <h2 class="sh">Where to Buy Native Plants in NH</h2>
-    <p class="sp">Support local nurseries that specialize in New Hampshire native plants for pollinators and wildlife gardens.</p>
-    <div class="nursery-grid">
-
-      <a href="https://bagleypondperennials.com/" target="_blank" rel="noopener noreferrer" class="nursery-card">
-        <h4>Bagley Pond Perennials</h4>
-        <span class="nursery-location">&#128205; Warner, NH</span>
-        <p>A certified organic native perennial farm offering pollinator-safe plants grown from seed &#8212; true natives, no cultivars. Mail order available. Located at 648 Pumpkin Hill Road.</p>
-        <span class="link-text">bagleypondperennials.com &#8594;</span>
-      </a>
-
-      <a href="https://fassettfarmnursery.com/" target="_blank" rel="noopener noreferrer" class="nursery-card">
-        <h4>Fassett Farm Nursery</h4>
-        <span class="nursery-location">&#128205; Jaffrey, NH</span>
-        <p>Nestled at the base of Mount Monadnock, offering an extensive inventory of Northeast native plants with 10 acres of trails and gardens to explore. Garden design services available.</p>
-        <span class="link-text">fassettfarmnursery.com &#8594;</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<div class="color-band"></div>
-
-<!-- MONARCH AND POLLINATOR ORGANIZATIONS -->
-<section class="sec">
-  <div class="inner">
-    <p class="sec-eyebrow">Get Connected</p>
-    <h2 class="sh">Monarch &amp; Pollinator Organizations</h2>
-    <p class="sp">The organizations working hardest to protect monarch butterflies and pollinators &#8212; locally, nationally, and internationally.</p>
+    <p class="sec-eyebrow">Learn More</p>
+    <h2 class="sh">Project Monarch &amp; Migration Research</h2>
+    <p class="sp">Dig deeper into the technology, research, and partnerships behind the nanotagging program &mdash; and download the app for yourself.</p>
     <div class="org-grid">
 
-      <a href="https://www.monarchwatch.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Conservation &amp; Research</span>
-        <h4>Monarch Watch</h4>
-        <p>A nonprofit education, conservation, and research program based at the University of Kansas, dedicated to the monarch butterfly and its spectacular migration.</p>
-        <span class="link-text">monarchwatch.org &#8594;</span>
+      <a href="https://celltracktech.com/pages/project-monarch-collaboration-2025" target="_blank" rel="noopener noreferrer" class="org-card">
+        <span class="org-card-label">Collaboration</span>
+        <h4>Project Monarch Collaboration &amp; Pilot Program</h4>
+        <p>Learn about the partnership and pilot program behind Project Monarch's nanotagging technology.</p>
+        <span class="link-text">celltracktech.com &#8594;</span>
       </a>
 
-      <a href="https://www.monarchwatch.org/tagging/" target="_blank" rel="noopener noreferrer" class="org-card">
+      <a href="https://celltracktech.com/pages/project-monarch-press-release-march-19-2026" target="_blank" rel="noopener noreferrer" class="org-card">
+        <span class="org-card-label">Research</span>
+        <h4>Historic Spring Migration Data</h4>
+        <p>Read about the historic spring migration data collected through the Project Monarch tracking network.</p>
+        <span class="link-text">celltracktech.com &#8594;</span>
+      </a>
+
+      <a href="https://monarchwatch.org/radiotag/" target="_blank" rel="noopener noreferrer" class="org-card">
         <span class="org-card-label">Citizen Science</span>
-        <h4>Monarch Watch &#8212; Tagging</h4>
-        <p>Join the official tagging program and help scientists track monarch migration routes across North America. Tag kits available each summer.</p>
-        <span class="link-text">monarchwatch.org/tagging &#8594;</span>
+        <h4>Monarch Watch &mdash; Radio Tagged Monarchs</h4>
+        <p>Explore Monarch Watch's radio tagging program and how it complements nanotag tracking efforts.</p>
+        <span class="link-text">monarchwatch.org/radiotag &#8594;</span>
       </a>
 
-      <a href="https://monarchjointventure.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">National Partnership</span>
-        <h4>Monarch Joint Venture</h4>
-        <p>A partnership of federal and state agencies, nonprofits, and universities working to protect the monarch migration across the United States.</p>
-        <span class="link-text">monarchjointventure.org &#8594;</span>
-      </a>
-
-      <a href="https://monarchjointventure.org/resources/downloads-and-links#for-kids" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">For Young Learners</span>
-        <h4>Monarch Joint Venture for Kids</h4>
-        <p>Downloadable resources, activities, and learning materials about monarch butterflies designed specifically for children and classrooms.</p>
-        <span class="link-text">MJV Resources for Kids &#8594;</span>
-      </a>
-
-      <a href="https://journeynorth.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Migration Tracking</span>
-        <h4>Journey North</h4>
-        <p>Track monarch migration in real time with citizen science sighting reports from across North America. Report your own monarch sightings!</p>
-        <span class="link-text">journeynorth.org &#8594;</span>
-      </a>
-
-      <a href="https://www.pollinator.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Pollinator Advocacy</span>
-        <h4>Pollinator Partnership</h4>
-        <p>The world&#8217;s largest nonprofit dedicated to pollinator health, offering free planting guides by ecoregion and science-based conservation resources.</p>
-        <span class="link-text">pollinator.org &#8594;</span>
-      </a>
-
-      <a href="https://www.pollinator-pathway.org/" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Habitat Corridors</span>
-        <h4>Pollinator Pathways</h4>
-        <p>A collaborative network of pesticide-free, native plant corridors providing essential habitat for bees, butterflies, birds, and other pollinators across communities.</p>
-        <span class="link-text">pollinator-pathway.org &#8594;</span>
-      </a>
-
-      <a href="https://xerces.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Invertebrate Conservation</span>
-        <h4>Xerces Society</h4>
-        <p>A nonprofit protecting wildlife through the conservation of invertebrates and their habitat, with extensive resources on pollinators, milkweed, and native plants.</p>
-        <span class="link-text">xerces.org &#8594;</span>
-      </a>
-
-      <a href="https://www.nativeplanttrust.org/" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">New England</span>
-        <h4>Native Plant Trust</h4>
-        <p>Dedicated to conserving and promoting native plants of New England through education, research, conservation, and a network of gardens and nurseries.</p>
-        <span class="link-text">nativeplanttrust.org &#8594;</span>
-      </a>
-
-      <a href="https://pollinatorpathwaysnh.org/" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">New Hampshire</span>
-        <h4>Pollinator Pathways NH</h4>
-        <p>A grassroots NH nonprofit restoring native pollinator habitat one yard at a time through community partnerships, education, and engagement across the state.</p>
-        <span class="link-text">pollinatorpathwaysnh.org &#8594;</span>
-      </a>
-
-      <a href="https://www.facebook.com/pollinatorpathwaysnh" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Social Media</span>
-        <h4>Pollinator Pathways NH on Facebook</h4>
-        <p>Follow Pollinator Pathways NH on Facebook for local events, planting tips, and community updates on pollinator habitat work across New Hampshire.</p>
-        <span class="link-text">facebook.com/pollinatorpathwaysnh &#8594;</span>
-      </a>
-
-      <a href="https://nhaudubon.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">New Hampshire</span>
-        <h4>NH Audubon</h4>
-        <p>Dedicated to the conservation of wildlife and habitat throughout New Hampshire, with programs focused on birds, pollinators, and native plant gardens.</p>
+      <a href="https://nhaudubon.org/butterflies-without-borders-tracking-monarch-migration-webinar-recording/" target="_blank" rel="noopener noreferrer" class="org-card">
+        <span class="org-card-label">Webinar Recording</span>
+        <h4>Butterflies Without Borders</h4>
+        <p>Watch NH Audubon's recorded webinar on tracking monarch migration across borders.</p>
         <span class="link-text">nhaudubon.org &#8594;</span>
       </a>
 
-      <a href="https://homegrownnationalpark.org" target="_blank" rel="noopener noreferrer" class="org-card">
-        <span class="org-card-label">Native Plant Movement</span>
-        <h4>Homegrown National Park</h4>
-        <p>Doug Tallamy&#8217;s initiative to create a network of native plant habitat in home gardens across the country, stitching together a vast &#8220;national park&#8221; for wildlife.</p>
-        <span class="link-text">homegrownnationalpark.org &#8594;</span>
+      <a href="https://apps.apple.com/us/app/project-monarch-science/id6460006970" target="_blank" rel="noopener noreferrer" class="org-card">
+        <span class="org-card-label">Download &middot; iOS</span>
+        <h4>Project Monarch on the App Store</h4>
+        <p>Get the free Project Monarch app for iPhone and iPad.</p>
+        <span class="link-text">apps.apple.com &#8594;</span>
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.celltracktech.projectMonarch.project_monarch&hl=en_US" target="_blank" rel="noopener noreferrer" class="org-card">
+        <span class="org-card-label">Download &middot; Android</span>
+        <h4>Project Monarch on Google Play</h4>
+        <p>Get the free Project Monarch app for Android devices.</p>
+        <span class="link-text">play.google.com &#8594;</span>
       </a>
 
     </div>
@@ -516,178 +572,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 </section>
 
 <div class="color-band"></div>
-
-<!-- UNH COOPERATIVE EXTENSION COURSES -->
-<section class="sec sec-alt">
-  <div class="inner">
-    <p class="sec-eyebrow">Keep Learning</p>
-    <h2 class="sh">UNH Cooperative Extension Courses</h2>
-    <p class="sp">Deepen your knowledge and give back to your community through these excellent volunteer training programs from UNH Cooperative Extension.</p>
-    <div class="course-grid">
-
-      <a href="https://extension.unh.edu/agriculture-gardens/yard-garden/new-hampshire-master-gardeners" target="_blank" rel="noopener noreferrer" class="course-card">
-        <h4>NH Master Gardeners</h4>
-        <p>A 12-week volunteer training program for those passionate about gardening and community education. Master Gardeners share their expertise through public projects, presentations, and the UNH Extension InfoLine.</p>
-        <span class="link-text">Learn more at extension.unh.edu &#8594;</span>
-      </a>
-
-      <a href="https://extension.unh.edu/resource/learn-about-natural-resources-stewards" target="_blank" rel="noopener noreferrer" class="course-card">
-        <h4>NH Natural Resource Stewards</h4>
-        <p>A 12-week hybrid course exploring NH&#8217;s ecosystems &#8212; forests, wetlands, soil, water, and wildlife. Stewards go on to lead conservation projects in their communities across the state.</p>
-        <span class="link-text">Learn more at extension.unh.edu &#8594;</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<div class="color-band"></div>
-
-<!-- BOOK LIST -->
-<section class="sec">
-  <div class="inner">
-    <p class="sec-eyebrow">Recommended Reading</p>
-    <h2 class="sh">Book List</h2>
-    <p class="sp">A curated collection of books on monarchs, butterflies, native plants, and gardening for wildlife &#8212; something for every age and interest.</p>
-
-    <div class="book-category">
-      <p class="book-category-title">Doug Tallamy Books</p>
-      <div class="book-list">
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Bringing Nature Home &amp; Nature&#8217;s Best Hope</span>
-            <span class="book-author">by Douglas Tallamy &#8212; Two essential books on restoring wildlife habitat through native plants in home gardens.</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#127909;</span>
-          <div>
-            <span class="book-title">Nature&#8217;s Best Hope (Powerpoint Presentation)</span>
-            <span class="book-author"><a href="https://www.youtube.com/results?search_query=Doug+Tallamy+Nature%27s+Best+Hope" target="_blank" rel="noopener noreferrer" style="color:var(--sage);">by Doug Tallamy &#8212; Watch on YouTube &#8594;</a></span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">The Living Landscape</span>
-            <span class="book-author">by Rick Darke and Douglas Tallamy &#8212; A guide to designing and planting ecologically rich landscapes for people and wildlife.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="book-category">
-      <p class="book-category-title">Monarchs &amp; Butterflies</p>
-      <div class="book-list">
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">The Monarch: Saving Our Most-Loved Butterfly</span>
-            <span class="book-author">by Kylee Baumle</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Butterfly Book</span>
-            <span class="book-author">by Donald &amp; Lillian Stokes &amp; Ernest Williams</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Caterpillars of Eastern North America</span>
-            <span class="book-author">by David L. Wagner</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="book-category">
-      <p class="book-category-title">Gardening &amp; Landscaping</p>
-      <div class="book-list">
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Gardening for Butterflies</span>
-            <span class="book-author">by the Xerces Society</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Attracting Native Pollinators</span>
-            <span class="book-author">by the Xerces Society</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">The Green Garden</span>
-            <span class="book-author">by Ellen Sousa</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Native Plants of the Northeast</span>
-            <span class="book-author">by Donald J. Leopold</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Native Plants for New England Gardens</span>
-            <span class="book-author">by Mark Richardson and Dan Jaffe</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Integrated Landscaping: Following Nature&#8217;s Lead</span>
-            <span class="book-author">UNH Cooperative Extension</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="book-category">
-      <p class="book-category-title">Books for Kids</p>
-      <div class="book-list">
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Fly, Butterfly</span>
-            <span class="book-author">by Bonnie Bader</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Are You a Butterfly?</span>
-            <span class="book-author">by Judy Allen and Tudor Humphries</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Milkweed Visitors</span>
-            <span class="book-author">by Mary Holland</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <span class="book-icon">&#128218;</span>
-          <div>
-            <span class="book-title">Mirabelle&#8217;s Metamorphosis</span>
-            <span class="book-author">by Sharon Rask-Huntington</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
